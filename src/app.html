@@ -1,12 +1,58 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="%sveltekit.assets%/favicon.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		%sveltekit.head%
-	</head>
-	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">%sveltekit.body%</div>
-	</body>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--    <link rel="preload" href="/title.svg" as="image" type="image/svg+xml" fetchpriority="high" />-->
+
+    <!--    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />-->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.svg" />
+    <!--    <link rel="manifest" href="/site.webmanifest" />-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wdth,wght@0,75..125,200..900;1,75..125,200..900&display=swap" rel="stylesheet">
+
+
+
+    <title>SparkJam</title>
+    <meta name="description" content="SparkJam, hosted by SFU Surge" />
+
+    <meta property="og:site_name" content="sfusurge.com" />
+    <meta property="article:author" content="https://sfusurge.com" />
+    <meta property="article:publisher" content="https://sfusurge.com" />
+    <meta property="og:type" content="article" />
+
+    <meta property="og:title" content="SparkJam" />
+    <meta property="og:description"
+          content="A two week long design sprint where students push their skills in brand, user interface, motion, prototyping, and story driven pitching to innovate within a chosen problem space." />
+    <!--    <meta property="og:image" content="/preview_image.jpg" />-->
+    <meta property="og:url" content="https://sparkjam.design" />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content="600" />
+    <meta property="og:image:height" content="295" />
+    <meta property="og:image:alt" content="SparkJam" />
+
+    <meta name="twitter:card" content="summary_large_image">
+    </meta>
+
+    %sveltekit.head%
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3XGD2E02GH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-3XGD2E02GH');
+    </script>
+</head>
+
+<body data-sveltekit-preload-data="hover">
+<div style="display: contents">%sveltekit.body%</div>
+</body>
+
 </html>

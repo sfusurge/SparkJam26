@@ -1,0 +1,19 @@
+@import 'tailwindcss';
+
+@font-face {
+    font-family: 'PPMori';
+    src: url('/fonts/PPMori-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PPMori';
+    src: url('/fonts/PPMori-SemiBold.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+html {
+    cursor: url('/cursor.png'), auto;
+}
