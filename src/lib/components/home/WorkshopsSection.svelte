@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { calendarEvents } from '$lib/data/calendar-events.js';
 	import SectionBadge from './SectionBadge.svelte';
 	import WorkshopEventCard from './WorkshopEventCard.svelte';
 </script>
@@ -15,65 +16,15 @@
 			</h2>
 		</div>
 		<div class="relative flex flex-col">
-			<WorkshopEventCard month="MAY" day="11" title="Building Prototypes in Framer">
-				{#snippet body()}
-					<p>
-						Learn all about the powerful no-code tool, with Framer Campus Leader and Nokia designer
-						<span class="underline">Zariyan Mansoor</span>.
-					</p>
-				{/snippet}
-				{#snippet badges()}
-					<span
-						class="rounded-full border border-boba-black bg-strawberry-moon px-5 py-2 font-sans text-2xl font-semibold"
-						>WORKSHOP</span
-					>
-					<span
-						class="rounded-full border border-boba-black bg-sparky-yellow px-5 py-2 font-sans text-2xl font-semibold"
-						>11:00am PST</span
-					>
-					<span
-						class="rounded-full border border-boba-black bg-sparky-yellow px-5 py-2 font-sans text-2xl font-semibold"
-						>2:00pm EST</span
-					>
-				{/snippet}
-			</WorkshopEventCard>
-			<WorkshopEventCard month="MAY" day="11" title="A Look Into Designing for Riot Games">
-				{#snippet body()}
-					<p>
-						Ever wonder how the UI in TFT is put together? Join
-						<span class="underline">Dave Felton</span>
-						and
-						<span class="underline">Another Name</span>
-						for this inside look.
-					</p>
-				{/snippet}
-				{#snippet badges()}
-					<div class="inline-flex items-stretch overflow-hidden rounded-full border border-boba-black">
-						<img
-							src={'/shapes/talkStarL.svg'}
-							alt=""
-							class="h-[42px] w-[22px] object-contain"
-						/>
-						<span
-							class="flex items-center border-x border-boba-black bg-touched-grass px-3 py-2 font-sans text-2xl font-semibold"
-							>Speaker Session</span
-						>
-						<img
-							src={'/shapes/talkStarR.svg'}
-							alt=""
-							class="h-[42px] w-[22px] scale-y-[-1] rotate-180 object-contain"
-						/>
-					</div>
-					<span
-						class="rounded-full border border-boba-black bg-sparky-yellow px-5 py-2 font-sans text-2xl font-semibold"
-						>6:00pm PST</span
-					>
-					<span
-						class="rounded-full border border-boba-black bg-sparky-yellow px-5 py-2 font-sans text-2xl font-semibold"
-						>9:00pm EST</span
-					>
-				{/snippet}
-			</WorkshopEventCard>
+			{#each calendarEvents as event, i (event.title + '-' + i)}
+				<WorkshopEventCard
+					month={event.month}
+					day={event.day}
+					title={event.title}
+					bodyHtml={event.bodyHtml}
+					badges={event.badges}
+				/>
+			{/each}
 		</div>
 	</div>
 </section>

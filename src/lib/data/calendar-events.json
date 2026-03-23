@@ -1,0 +1,26 @@
+{
+	"events": [
+		{
+			"month": "MAY",
+			"day": "11",
+			"title": "Building Prototypes in Framer",
+			"bodyHtml": "<p>Learn all about the powerful no-code tool, with Framer Campus Leader and Nokia designer <span class=\"underline\">Zariyan Mansoor</span>.</p>",
+			"badges": [
+				{ "kind": "pill", "text": "WORKSHOP", "variant": "strawberry-moon" },
+				{ "kind": "pill", "text": "11:00am PST", "variant": "sparky-yellow" },
+				{ "kind": "pill", "text": "2:00pm EST", "variant": "sparky-yellow" }
+			]
+		},
+		{
+			"month": "MAY",
+			"day": "11",
+			"title": "A Look Into Designing for Riot Games",
+			"bodyHtml": "<p>Ever wonder how the UI in TFT is put together? Join <span class=\"underline\">Dave Felton</span> and <span class=\"underline\">Another Name</span> for this inside look.</p>",
+			"badges": [
+				{ "kind": "speaker-session", "text": "Speaker Session" },
+				{ "kind": "pill", "text": "6:00pm PST", "variant": "sparky-yellow" },
+				{ "kind": "pill", "text": "9:00pm EST", "variant": "sparky-yellow" }
+			]
+		}
+	]
+}

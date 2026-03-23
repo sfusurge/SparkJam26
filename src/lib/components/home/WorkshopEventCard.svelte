@@ -1,18 +1,24 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
+	import type { CalendarBadge, CalendarPillVariant } from '$lib/data/calendar-events.js';
+
+	const pillVariantClass: Record<CalendarPillVariant, string> = {
+		'strawberry-moon': 'bg-strawberry-moon',
+		'sparky-yellow': 'bg-sparky-yellow',
+		'touched-grass': 'bg-touched-grass'
+	};
 
 	const {
 		month,
 		day,
 		title,
-		body,
+		bodyHtml,
 		badges
 	}: {
 		month: string;
 		day: string;
 		title: string;
-		body: Snippet;
-		badges: Snippet;
+		bodyHtml: string;
+		badges: CalendarBadge[];
 	} = $props();
 </script>
 
@@ -40,11 +46,38 @@
 					{title}
 				</h3>
 				<div class="mt-4 font-sans text-[32px] leading-[1.11] tracking-[-0.02em]">
-					{@render body()}
+					<!-- eslint-disable-next-line svelte/no-at-html-tags -- static site copy from repo JSON -->
+					{@html bodyHtml}
 				</div>
 			</div>
 			<div class="flex flex-wrap items-center gap-8">
-				{@render badges()}
+				{#each badges as badge, i (badge.kind + '-' + badge.text + '-' + i)}
+					{#if badge.kind === 'pill'}
+						<span
+							class="rounded-full border border-boba-black px-5 py-2 font-sans text-2xl font-semibold {pillVariantClass[badge.variant]}"
+							>{badge.text}</span
+						>
+					{:else}
+						<div
+							class="inline-flex items-stretch overflow-hidden rounded-full border border-boba-black"
+						>
+							<img
+								src="/shapes/talkStarL.svg"
+								alt=""
+								class="h-[42px] w-[22px] object-contain"
+							/>
+							<span
+								class="flex items-center border-x border-boba-black bg-touched-grass px-3 py-2 font-sans text-2xl font-semibold"
+								>{badge.text}</span
+							>
+							<img
+								src="/shapes/talkStarR.svg"
+								alt=""
+								class="h-[42px] w-[22px] scale-y-[-1] rotate-180 object-contain"
+							/>
+						</div>
+					{/if}
+				{/each}
 			</div>
 		</div>
 	</div>
