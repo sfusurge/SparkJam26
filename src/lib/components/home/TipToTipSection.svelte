@@ -8,14 +8,14 @@
 		<div class="border border-boba-black border-b-0 bg-citrouille px-8 py-8">
 			<h2
 				id="s02-title"
-				class="font-['PPMori',sans-serif] text-[48px] font-extrabold leading-none tracking-[-0.03em]"
+				class="font-sans text-[48px] font-extrabold leading-none tracking-[-0.03em]"
 			>
 				It’s True, We’re Going Tip to Tip.
 			</h2>
 		</div>
 		<div class="grid gap-0 grid-cols-[1fr_minmax(0,467px)]">
 			<div class="border border-boba-black bg-sparky-yellow px-8 py-10">
-				<p class="font-['PPMori',sans-serif] text-[32px] leading-[1.11] tracking-[-0.02em]">
+				<p class="font-sans text-[32px] leading-[1.11] tracking-[-0.02em]">
 					This year, SparkJam is going across Canada. Students based in British Columbia can attend the event
 					at Simon Fraser University; and students in Toronto can attend at the University of Waterloo!
 				</p>

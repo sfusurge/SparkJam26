@@ -16,13 +16,13 @@
 			<div class="border border-boba-black border-b-0 bg-citrouille px-8 py-9">
 				<h2
 					id="s01-title"
-					class="font-['PPMori',sans-serif] text-[48px] font-extrabold leading-none tracking-[-0.03em]"
+					class="font-sans text-[48px] font-extrabold leading-none tracking-[-0.03em]"
 				>
 					Bridging the Industry &amp; Classroom.
 				</h2>
 			</div>
 			<div class="flex-1 border border-boba-black bg-sparky-yellow px-8 py-10">
-				<p class="font-['PPMori',sans-serif] text-[32px] leading-[1.11] tracking-[-0.02em]">
+				<p class="font-sans text-[32px] leading-[1.11] tracking-[-0.02em]">
 					SparkJam is a 2 week long design jam where students spend the first week developing their skills,
 					and the second applying them on a design challenge brief.
 				</p>

@@ -9,7 +9,7 @@
 		<div class="border border-boba-black bg-citrouille px-8 py-14">
 			<h2
 				id="s03-title"
-				class="font-['PPMori',sans-serif] text-[48px] font-extrabold leading-none tracking-[-0.03em]"
+				class="font-sans text-[48px] font-extrabold leading-none tracking-[-0.03em]"
 			>
 				Two Weeks: One for Learning, the Other for Building.
 			</h2>

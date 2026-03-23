@@ -9,7 +9,7 @@
 		<div class="border-b border-boba-black bg-citrouille px-8 py-8">
 			<h2
 				id="s04-title"
-				class="max-w-[90%] font-['PPMori',sans-serif] text-[48px] font-extrabold leading-none tracking-[-0.03em]"
+				class="max-w-[90%] font-sans text-[48px] font-extrabold leading-none tracking-[-0.03em]"
 			>
 				Spark Your Learnin’, then Start Your Jammin’
 			</h2>
@@ -24,15 +24,15 @@
 				{/snippet}
 				{#snippet badges()}
 					<span
-						class="rounded-full border border-boba-black bg-strawberry-moon px-5 py-2 font-['PPMori',sans-serif] text-2xl font-semibold"
+						class="rounded-full border border-boba-black bg-strawberry-moon px-5 py-2 font-sans text-2xl font-semibold"
 						>WORKSHOP</span
 					>
 					<span
-						class="rounded-full border border-boba-black bg-sparky-yellow px-5 py-2 font-['PPMori',sans-serif] text-2xl font-semibold"
+						class="rounded-full border border-boba-black bg-sparky-yellow px-5 py-2 font-sans text-2xl font-semibold"
 						>11:00am PST</span
 					>
 					<span
-						class="rounded-full border border-boba-black bg-sparky-yellow px-5 py-2 font-['PPMori',sans-serif] text-2xl font-semibold"
+						class="rounded-full border border-boba-black bg-sparky-yellow px-5 py-2 font-sans text-2xl font-semibold"
 						>2:00pm EST</span
 					>
 				{/snippet}
@@ -55,7 +55,7 @@
 							class="h-[42px] w-[22px] object-contain"
 						/>
 						<span
-							class="flex items-center border-x border-boba-black bg-touched-grass px-3 py-2 font-['PPMori',sans-serif] text-2xl font-semibold"
+							class="flex items-center border-x border-boba-black bg-touched-grass px-3 py-2 font-sans text-2xl font-semibold"
 							>Speaker Session</span
 						>
 						<img
@@ -65,11 +65,11 @@
 						/>
 					</div>
 					<span
-						class="rounded-full border border-boba-black bg-sparky-yellow px-5 py-2 font-['PPMori',sans-serif] text-2xl font-semibold"
+						class="rounded-full border border-boba-black bg-sparky-yellow px-5 py-2 font-sans text-2xl font-semibold"
 						>6:00pm PST</span
 					>
 					<span
-						class="rounded-full border border-boba-black bg-sparky-yellow px-5 py-2 font-['PPMori',sans-serif] text-2xl font-semibold"
+						class="rounded-full border border-boba-black bg-sparky-yellow px-5 py-2 font-sans text-2xl font-semibold"
 						>9:00pm EST</span
 					>
 				{/snippet}

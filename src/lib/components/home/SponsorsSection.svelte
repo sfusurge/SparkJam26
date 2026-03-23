@@ -1,5 +1,5 @@
 <section class="mx-auto mt-12 max-w-[750px] text-center" aria-label="Sponsors">
-	<p class="font-['PPMori',sans-serif] text-[32px] leading-[1.11] tracking-[-0.02em]">
+	<p class="font-sans text-[32px] leading-[1.11] tracking-[-0.02em]">
 		<span class="font-extrabold italic">SparkJam</span>
 		would not have been possible without the support from our amazing sponsors and community.
 	</p>

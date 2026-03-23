@@ -22,12 +22,12 @@
 			class="relative flex size-[246px] shrink-0 flex-col overflow-hidden rounded-2xl border-2 border-boba-black bg-canvas-grey"
 		>
 			<div
-				class="border-b-2 border-boba-black bg-sparky-yellow py-2 text-center font-['PPMori',sans-serif] text-2xl font-semibold tracking-[-0.03em]"
+				class="border-b-2 border-boba-black bg-sparky-yellow py-2 text-center font-sans text-2xl font-semibold tracking-[-0.03em]"
 			>
 				{month}
 			</div>
 			<div
-				class="flex flex-1 items-center justify-center font-['PPMori',sans-serif] text-[96px] font-extrabold"
+				class="flex flex-1 items-center justify-center font-sans text-[96px] font-extrabold"
 			>
 				{day}
 			</div>
@@ -35,11 +35,11 @@
 		<div class="min-w-0 flex-1 space-y-6">
 			<div>
 				<h3
-					class="font-['PPMori',sans-serif] text-[40px] font-extrabold tracking-[-0.02em]"
+					class="font-sans text-[40px] font-extrabold tracking-[-0.02em]"
 				>
 					{title}
 				</h3>
-				<div class="mt-4 font-['PPMori',sans-serif] text-[32px] leading-[1.11] tracking-[-0.02em]">
+				<div class="mt-4 font-sans text-[32px] leading-[1.11] tracking-[-0.02em]">
 					{@render body()}
 				</div>
 			</div>

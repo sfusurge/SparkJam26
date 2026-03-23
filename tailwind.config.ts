@@ -5,6 +5,9 @@ export default {
 
 	theme: {
 		extend: {
+			fontFamily: {
+				sans: ['PPMori', 'sans-serif']
+			},
 			colors: {
 				'strawberry-moon': '#ff73a6',
 				'citrouille': '#ff8e24',
