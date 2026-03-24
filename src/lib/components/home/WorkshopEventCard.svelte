@@ -58,23 +58,12 @@
 							>{badge.text}</span
 						>
 					{:else}
-						<div
-							class="inline-flex items-stretch overflow-hidden rounded-full border border-boba-black"
-						>
-							<img
-								src="/shapes/talkStarL.svg"
-								alt=""
-								class="h-[42px] w-[22px] object-contain"
-							/>
+						<div class="relative flex items-center justify-center">
+							<img src="/shapes/talkstar.svg" alt="" class="h-11 w-auto" />
 							<span
-								class="flex items-center border-x border-boba-black bg-touched-grass px-3 py-2 font-sans text-2xl font-semibold"
+								class="absolute inset-0 flex items-center justify-center font-sans text-2xl font-semibold"
 								>{badge.text}</span
 							>
-							<img
-								src="/shapes/talkStarR.svg"
-								alt=""
-								class="h-[42px] w-[22px] scale-y-[-1] rotate-180 object-contain"
-							/>
 						</div>
 					{/if}
 				{/each}
