@@ -1,12 +1,27 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 	import FullBleedMedia from './FullBleedMedia.svelte';
+	import GravityClickSection from '../physics_stuff/GravityClickSection.svelte';
 
-	const { children }: { children?: Snippet } = $props();
+	const { children, class: className = '' }: { children?: Snippet; class?: string } = $props();
+	let _width = $state(0);
+	let width = $derived(Math.min(_width, 1920));
+	let height = $state(0);
+	let titleHeight = $derived(Math.max(Math.min(height * 0.85, 1280), 600));
 </script>
 
-<FullBleedMedia src="/footer.svg" class="mt-20">
-	{#if children}
-		{@render children()}
-	{/if}
-</FullBleedMedia>
+<svelte:window bind:innerWidth={_width} bind:innerHeight={height} />
+
+
+<div class="relative w-full overflow-hidden {className}">
+	<FullBleedMedia src="/footer/footer.svg" class="mt-20" bind:mediaWidth={width} bind:mediaHeight={height}>
+		{#snippet overlay()}
+			{#if width && height}
+				<GravityClickSection {width} height={titleHeight} />
+			{/if}
+		{/snippet}
+		{#if children}
+			{@render children()}
+		{/if}
+	</FullBleedMedia>
+</div>

@@ -1,23 +1,36 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
-	const {
+	let {
 		alt = '',
 		src,
 		class: className = '',
+		mediaWidth = $bindable(0),
+		mediaHeight = $bindable(0),
+		overlay,
 		children
 	}: {
 		src: string;
 		alt?: string;
 		class?: string;
+		mediaWidth?: number;
+		mediaHeight?: number;
+		overlay?: Snippet;
 		children?: Snippet;
 	} = $props();
 </script>
 
-<div
-	class="relative mx-0 w-full {className}"
->
-	<img {src} {alt} class="block w-full" aria-hidden={alt === '' ? true : undefined} />
+<div class="relative mx-0 w-full {className}">
+	<div class="relative w-full overflow-hidden" bind:clientWidth={mediaWidth} bind:clientHeight={mediaHeight}>
+		<img {src} {alt} class="block w-full" aria-hidden={alt === '' ? true : undefined} />
+		{#if overlay}
+			<div class="absolute inset-0 z-50">
+				{@render overlay()}
+			</div>
+		{/if}
+	</div>
 	{#if children}
-		{@render children()}
+		<div class="relative z-40">
+			{@render children()}
+		</div>
 	{/if}
 </div>

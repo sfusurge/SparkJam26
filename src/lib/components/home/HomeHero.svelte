@@ -1,4 +1,4 @@
-<section class="relative overflow-visible pb-16 md:pb-24" aria-labelledby="hero-heading">
+<section class="relative overflow-visible mt-2 pb-16 md:pb-24" aria-labelledby="hero-heading">
 	<div
 		class="relative mx-auto aspect-[1411/819] w-full max-w-[1392px]"
 	>
