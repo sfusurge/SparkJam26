@@ -2,6 +2,58 @@
 	<div class="relative w-[766px]">
 		<img src="/logosection/sj_logo.svg" alt="SparkJam" class="mx-auto h-auto w-full" />
 	</div>
+	<div
+			class="pointer-events-auto absolute left-[86.5%] top-[10%] z-[1] w-[13.68%] min-w-[100px] max-w-[190px] origin-center transition-transform duration-300 hover:rotate-[32deg] max-[640px]:left-[78%]"
+			aria-hidden="true"
+		>
+			<div class="relative aspect-square w-full">
+				<img
+					src="/shapes/2D%20-%20Triangle (1).svg"
+					alt=""
+					class="absolute inset-x-[9.76%] bottom-[25%] top-[4.2%] block size-full max-w-none object-contain"
+				/>
+			</div>
+	</div>
+
+	<div
+			class="pointer-events-auto absolute left-[75%] top-[85%] z-[1] w-[20%] min-w-[100px] max-w-[500px] origin-center"
+			aria-hidden="true"
+		>
+			<div class="relative aspect-square w-full">
+				<img
+					src="/shapes/2D-North-Star (1).svg"
+					alt=""
+					class="absolute inset-x-[9.76%] bottom-[25%] top-[4.2%] block size-full max-w-none object-contain"
+				/>
+			</div>
+	</div>
+
+	<div
+			class="pointer-events-auto absolute left-[2.5%] top-[98%] z-[1] w-[13.68%] min-w-[50px] max-w-[50px] origin-center"
+			aria-hidden="true"
+		>
+			<div class="relative aspect-square w-full">
+				<img
+					src="/shapes/2D - Circle.svg"
+					alt=""
+					class="absolute inset-x-[9.76%] bottom-[25%] top-[4.2%] block size-full max-w-none object-contain"
+				/>
+			</div>
+	</div>
+
+	<div
+			class="pointer-events-auto absolute left-[-5%] top-[100%] z-[1] w-[13.68%] min-w-[100px] max-w-[200px] origin-center"
+			aria-hidden="true"
+		>
+			<div class="relative aspect-square w-full">
+				<img
+					src="/shapes/2D-Star.svg"
+					alt=""
+					class="absolute inset-x-[9.76%] bottom-[25%] top-[4.2%] block size-full max-w-none object-contain"
+				/>
+			</div>
+	</div>
+
 	<div class="flex w-full max-w-[403px] flex-col gap-6">
 		<a
 			href="https://portal.sfusurge.com"
