@@ -2,9 +2,11 @@
 	import SectionBadge from './SectionBadge.svelte';
 </script>
 
-<section class="relative mt-24" aria-labelledby="s02-title">
+<section class="relative mt-24 mx-auto w-full max-w-[1334px] px-[3%]" aria-labelledby="s02-title">
 	<SectionBadge label="02" class="rotate-[11deg]" />
 	<div class="mt-14 flex bg-boba-black flex-col gap-0">
+		<div class="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-[1px] bg-boba-black"></div>
+		<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-screen h-[1px] bg-boba-black"></div>
 		<div class="border rounded-xl border-boba-black border-b-0 bg-citrouille px-8 py-8">
 			<h2
 				id="s02-title"
