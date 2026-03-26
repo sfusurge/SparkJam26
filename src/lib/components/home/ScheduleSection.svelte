@@ -5,9 +5,24 @@
 
 <section class="relative mt-24 mx-auto w-full max-w-[1334px] px-[3%]" aria-labelledby="s03-title">
 	<SectionBadge label="03" class="-rotate-[15deg]" />
-	<div class="mt-14 grid gap-0  bg-boba-black grid-cols-[minmax(0,522px)_1fr]">
+	<div class=" relative mt-14 grid gap-0  bg-boba-black grid-cols-[minmax(0,522px)_1fr]">
+
+		<div class="pointer-events-none absolute -z-10 top-0 left-0" aria-hidden="true">
+        <div class="size-3 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-boba-black"></div>
+    </div>
+    <div class="pointer-events-none absolute -z-10 top-0 right-0" aria-hidden="true">
+        <div class="size-3 translate-x-1/2 -translate-y-1/2 rotate-45 bg-boba-black"></div>
+    </div>
+    <div class="pointer-events-none absolute -z-10 bottom-0 left-0" aria-hidden="true">
+        <div class="size-3 -translate-x-1/2 translate-y-1/2 rotate-45 bg-boba-black"></div>
+    </div>
+    <div class="pointer-events-none absolute -z-10 bottom-0 right-0" aria-hidden="true">
+        <div class="size-3 translate-x-1/2 translate-y-1/2 rotate-45 bg-boba-black"></div>
+    </div>
+
 		<div class="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-[1px] bg-boba-black"></div>
 		<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-screen h-[1px] bg-boba-black"></div>
+
 
 		<div class="border rounded-xl border-boba-black bg-citrouille px-8 py-14">
 			<h2
