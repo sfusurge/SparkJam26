@@ -1,4 +1,31 @@
 <section class="mx-auto mt-12 max-w-[750px] text-center" aria-label="Sponsors">
+
+	<div
+			class="pointer-events-auto absolute left-[25%] top-[101.25%] z-[1] w-[13.68%] min-w-[100px] max-w-[300px] origin-center"
+			aria-hidden="true"
+		>
+			<div class="relative aspect-square w-full">
+				<img
+					src="/shapes/2D-North-Star.svg"
+					alt=""
+					class="absolute inset-x-[9.76%] bottom-[25%] top-[4.2%] block size-full max-w-none object-contain"
+				/>
+			</div>
+	</div>
+
+	<div
+			class="pointer-events-auto absolute left-[65%] top-[103%] z-[1] w-[13.68%] min-w-[50px] max-w-[50px] origin-center"
+			aria-hidden="true"
+		>
+			<div class="relative aspect-square w-full">
+				<img
+					src="/shapes/2D - Circle (1).svg"
+					alt=""
+					class="absolute inset-x-[9.76%] bottom-[25%] top-[4.2%] block size-full max-w-none object-contain"
+				/>
+			</div>
+	</div>
+
 	<p class="font-sans text-[32px] leading-[1.11] tracking-[-0.02em]">
 		<span class="font-extrabold italic">SparkJam</span>
 		would not have been possible without the support from our amazing sponsors and community.
