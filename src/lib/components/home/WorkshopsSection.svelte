@@ -7,8 +7,7 @@
 <section class="relative mt-24 mx-auto w-full max-w-[1334px] px-[3%]">
 	<SectionBadge label="04" class="rotate-[15deg]" />
 
-	<div class="relative mt-14">
-		<!-- Corner diamonds -->
+	<div class="relative mt-14">\
 		<div class="pointer-events-none absolute -z-10 top-0 left-0" aria-hidden="true">
 			<div class="size-3 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-boba-black"></div>
 		</div>

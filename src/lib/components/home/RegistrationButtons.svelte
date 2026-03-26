@@ -1,6 +1,5 @@
 <section class="relative mt-28" aria-label="Links and logo">
 	<div class="relative w-full max-w-[1334px] mx-auto px-[3%]">
-		<!-- Vertical lines -->
 		<div class="absolute inset-y-0 left-[3%] w-[1px] bg-boba-black"></div>
 		<div class="absolute inset-y-0 right-[3%] w-[1px] bg-boba-black"></div>
 
