@@ -1,5 +1,5 @@
 <header
-	class="sticky top-0 z-50 w-full border-b border-boba-black/10 bg-sparky-yellow/85 backdrop-blur-[1px]"
+	class="sticky top-0 z-[100] w-full border-b border-boba-black/10 bg-sparky-yellow/85 backdrop-blur-[1px]"
 	aria-label="Site"
 >
 	<div class="mx-auto flex h-[60px] w-full max-w-[1512px] items-center justify-between px-7">

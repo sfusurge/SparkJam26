@@ -3,7 +3,9 @@
 		{
 			"month": "MAY",
 			"day": "11",
+			"category": "workshop",
 			"title": "Building Prototypes in Framer",
+			"registerUrl": "#",
 			"bodyHtml": "<p>Learn all about the powerful no-code tool, with Framer Campus Leader and Nokia designer <span class=\"underline\">Zariyan Mansoor</span>.</p>",
 			"badges": [
 				{ "kind": "pill", "text": "WORKSHOP", "variant": "strawberry-moon" },
@@ -14,7 +16,9 @@
 		{
 			"month": "MAY",
 			"day": "11",
+			"category": "speaker-session",
 			"title": "A Look Into Designing for Riot Games",
+			"registerUrl": "#",
 			"bodyHtml": "<p>Ever wonder how the UI in TFT is put together? Join <span class=\"underline\">Dave Felton</span> and <span class=\"underline\">Another Name</span> for this inside look.</p>",
 			"badges": [
 				{ "kind": "speaker-session", "text": "Speaker Session" },
