@@ -9,9 +9,11 @@ export type CalendarBadge =
 export type CalendarEvent = {
 	month: string;
 	day: string;
+	category: 'workshop' | 'speaker-session';
 	title: string;
 	bodyHtml: string;
 	badges: CalendarBadge[];
+	registerUrl?: string;
 };
 
 export const calendarEvents = calendarEventsJson.events as CalendarEvent[];

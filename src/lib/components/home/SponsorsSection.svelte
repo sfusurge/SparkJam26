@@ -1,7 +1,7 @@
 <section class="mx-auto mt-12 max-w-[750px] text-center" aria-label="Sponsors">
 
 	<div
-			class="pointer-events-auto absolute left-[25%] top-[101.25%] z-[1] w-[13.68%] min-w-[100px] max-w-[300px] origin-center"
+			class="pointer-events-auto absolute left-[25%] top-[101.25%] z-[100] w-[13.68%] min-w-[100px] max-w-[300px] origin-center transition-transform duration-300 hover:-rotate-12"
 			aria-hidden="true"
 		>
 			<div class="relative aspect-square w-full">
@@ -14,7 +14,7 @@
 	</div>
 
 	<div
-			class="pointer-events-auto absolute left-[65%] top-[103%] z-[1] w-[13.68%] min-w-[50px] max-w-[50px] origin-center"
+			class="pointer-events-auto absolute left-[65%] top-[103%] z-[100] w-[13.68%] min-w-[50px] max-w-[50px] origin-center"
 			aria-hidden="true"
 		>
 			<div class="relative aspect-square w-full">
@@ -52,9 +52,6 @@
 				</a>
 			</div>
 			<div class="flex flex-wrap items-center justify-between gap-8">
-				<a href="https://www.huion.com/" target="_blank" rel="noopener noreferrer" class="transition-opacity hover:opacity-80">
-					<img src="/sponsors/huion.png" alt="Huion" class="h-[79px] object-contain" />
-				</a>
 				<a href="https://www.instagram.com/hanoidrip/" target="_blank" rel="noopener noreferrer" class="transition-opacity hover:opacity-80">
 					<img src="/sponsors/hanoidrip.png" alt="Hanoi Drip" class="h-[79px] rounded-xl object-contain" />
 				</a>

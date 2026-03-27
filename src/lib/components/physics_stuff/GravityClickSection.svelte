@@ -309,7 +309,7 @@
 
 <div
         class="mouseCollider"
-        style="width:{width}px; height:{height}px; position:absolute; top:0; left:0; z-index:999;"
+        style="width:{width}px; height:{height}px; position:absolute; top:0; left:0; z-index:10;"
         bind:this={mouseCollider}
         onpointerup={(e) => {
         onmouseup(e);
