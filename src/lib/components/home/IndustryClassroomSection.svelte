@@ -27,11 +27,11 @@
     </div>
 
 		<div class="grid gap-0 bg-boba-black grid-cols-[minmax(0,467px)_1fr]">
-			<div class="overflow-hidden rounded-xl border border-boba-black bg-strawberry-moon min-h-94.5">
+			<div class="flex items-end justify-center overflow-hidden rounded-xl border border-boba-black bg-strawberry-moon min-h-94.5">
 				<img
 					src={'/Otter Elements.svg'}
 					alt="SparkJam characters"
-					class="mx-auto block h-auto w-full max-w-98.75 object-contain py-8"
+					class="mx-auto block h-auto w-full max-w-98.75 object-contain"
 				/>
 			</div>
 			<div class="flex min-h-0 flex-col">
