@@ -52,9 +52,6 @@
 				</a>
 			</div>
 			<div class="flex flex-wrap items-center justify-between gap-8">
-				<a href="https://www.huion.com/" target="_blank" rel="noopener noreferrer" class="transition-opacity hover:opacity-80">
-					<img src="/sponsors/huion.png" alt="Huion" class="h-[79px] object-contain" />
-				</a>
 				<a href="https://www.instagram.com/hanoidrip/" target="_blank" rel="noopener noreferrer" class="transition-opacity hover:opacity-80">
 					<img src="/sponsors/hanoidrip.png" alt="Hanoi Drip" class="h-[79px] rounded-xl object-contain" />
 				</a>
