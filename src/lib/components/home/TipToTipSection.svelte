@@ -21,8 +21,10 @@
 	
 		<div class="absolute -top-24 -bottom-24 left-0 w-[1px] bg-boba-black"></div>
 		<div class="absolute -top-24 -bottom-24 right-0 w-[1px] bg-boba-black"></div>
-		<div class="absolute top-0 left-0 w-full h-[1px] bg-boba-black"></div>
-		<div class="absolute bottom-0 left-0 w-full h-[1px] bg-boba-black"></div>
+		
+		<div class="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-[1px] bg-boba-black"></div>
+		<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-screen h-[1px] bg-boba-black"></div>
+
 		<div class="border rounded-xl border-boba-black border-b-0 bg-citrouille px-8 py-8">
 			<h2
 				id="s02-title"
