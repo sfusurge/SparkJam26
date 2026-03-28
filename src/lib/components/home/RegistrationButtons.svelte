@@ -3,7 +3,16 @@
 		<div class="absolute inset-y-0 left-[3%] w-[1px] bg-boba-black"></div>
 		<div class="absolute inset-y-0 right-[3%] w-[1px] bg-boba-black"></div>
 
-		<div class="flex flex-col items-center gap-6">
+		<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-screen h-[1px] bg-boba-black"></div>
+
+    <div class="pointer-events-none absolute -z-10 bottom-0 left-[3%]" aria-hidden="true">
+        <div class="size-3 -translate-x-1/2 translate-y-1/2 rotate-45 bg-boba-black"></div>
+    </div>
+    <div class="pointer-events-none absolute -z-10 bottom-0 right-[3%]" aria-hidden="true">
+        <div class="size-3 translate-x-1/2 translate-y-1/2 rotate-45 bg-boba-black"></div>
+    </div>
+
+		<div class="flex flex-col items-center gap-6 pb-20">
 			<div class="relative w-[766px]">
 				<img src="/logosection/sj_logo.svg" alt="SparkJam" class="mx-auto h-auto w-full" />
 			</div>
