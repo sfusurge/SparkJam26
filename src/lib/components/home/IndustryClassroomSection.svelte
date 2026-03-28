@@ -13,6 +13,9 @@
 		<div class="absolute top-0 left-0 w-full h-[1px] bg-boba-black"></div>
 		<div class="absolute bottom-0 left-0 w-full h-[1px] bg-boba-black"></div>
 
+		<div class="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-[1px] bg-boba-black"></div>
+		<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-screen h-[1px] bg-boba-black"></div>
+
 		<div class="pointer-events-none absolute -z-10 top-0 left-0" aria-hidden="true">
         <div class="size-3 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-boba-black"></div>
     </div>
