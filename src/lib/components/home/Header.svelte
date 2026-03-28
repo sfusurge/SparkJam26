@@ -22,11 +22,15 @@
 		padding-top: env(safe-area-inset-top, 0px);
 		padding-left: env(safe-area-inset-left);
 		padding-right: env(safe-area-inset-right);
+		overflow: visible;
 	}
 
 	.header-bar__glass {
 		position: absolute;
-		inset: 0;
+		left: 0;
+		right: 0;
+		top: 0;
+		height: calc(100% + var(--header-feather, 2.75rem));
 		pointer-events: none;
 		background: linear-gradient(
 			180deg,
