@@ -17,7 +17,8 @@
 		"!dist/**/*.spec.*"
 	],
 	"sideEffects": [
-		"**/*.css"
+		"**/*.css",
+		"src/lib/components/physics_stuff/pathseg.js"
 	],
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
