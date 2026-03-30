@@ -13,7 +13,7 @@
 <svelte:window bind:innerWidth={_width} bind:innerHeight={height} />
 
 
-<div class="relative w-full overflow-hidden {className}">
+<div class="relative isolate w-full overflow-hidden {className}">
 	<FullBleedMedia src="/footer/footer.svg" class="mt-20" bind:mediaWidth={width} bind:mediaHeight={height}>
 		{#snippet overlay()}
 			{#if width && height}
