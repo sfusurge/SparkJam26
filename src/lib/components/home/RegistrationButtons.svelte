@@ -1,3 +1,7 @@
+<script lang="ts">
+	import Button from '$lib/components/ui/Button.svelte';
+</script>
+
 <section class="relative mt-28" aria-label="Links and logo">
 	<div class="relative w-full max-w-[1334px] mx-auto px-[3%]">
 		<div class="absolute inset-y-0 left-[3%] w-[1px] bg-boba-black"></div>
@@ -69,28 +73,11 @@
 				</div>
 			</div>
 
-			<div class="flex w-full max-w-[403px] flex-col gap-6">
-				<a
-					href="https://portal.sfusurge.com"
-					class="inline-flex items-center justify-center rounded-xl border-2 border-canvas-grey bg-boba-black px-8 py-4 text-center font-sans text-[40px] font-extrabold tracking-[-0.03em] text-canvas-grey no-underline"
-				>
-					Get Jammin'
-				</a>
-				<span
-					class="inline-flex items-center justify-center rounded-xl border-2 border-boba-black bg-canvas-grey px-8 py-4 text-center font-sans text-[40px] font-extrabold tracking-[-0.03em] text-boba-black"
-				>
-					FAQ &amp; More Info
-				</span>
-				<span
-					class="inline-flex items-center justify-center rounded-xl border-2 border-boba-black bg-canvas-grey px-8 py-4 text-center font-sans text-[40px] font-extrabold tracking-[-0.03em] text-boba-black"
-				>
-					Mentor Registration
-				</span>
-				<span
-					class="inline-flex items-center justify-center rounded-xl border-2 border-boba-black bg-canvas-grey px-8 py-4 text-center font-sans text-[40px] font-extrabold tracking-[-0.03em] text-boba-black"
-				>
-					Judge Registration
-				</span>
+			<div class="flex flex-col items-center gap-6">
+				<Button variant="section-primary" href="https://portal.sfusurge.com">Get Jammin'</Button>
+				<Button variant="section-secondary" as="span">FAQ &amp; More Info</Button>
+				<Button variant="section-secondary" as="span">Mentor Registration</Button>
+				<Button variant="section-secondary" as="span">Judge Registration</Button>
 			</div>
 		</div>
 	</div>

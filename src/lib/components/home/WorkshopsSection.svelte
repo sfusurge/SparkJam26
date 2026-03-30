@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { calendarEvents } from '$lib/data/calendar-events.js';
 	import { fade } from 'svelte/transition';
+	import IconSquareButton from '$lib/components/ui/IconSquareButton.svelte';
 	import SectionBadge from './SectionBadge.svelte';
 	import WorkshopEventCard from './WorkshopEventCard.svelte';
 
@@ -68,9 +69,7 @@
 						<div
 							class="flex h-[72px] w-[151px] items-center justify-center gap-3 rounded-lg border border-boba-black bg-canvas-grey px-2"
 						>
-							<button
-								type="button"
-								class="relative size-[52px] shrink-0 transition-transform duration-300"
+							<IconSquareButton
 								onclick={() => (showWorkshops = !showWorkshops)}
 								aria-label={showWorkshops ? 'Hide workshops' : 'Show workshops'}
 							>
@@ -80,13 +79,11 @@
 										src="/workshop/pinkfill.svg"
 										alt=""
 										transition:fade={{ duration: 200 }}
-										class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[calc(50%+2px)]"
+										class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
 									/>
 								{/if}
-							</button>
-							<button
-								type="button"
-								class="relative size-[52px] shrink-0 transition-transform duration-300"
+							</IconSquareButton>
+							<IconSquareButton
 								onclick={() => (showSpeakerSessions = !showSpeakerSessions)}
 								aria-label={showSpeakerSessions ? 'Hide speaker sessions' : 'Show speaker sessions'}
 							>
@@ -96,10 +93,10 @@
 										src="/workshop/greenfill.svg"
 										alt=""
 										transition:fade={{ duration: 200 }}
-										class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+										class="absolute w-[28px] h-[28px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
 									/>
 								{/if}
-							</button>
+							</IconSquareButton>
 						</div>
 					</div>
 				</div>

@@ -19,5 +19,5 @@ html, body {
     overflow-x: clip;
     margin: 0;
     padding: 0;
-    cursor: url('/cursor.png'), auto;
+    cursor: url('/cursor.svg'), auto;
 }

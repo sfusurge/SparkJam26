@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Button from '$lib/components/ui/Button.svelte';
 	import type { CalendarBadge, CalendarPillVariant } from '$lib/data/calendar-events.js';
 
 	const pillVariantClass: Record<CalendarPillVariant, string> = {
@@ -80,28 +81,14 @@
 				{/each}
 			</div>
 
-			<a
+			<Button
+				variant="register-row"
 				href={registerUrl}
-				class="inline-flex h-[44px] w-full shrink-0 items-center justify-center gap-2.5 rounded-md border border-boba-black bg-boba-black px-5 font-sans text-2xl font-semibold leading-none tracking-[-0.03em] text-canvas-grey transition-opacity hover:opacity-90 sm:w-[231px]"
-				{...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+				target={isExternal ? '_blank' : undefined}
+				rel={isExternal ? 'noopener noreferrer' : undefined}
 			>
 				Register Now
-				<svg
-					class="size-4 shrink-0 text-canvas-grey"
-					viewBox="0 0 17 16"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-					aria-hidden="true"
-				>
-					<path
-						d="M4.5 11.5L12.5 3.5M12.5 3.5H6.5M12.5 3.5V9.5"
-						stroke="currentColor"
-						stroke-width="1.5"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-					/>
-				</svg>
-			</a>
+			</Button>
 		</div>
 	</div>
 </article>

@@ -46,7 +46,7 @@
 						Bridging the Industry &amp; Classroom.
 					</h2>
 				</div>
-				<div class="flex-1 rounded-xl border border-boba-black bg-sparky-yellow px-8 py-10">
+				<div class="flex-1 rounded-xl border border-boba-black bg-sparky-yellow p-15">
 					<p class="font-sans text-[32px] leading-[1.11] tracking-[-0.02em]">
 						SparkJam is a 2 week long design jam where students spend the first week developing their skills,
 						and the second applying them on a design challenge brief.
