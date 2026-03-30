@@ -25,6 +25,11 @@ export abstract class component {
         this.SpecialSetup = setup;
     }
 
+    setPosition(x: number, y: number){
+        this.x = x;
+        this.y = y;
+    }
+
     abstract update(): void;
 
     xStd(x: number) {
