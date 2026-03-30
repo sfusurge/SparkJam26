@@ -1,4 +1,8 @@
-<section class="relative overflow-visible mt-2 pb-16 md:pb-24" aria-labelledby="hero-heading">
+<script lang="ts">
+	import Button from '$lib/components/ui/Button.svelte';
+</script>
+
+<section class="relative overflow-visible mt-8 pb-16 md:pb-24" aria-labelledby="hero-heading">
 	<div
 		class="relative mx-auto aspect-[1411/819] w-full max-w-[1392px]"
 	>
@@ -66,12 +70,13 @@
 			>
 				May 11 - 23
 			</p>
-			<a
+			<Button
+				variant="hero-cta"
 				href="/apply"
-				class="mt-[min(18vw,9rem)] inline-flex self-end rotate-[7.78deg] items-center justify-center rounded-xl border-2 border-boba-black bg-canvas-grey px-5 py-1 font-sans text-[clamp(24px,4.5vw,40px)] font-extrabold tracking-[-0.03em] text-boba-black no-underline shadow-[4px_4px_0_var(--color-boba-black)] transition hover:-translate-y-0.5"
+				class="mt-[min(18vw,9rem)] self-end rotate-[7.78deg]"
 			>
 				Get Jammin’
-			</a>
+			</Button>
 		</div>
 	</div>
 </section>
