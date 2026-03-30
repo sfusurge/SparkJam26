@@ -17,23 +17,42 @@
         return renderManager;
     })
 
+    $effect(() => {
+        renderer;
+    })
+
     onDestroy(() => {
         renderer?.destroy();
     })
 
     $effect(() => {
-        renderer;
+        if(renderer?.currentDistanceInKM !== undefined){
+            mileageDisplay = renderer.currentDistanceInKM;
+        }
     })
 
 </script>
 
 <section>
     <canvas bind:this={canvas} height="800" width="1400"></canvas>
+    <div id="mileage">{mileageDisplay} KM travelled</div>
 </section>
-
 
 <style>
     canvas{
         background: #45A2FF;
+    }
+
+    #mileage{
+        width: fit-content;
+        padding: 2px 15px;
+        padding-top: 4px;
+
+        background-color: white;
+        border: 1px black solid;
+        border-radius: 25px;
+
+        font-weight: 600;
+        font-size: xx-large;
     }
 </style>
