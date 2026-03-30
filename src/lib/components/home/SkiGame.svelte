@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onDestroy } from "svelte";
-  import { GameRenderer } from "./SkiGame.svelte.ts";
+  import { GameRenderer } from "../ski_game/SkiGame.svelte.ts";
 
     let canvas: HTMLCanvasElement | undefined;
 
