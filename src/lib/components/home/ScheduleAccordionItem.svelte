@@ -30,7 +30,7 @@
 		<img
 				src={'/shapes/accordionChevron.svg'}
 				alt=""
-				class="size-[62px] shrink-0 transition-transform duration-300 {open ? 'rotate-180' : ''}"
+				class="size-[62px] shrink-0 transition-all duration-300 hover:invert {open ? 'rotate-180' : ''}"
 		/>
 	</button>
 
