@@ -5,6 +5,12 @@ interface boundRange {
     max: number
 }
 
+interface obstacleItem {
+    spriteID: number,
+    lanePosition: number,
+    trailPosition: number
+}
+
 let keybinds : {[id: string]: () => void} = {};
 
 const loadSprites = (names: string[]) => {
@@ -20,21 +26,37 @@ const obstacleSprites = loadSprites(["redCone", "blueCone", "redBall.svg", "blue
 const otterSprites = loadSprites(["otterSkiing.svg"]);
 
 const positionRange: boundRange = {min: 0, max: 4};
-const defaultPos: number = 1;
+const defaultPos: number = 2;
+
 const positionCoords: number[][] = [
     [0.17, 0.37],
-    [0.14, 0.42],
-    [0.11, 0.47],
-    [0.08, 0.52],
-    [0.05, 0.57]
+    [0.13, 0.404],
+    [0.09, 0.438],
+    [0.05, 0.472],
+    [0.01, 0.506],
 ];
+const spawnCoords: number[][] = [
+    [0.77, 1.07],
+    [0.73, 1.104],
+    [0.69, 1.138],
+    [0.65, 1.172],
+    [0.61, 1.206],
+]
+const skiTrackLen: number = 1.35;
 
 const backgroundFrames: number = 15000;
 
 const destination: number = 4173;
 const duration: number = 400000;
+const obstacleVisibilityWindow: number = 2500;
 
-const obstacleGenerationSpacing: boundRange = {min: 4000, max: 10000};
+const obstacleGenerationSpacing: boundRange = {min: 500, max: 2000};
+
+const randWholeNum = (range: number) => {
+    return Math.trunc(Math.random() * range);
+}
+
+const slopeAngle = 49.5 * Math.PI / 180;
 
 export class GameRenderer {
     canvas: HTMLCanvasElement;
@@ -47,8 +69,9 @@ export class GameRenderer {
     delta = 0;
 
     staticObj: component[] = [];
-    obstaclesObj: component[] = [];
+    obstaclesList: component[] = [];
     dynamicObjs: {[id: string]: component} = {};
+    skiCourse: obstacleItem[] = [];
 
     ottPosition: number = defaultPos;
     ottID: string = "OTT";
@@ -57,6 +80,7 @@ export class GameRenderer {
 
     currentDistanceInKM: number = $state(0);
 
+    obstacleCache: number = 0;
 
     constructor(canvas: HTMLCanvasElement, mobileMode:boolean){
         this.canvas = canvas;
@@ -74,8 +98,14 @@ export class GameRenderer {
     init(){
         this.setupEnv();
         this.setupEvents();
+        this.reset();
 
         this.renderHandle = requestAnimationFrame(this.eventLoop.bind(this));
+    }
+
+    reset(){
+        this.skiCourse = [];
+        this.generateSkiCourse();
     }
 
     setupEnv(){
@@ -90,6 +120,7 @@ export class GameRenderer {
             )
         );
 
+        let ang = 34 * Math.PI / 180;
         this.staticObj.push(
             new cQuad(this.pkg,
                 -0.05, 0.1,
@@ -97,7 +128,7 @@ export class GameRenderer {
                 "fill",
                 () => {
                     this.ctx.fillStyle = "white";
-                    this.ctx.rotate(34 * Math.PI / 180);
+                    this.ctx.rotate(ang);
                 }
             ),
             new cQuad(this.pkg,
@@ -106,7 +137,7 @@ export class GameRenderer {
                 "fill",
                 () => {
                     this.ctx.fillStyle = "lightgrey";
-                    this.ctx.rotate(34 * Math.PI / 180);
+                    this.ctx.rotate(ang);
                 }
             )
         );
@@ -144,17 +175,25 @@ export class GameRenderer {
     }
 
     generateSkiCourse(){
-        
+        let counter = 0;
+        while(counter < duration){
+            counter += randWholeNum((obstacleGenerationSpacing.max - obstacleGenerationSpacing.min)) + obstacleGenerationSpacing.min;
+            this.skiCourse.push({
+                spriteID: randWholeNum(4),
+                lanePosition: randWholeNum(positionRange.max + 1),
+                trailPosition: counter
+            })
+        }
     }
 
     setupEvents(){
-        keybinds['a'] = () => {
+        keybinds['d'] = () => {
             if(this.ottPosition > positionRange.min){
                 this.ottPosition--;
                 this.dynamicObjs[this.ottID].setPosition(positionCoords[this.ottPosition][0], positionCoords[this.ottPosition][1]);
             }
         };
-        keybinds['d'] = () => {
+        keybinds['a'] = () => {
             if(this.ottPosition < positionRange.max){
                 this.ottPosition++;
                 this.dynamicObjs[this.ottID].setPosition(positionCoords[this.ottPosition][0], positionCoords[this.ottPosition][1]);
@@ -195,6 +234,7 @@ export class GameRenderer {
         }
 
         this.renderEnv();
+        this.renderObstacles();
     }
 
     renderEnv() {
@@ -210,14 +250,61 @@ export class GameRenderer {
             this.staticObj[0].x = p;
             this.staticObj[1].x = p2;
         }
-        
-        Object.keys(this.dynamicObjs).forEach(k => {
-            this.dynamicObjs[k].update();
-        })
 
         // this.obstaclesObj.forEach(obj => {
         //     obj.update();
         // });
+    }
+
+    renderObstacles() {
+        const obstacleRender = (o: obstacleItem) => {
+            let coord = this.calculateSlopeCoordXY(o.lanePosition, (this.currentTime - o.trailPosition)/obstacleVisibilityWindow);
+            this.ctx.drawImage(
+                obstacleSprites[o.spriteID],
+                this.xStd(coord[0]),
+                this.yStd(coord[1])
+            )
+        }
+
+        let obstacles:obstacleItem[] = [];
+        for (let i = this.obstacleCache; i < this.skiCourse.length; i++){
+            let obst = this.skiCourse[i];
+            let pos = obst.trailPosition;
+            if(this.currentTime > pos + obstacleVisibilityWindow){
+                this.obstacleCache++;
+                continue;
+            }
+            if(this.currentTime < pos){
+                break;
+            }
+            let ln = this.skiCourse[i].lanePosition;
+            if(ln >= this.ottPosition){
+                obstacles.push(obst);
+            }else{
+                obstacleRender(obst);
+            }
+        }
+        Object.keys(this.dynamicObjs).forEach(k => {
+            this.dynamicObjs[k].update();
+        })
+        obstacles.forEach(o => {
+            obstacleRender(o);
+        })
+    }
+
+    xStd(x: number) {
+        return x * this.pkg.w;
+    }
+
+    yStd(y: number) {
+        return y * this.pkg.h;
+    }
+
+    calculateSlopeCoordXY(lane: number, position: number){
+        let len = position * skiTrackLen;
+        let x = spawnCoords[lane][0] - len * Math.cos(slopeAngle);
+        let y = spawnCoords[lane][1] - len * Math.sin(slopeAngle);
+        return [x, y];
     }
 
     destroy() {
