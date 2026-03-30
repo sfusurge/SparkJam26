@@ -23,7 +23,7 @@
 		<div class="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-[1px] bg-boba-black"></div>
 		<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-screen h-[1px] bg-boba-black"></div>
 		
-		<div class="border rounded-xl border-boba-black bg-citrouille px-8 py-14">
+		<div class="border rounded-xl border-boba-black bg-citrouille p-15">
 			<h2
 				id="s03-title"
 				class="font-sans text-[48px] font-extrabold leading-none tracking-[-0.03em]"

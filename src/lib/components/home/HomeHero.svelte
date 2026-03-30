@@ -23,7 +23,7 @@
 		</div>
 
 		<div
-			class="pointer-events-auto absolute left-[3.23%] top-[68.06%] z-[1] w-[5.1%] min-w-[48px] max-w-[71px] origin-center transition-transform duration-300 hover:rotate-6"
+			class="pointer-events-auto absolute left-[6.23%] top-[63%] z-[1] w-[5.1%] min-w-[48px] max-w-[71px] origin-center transition-transform duration-300 hover:rotate-6"
 			aria-hidden="true"
 		>
 			<div class="relative aspect-square w-full">
@@ -32,7 +32,7 @@
 		</div>
 
 		<div
-			class="pointer-events-auto absolute left-[84%] top-[31.2%] z-[1] w-[13.68%] min-w-[100px] max-w-[190px] origin-center transition-transform duration-300 hover:rotate-[32deg] max-[640px]:left-[78%]"
+			class="pointer-events-auto absolute left-[84%] top-[31.2%] z-[1] w-[13.68%] min-w-[100px] max-w-[190px] origin-center transition-transform duration-300 hover:-rotate-2 max-[640px]:left-[78%]"
 			aria-hidden="true"
 		>
 			<div class="relative aspect-square w-full">
