@@ -5,7 +5,7 @@ export interface RenderPkg {
 }
 
 export function getSrc(file: string) {
-    return `/game/${file}${(file.split(".").length < 2) && ".webp"}`
+    return `/game/${file}${(file.split(".").length < 2) ? ".webp" : ""}`
 }
 
 export abstract class component {
@@ -49,12 +49,14 @@ export class cQuad extends component {
     }
 
     update() {
+        this.ctx.save();
         this.SpecialSetup();
         if (this.type == "fill") {
             this.ctx.fillRect(this.xStd(this.x), this.yStd(this.y), this.xStd(this.width), this.yStd(this.height));
         } else {
             this.ctx.strokeRect(this.xStd(this.x), this.yStd(this.y), this.xStd(this.width), this.yStd(this.height));
         }
+        this.ctx.restore();
     }
 }
 
