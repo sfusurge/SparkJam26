@@ -9,22 +9,38 @@
 		panelClass: string;
 		children: Snippet;
 	} = $props();
+
+	let open = $state(false);
+
+	function toggle() {
+		open = !open;
+	}
 </script>
 
-<details
-	class="group rounded-2xl border border-boba-black overflow-hidden open:pb-0 [&_summary::-webkit-details-marker]:hidden {panelClass}"
+<div
+		class="group rounded-2xl border border-boba-black overflow-hidden {panelClass}"
+		class:open
 >
-	<summary
-		class="flex cursor-pointer list-none items-center justify-between gap-4 font-sans text-[40px] font-extrabold tracking-[-0.02em] px-6 py-4"
+	<button
+			onclick={toggle}
+			class="flex w-full cursor-pointer items-center justify-between gap-4 font-sans text-[40px] font-extrabold tracking-[-0.02em] px-6 py-4"
+			aria-expanded={open}
 	>
 		{title}
 		<img
-			src={'/shapes/accordionChevron.svg'}
-			alt=""
-			class="size-[62px] shrink-0 transition group-open:rotate-180"
+				src={'/shapes/accordionChevron.svg'}
+				alt=""
+				class="size-[62px] shrink-0 transition-transform duration-300 {open ? 'rotate-180' : ''}"
 		/>
-	</summary>
-	<div class="bg-white px-6 pb-6 pt-4 font-sans text-2xl leading-snug border-t border-boba-black">
-		{@render children()}
+	</button>
+
+	<div
+			class="grid transition-all duration-300 ease-in-out {open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}"
+	>
+		<div class="overflow-hidden">
+			<div class="bg-white px-6 pb-6 pt-4 font-sans text-2xl leading-snug border-t border-boba-black">
+				{@render children()}
+			</div>
+		</div>
 	</div>
-</details>
+</div>
