@@ -28,7 +28,7 @@
 </script>
 
 <article
-	class="flex flex-col gap-8 border-b border-boba-black bg-canvas-grey px-8 py-10 lg:flex-row lg:items-start lg:justify-between lg:gap-10 lg:px-16"
+	class="flex flex-col gap-8 border-b border-boba-black bg-canvas-grey px-8 py-10 last:border-b-0 lg:flex-row lg:items-start lg:justify-between lg:gap-10 lg:px-16"
 >
 	<div
 		class="relative flex size-[138px] shrink-0 flex-col overflow-hidden rounded-[9px] border-2 border-boba-black bg-canvas-grey"
