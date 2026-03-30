@@ -41,7 +41,7 @@
 	] as const;
 
 	function barBodyShiftX(viewBoxWidth: number, bodyCenterX: number) {
-		return `calc(-182px * (${viewBoxWidth / 2} - ${bodyCenterX}) / ${viewBoxWidth})`;
+		return `calc(-182px * 0.98 * (${viewBoxWidth / 2} - ${bodyCenterX}) / ${viewBoxWidth})`;
 	}
 
 	let hovered = $state<number | null>(null);
