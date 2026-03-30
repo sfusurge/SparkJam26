@@ -15,7 +15,7 @@
 
 <button
 	type="button"
-	class="relative size-[52px] shrink-0 transition-transform duration-300 {className}"
+	class="relative size-[52px] shrink-0 transition-transform duration-300 hover:bg-canvas-grey {className}"
 	{...rest}
 >
 	{@render children()}

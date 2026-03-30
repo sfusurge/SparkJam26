@@ -79,7 +79,7 @@
 										src="/workshop/pinkfill.svg"
 										alt=""
 										transition:fade={{ duration: 200 }}
-										class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[calc(50%+2px)]"
+										class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
 									/>
 								{/if}
 							</IconSquareButton>
@@ -93,7 +93,7 @@
 										src="/workshop/greenfill.svg"
 										alt=""
 										transition:fade={{ duration: 200 }}
-										class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+										class="absolute w-[28px] h-[28px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
 									/>
 								{/if}
 							</IconSquareButton>
