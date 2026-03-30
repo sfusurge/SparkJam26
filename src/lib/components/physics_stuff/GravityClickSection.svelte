@@ -13,7 +13,7 @@
         Body,
         type World,
     } from "matter-js";
-    import { onMount } from "svelte";
+    import { onMount, onDestroy } from "svelte";
     import "./pathseg.js";
     // @ts-ignore
     import PolyDecomp from "poly-decomp";
@@ -73,6 +73,8 @@
     let mouseCollider: HTMLDivElement | undefined = $state();
     let rightBoundRect: Body | undefined = undefined;
     let botBoundRect: Body | undefined = undefined;
+    let runner: ReturnType<typeof Runner.create> | undefined = undefined;
+    let footerVisibleObserver: IntersectionObserver | undefined = undefined;
 
     function addShape(
         x: number,
@@ -122,9 +124,7 @@
         });
         world = engine.world;
 
-        const runner = Runner.create();
-
-        Runner.run(runner, engine);
+        runner = Runner.create();
 
         // fetch svgs in js
         async function loadSvgs(url: string) {
@@ -210,6 +210,28 @@
         });
 
         initialized = true;
+
+        footerVisibleObserver = new IntersectionObserver(
+            (entries) => {
+                if (!entries.some((e) => e.isIntersecting) || !runner || !engine) return;
+                Runner.run(runner, engine);
+                footerVisibleObserver?.disconnect();
+                footerVisibleObserver = undefined;
+            },
+            { root: null, rootMargin: "0px", threshold: 0.12 },
+        );
+        if (container) {
+            footerVisibleObserver.observe(container);
+        }
+    });
+
+    onDestroy(() => {
+        footerVisibleObserver?.disconnect();
+        footerVisibleObserver = undefined;
+        if (runner) {
+            Runner.stop(runner);
+            runner = undefined;
+        }
     });
 
     $effect(() => {
@@ -259,6 +281,12 @@
     $effect(() => {
         if (width > 200 && rightBoundRect) {
             Body.set(rightBoundRect, "position", { x: width + 500, y: 10000 });
+        }
+    });
+
+    $effect(() => {
+        if (height > 200 && botBoundRect) {
+            Body.set(botBoundRect, "position", { x: width / 2, y: height - 10 });
         }
     });
 

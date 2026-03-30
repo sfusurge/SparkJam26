@@ -3,7 +3,7 @@
 </script>
 
 <div
-	class="absolute inset-x-0 bottom-10 z-20 mx-auto flex max-w-[1447px] flex-col gap-4 px-2 sm:flex-row sm:items-center sm:justify-between"
+	class="absolute inset-x-0 bottom-10 z-50 mx-auto flex max-w-[1447px] flex-col gap-4 px-2 sm:flex-row sm:items-center sm:justify-between"
 >
 	<Button variant="credits-team" href="https://www.sfusurge.com">
 		Coded by <span class="ml-1 underline">The SFU Surge Dev Team</span>
