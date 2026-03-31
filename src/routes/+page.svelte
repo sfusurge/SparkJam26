@@ -7,7 +7,6 @@
 	import SkiGame from '$lib/components/home/SkiGame.svelte';
 	import SponsorsSection from '$lib/components/home/SponsorsSection.svelte';
 	import ChartSection from '$lib/components/home/ChartSection.svelte';
-	import StatsSection from '$lib/components/home/StatsSection.svelte';
 	import TipToTipSection from '$lib/components/home/TipToTipSection.svelte';
 	import WorkshopsSection from '$lib/components/home/WorkshopsSection.svelte';
 </script>
@@ -19,7 +18,6 @@
 	<TipToTipSection />
 	<ScheduleSection />
 	<WorkshopsSection />
-	<StatsSection />
 	<ChartSection />
 	<RegistrationButtons />
 	<SponsorsSection />

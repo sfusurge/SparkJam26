@@ -5,7 +5,7 @@
 		class="inline-flex flex-wrap items-center justify-center gap-1 rounded-2xl border border-boba-black bg-touched-grass px-6 py-4 text-center font-sans text-lg font-semibold tracking-[-0.02em] text-boba-black md:text-2xl"
 	>
 		Coded by
-		<a href="https://www.sfusurge.com" class="text-inherit underline">The SFU Surge Dev Team</a>
+		<a href="https://sfusurge.com/about" class="text-inherit underline">The SFU Surge Dev Team</a>
 	</p>
 	<p
 		class="inline-flex flex-wrap items-center justify-center gap-1 rounded-2xl border border-boba-black bg-strawberry-moon px-6 py-4 text-center font-sans text-lg font-semibold tracking-[-0.02em] text-boba-black md:text-2xl"
