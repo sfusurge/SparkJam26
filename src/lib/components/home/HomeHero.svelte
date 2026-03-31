@@ -7,7 +7,7 @@
 		class="relative mx-auto aspect-[1411/819] w-full max-w-[1392px]"
 	>
 		<img
-			src="/logosection/SJ_Background.png"
+			src="/logosection/SJ_Background.webp"
 			alt=""
 			class="pointer-events-none mx-auto block size-[94%] z-1 object-cover select-none"
 			aria-hidden="true"
