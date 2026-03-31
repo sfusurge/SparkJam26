@@ -156,7 +156,7 @@ export class GameRenderer {
         this.dynamicObjs[this.ottID] = new cImg(
             this.pkg,
             positionCoords[this.ottPosition][0], positionCoords[this.ottPosition][1],
-            [otterSprites[0]]
+            otterSprites
         );
 
         // otter position debug
@@ -233,12 +233,23 @@ export class GameRenderer {
         let delta = d * gameSpeed;
         this.currentTime += delta;
 
+        const ottImg = () => {
+            return(this.dynamicObjs[this.ottID] as cImg);
+        }
+
         if(this.collision == true){
             if(this.collisionSlowDur > 0){
                 this.collisionSlowDur -= slowSpeed * this.collisionSlowDur / 2;
-            }else{
-                this.collisionSlowDur = 0;
-                this.gameOver();
+                if(this.collisionSlowDur < 0.001){
+                    this.collisionSlowDur = 0;
+                    this.gameOver();
+                }else if(this.collisionSlowDur < 0.3 && ottImg().currentSprite == 2){
+                    ottImg().currentSprite++;
+                }else if(this.collisionSlowDur < 0.4 && ottImg().currentSprite == 1){
+                    ottImg().currentSprite++;
+                }else if(this.collisionSlowDur < 0.5 && ottImg().currentSprite == 0){
+                    ottImg().currentSprite++;
+                }
             }
             this.currentTime -= delta * (1 - this.collisionSlowDur);
         }
@@ -313,7 +324,6 @@ export class GameRenderer {
             let prog = (this.currentTime - pos) / obstacleVisibilityWindow;
             if(ln >= this.ottPosition){
                 if(ln == this.ottPosition && prog > 0.66 && prog < 0.75){
-                    console.log(prog)
                     this.collision = true;
                 }
                 obstacles.push(obst);
