@@ -50,7 +50,7 @@
 				>
 					<h2
 							id="s04-title"
-							class="max-w-[min(100%,1285px)] font-sans text-[clamp(2rem,5vw,3rem)] font-extrabold leading-none tracking-[-0.03em] text-boba-black"
+							class="max-w-[min(100%,1285px)] py-[35px] font-sans text-[48px] font-extrabold leading-none tracking-[-0.03em] text-boba-black"
 					>
 						Spark Your Learnin', then Start Your Jammin'
 					</h2>

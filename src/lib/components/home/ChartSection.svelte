@@ -45,7 +45,7 @@
 	}
 
 	let hovered = $state<number | null>(null);
-	let selected = $state<number | null>(null);
+	let selected = $state<number | null>(0);
 
 	let visibleIndex = $derived(hovered !== null ? hovered : selected);
 </script>
@@ -112,7 +112,7 @@
 							>
 								<!-- Pill -->
 								<span
-										class="absolute bottom-full left-1/2 z-10 mb-3 translate-x-[calc(-50%_+_var(--bar-shift))] inline-flex items-center justify-center gap-[10px] rounded-[5px] border-2 border-[#E8E6DE] p-[10px] text-[32px] font-semibold leading-none tracking-[-0.64px] text-black whitespace-nowrap transition-all duration-200 {bar.pillClass} {isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-1'}"
+										class="absolute bottom-full left-1/2 z-10 mb-3 translate-x-[calc(-50%_+_var(--bar-shift))] inline-flex items-center justify-center gap-[10px] rounded-[5px] border-2 border-[#E8E6DE] p-[10px] text-[32px] font-semibold leading-none tracking-[-0.64px] text-black whitespace-nowrap transition-all duration-200 {bar.pillClass} {selected === i ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-1'}"
 								>
 									{bar.label}
 								</span>
