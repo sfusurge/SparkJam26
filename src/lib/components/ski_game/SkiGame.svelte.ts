@@ -43,10 +43,9 @@ const spawnCoords: number[][] = [
     [0.61, 1.206],
 ]
 const skiTrackLen: number = 1.35;
-const collisionWindow: number = 20;
 
 const backgroundFrames: number = 15000;
-const slowSpeed: number = 0.005;
+const slowSpeed: number = 0.15;
 
 const destination: number = 4173;
 const duration: number = 400000;
@@ -210,7 +209,6 @@ export class GameRenderer {
         };
         keybinds['arrowleft'] = () => {
             this.inputCallback('a');
-            this.collision = true;
         }
         keybinds['arrowright'] = () => {
             this.inputCallback('d');
@@ -230,7 +228,7 @@ export class GameRenderer {
         this.currentTime = time;
         if(this.collision == true){
             if(this.collisionSlowDur > 0){
-                this.collisionSlowDur -= slowSpeed;
+                this.collisionSlowDur -= slowSpeed * this.collisionSlowDur / 2;
             }else{
                 this.collisionSlowDur = 0;
             }
@@ -280,7 +278,7 @@ export class GameRenderer {
             this.ctx.drawImage(
                 obstacleSprites[o.spriteID],
                 this.xStd(coord[0]),
-                this.yStd(coord[1])
+                this.yStd(coord[1] - 0.05 + (o.spriteID > 1 ? 0.03 : 0))
             )
         }
 
@@ -288,15 +286,22 @@ export class GameRenderer {
         for (let i = this.obstacleCache; i < this.skiCourse.length; i++){
             let obst = this.skiCourse[i];
             let pos = obst.trailPosition;
+            //removes redundancy of obstacles that the otter has passed
             if(this.currentTime > pos + obstacleVisibilityWindow){
                 this.obstacleCache++;
                 continue;
             }
+            //does not render things far into future
             if(this.currentTime < pos){
                 break;
             }
             let ln = this.skiCourse[i].lanePosition;
+            let prog = (this.currentTime - pos) / obstacleVisibilityWindow;
             if(ln >= this.ottPosition){
+                if(ln == this.ottPosition && prog > 0.66 && prog < 0.75){
+                    console.log(prog)
+                    this.collision = true;
+                }
                 obstacles.push(obst);
             }else{
                 obstacleRender(obst);
