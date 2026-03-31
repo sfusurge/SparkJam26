@@ -39,9 +39,14 @@
 
 <section>
     <canvas bind:this={canvas} height="800" width="1400"></canvas>
-    <div id="stats">
-        <div id="mileage">{mileageDisplay} KM travelled</div>
-        <p id="highScore">High Score: {highScore} KM</p>
+    <div id="gameUI">
+        <div id="stats">
+            <div id="mileage">{mileageDisplay} KM travelled</div>
+            <p id="highScore">High Score: {highScore} KM</p>
+        </div>
+        <div on:click={() => {renderer?.pauseToggle()}}>
+            <img id="pauseBtn" src="/game/pause.svg"/>
+        </div>
     </div>
 </section>
 
@@ -50,10 +55,16 @@
         background: #45A2FF;
     }
 
-    #stats{
-        width: fit-content;
+    #gameUI{
+        position: relative;
+        top: -775px;
+        left: 1025px;
         display: flex;
-        flex-direction: column;
+    }
+
+    #pauseBtn{
+        padding-top: 2.5px;
+        padding-left: 5px;
     }
 
     #mileage{
@@ -71,7 +82,7 @@
 
     #highScore{
         width: 100%;
-        padding-right: 20px;
+        padding-left: 5px;
 
         font-weight: 600;
         color: white;

@@ -1,5 +1,14 @@
 import { cImg, component, cQuad, getSrc, type RenderPkg } from "./CanvasTools.ts";
 
+export const GamePhase = {
+    PRE: 0,
+    RUNNING: 1,
+    PAUSED: 2,
+    ENDED: 3
+} as const;
+
+export type GamePhaseType = typeof GamePhase[keyof typeof GamePhase]
+
 interface boundRange {
     min: number,
     max: number
@@ -67,6 +76,8 @@ export class GameRenderer {
     pkg: RenderPkg;
     renderHandle = -1;
 
+    gameState: GamePhaseType = $state(GamePhase.RUNNING);
+
     pTime = 0;
     currentTime = 0;
 
@@ -112,11 +123,34 @@ export class GameRenderer {
         this.currentTime = 0;
         this.currentDistanceInKM = 0;
         this.obstacleCache = 0;
+
         this.collision = false;
         this.collisionSlowDur = 1;
+        (this.dynamicObjs[this.ottID] as cImg).currentSprite = 0;
 
         this.skiCourse = [];
         this.generateSkiCourse();
+    }
+
+    startGame(){
+        if(this.gameState == GamePhase.PRE){
+            this.gameState = GamePhase.RUNNING;
+        }
+    }
+
+    pauseToggle(){
+        if(this.gameState == GamePhase.RUNNING){
+            this.gameState = GamePhase.PAUSED;
+        }else if(this.gameState == GamePhase.PAUSED){
+            this.gameState = GamePhase.RUNNING;
+        }
+    }
+
+    playAgain(){
+        if(this.gameState == GamePhase.ENDED){
+            this.gameState = GamePhase.RUNNING;
+        }
+        this.reset();
     }
 
     setupEnv(){
@@ -230,31 +264,34 @@ export class GameRenderer {
         let d = (time - this.pTime);
         this.pTime = time;
 
-        let delta = d * gameSpeed;
-        this.currentTime += delta;
-
         const ottImg = () => {
             return(this.dynamicObjs[this.ottID] as cImg);
         }
 
-        if(this.collision == true){
-            if(this.collisionSlowDur > 0){
-                this.collisionSlowDur -= slowSpeed * this.collisionSlowDur / 2;
-                if(this.collisionSlowDur < 0.001){
-                    this.collisionSlowDur = 0;
-                    this.gameOver();
-                }else if(this.collisionSlowDur < 0.3 && ottImg().currentSprite == 2){
-                    ottImg().currentSprite++;
-                }else if(this.collisionSlowDur < 0.4 && ottImg().currentSprite == 1){
-                    ottImg().currentSprite++;
-                }else if(this.collisionSlowDur < 0.5 && ottImg().currentSprite == 0){
-                    ottImg().currentSprite++;
-                }
-            }
-            this.currentTime -= delta * (1 - this.collisionSlowDur);
-        }
+        let delta = d * gameSpeed;
+        if(this.gameState == GamePhase.RUNNING){
+            
+            this.currentTime += delta;
 
-        this.currentDistanceInKM = Math.trunc((this.currentTime / duration) * destination);
+            if(this.collision == true){
+                if(this.collisionSlowDur > 0){
+                    this.collisionSlowDur -= slowSpeed * this.collisionSlowDur / 2;
+                    if(this.collisionSlowDur < 0.001){
+                        this.collisionSlowDur = 0;
+                        this.gameOver();
+                    }else if(this.collisionSlowDur < 0.3 && ottImg().currentSprite == 2){
+                        ottImg().currentSprite++;
+                    }else if(this.collisionSlowDur < 0.4 && ottImg().currentSprite == 1){
+                        ottImg().currentSprite++;
+                    }else if(this.collisionSlowDur < 0.5 && ottImg().currentSprite == 0){
+                        ottImg().currentSprite++;
+                    }
+                }
+                this.currentTime -= delta * (1 - this.collisionSlowDur);
+            }
+
+            this.currentDistanceInKM = Math.trunc((this.currentTime / duration) * destination);
+        }
 
         this.render();
         this.renderHandle = requestAnimationFrame(this.eventLoop.bind(this));
@@ -264,6 +301,7 @@ export class GameRenderer {
         if(this.KM_highScore < this.currentDistanceInKM){
             this.KM_highScore = this.currentDistanceInKM;
         }
+        this.gameState = GamePhase.ENDED;
     }
 
     render() {
