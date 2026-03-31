@@ -151,22 +151,25 @@
             ),
         );
 
-        // pre-defined pile
+        // Pre-defined pile: spawn above the viewport so when the runner starts (scroll
+        // activation), items fall from the top of the page into the canvas.
         const rng = Math.random;
-        const getXPos = () => {
-            return rng() * 300 + width / 2 - 150;
-        };
-        addShape(getXPos(), -300, svgs.asterisk.verticies!, svgs.asterisk.img);
-        addShape(width / 2, -450, svgs.otter.verticies!, svgs.otter.img);
-        addShape(getXPos(), rng() * -200, svgs.box.verticies!, svgs.box.img);
-        addShape(getXPos(), -300, svgs.surge.verticies!, svgs.surge.img);
-        addShape(getXPos(), -80, svgs.bundle.verticies!, svgs.bundle.img);
-        addShape(getXPos(), -80, svgs.bundle.verticies!, svgs.bundle.img);
-        addShape(getXPos(), -300, svgs.pencil.verticies!, svgs.pencil.img);
-        addShape(getXPos(), -300, svgs.pencil.verticies!, svgs.pencil.img);
-        addShape(getXPos(), -200, svgs.arrow.verticies!, svgs.arrow.img);
-        addShape(getXPos(), -200, svgs.arrow.verticies!, svgs.arrow.img);
-        addShape(getXPos(), -300, svgs.star.verticies!, svgs.star.img);
+        const viewportTopOffset =
+            typeof window !== "undefined" ? window.innerHeight : Math.max(height, 800);
+        const fallBand = 420;
+        const getXPos = () => rng() * Math.max(width - 80, 40) + 40;
+        const getFallY = () => -viewportTopOffset - rng() * fallBand;
+        addShape(getXPos(), getFallY(), svgs.asterisk.verticies!, svgs.asterisk.img);
+        addShape(width / 2 + (rng() - 0.5) * 120, getFallY(), svgs.otter.verticies!, svgs.otter.img);
+        addShape(getXPos(), getFallY(), svgs.box.verticies!, svgs.box.img);
+        addShape(getXPos(), getFallY(), svgs.surge.verticies!, svgs.surge.img);
+        addShape(getXPos(), getFallY(), svgs.bundle.verticies!, svgs.bundle.img);
+        addShape(getXPos(), getFallY(), svgs.bundle.verticies!, svgs.bundle.img);
+        addShape(getXPos(), getFallY(), svgs.pencil.verticies!, svgs.pencil.img);
+        addShape(getXPos(), getFallY(), svgs.pencil.verticies!, svgs.pencil.img);
+        addShape(getXPos(), getFallY(), svgs.arrow.verticies!, svgs.arrow.img);
+        addShape(getXPos(), getFallY(), svgs.arrow.verticies!, svgs.arrow.img);
+        addShape(getXPos(), getFallY(), svgs.star.verticies!, svgs.star.img);
 
         // world boundry
 

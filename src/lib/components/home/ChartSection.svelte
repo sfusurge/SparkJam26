@@ -121,13 +121,10 @@
 									<img
 											src={bar.src}
 											alt={bar.label}
-											class="block h-full w-full select-none object-fill"
+											class="block h-full w-full select-none object-fill transition-[filter] duration-200"
+											style={isActive ? 'filter: brightness(1.3)' : ''}
 											draggable="false"
 									/>
-									<div
-											class="pointer-events-none absolute inset-0 mix-blend-soft-light transition-colors duration-200 {isActive ? 'bg-white/26' : 'bg-white/0'}"
-											aria-hidden="true"
-									></div>
 								</div>
 
 								<!-- Outline -->
