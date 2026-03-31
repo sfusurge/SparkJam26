@@ -1,11 +1,12 @@
 <script lang="ts">
   import { onDestroy } from "svelte";
-  import { GameRenderer } from "../ski_game/SkiGame.svelte.ts";
+  import { GamePhase, GameRenderer } from "../ski_game/SkiGame.svelte.ts";
 
     let canvas: HTMLCanvasElement | undefined;
 
     let mileageDisplay = $state(0);
     let highScore = $state(0);
+    let gameState = $state(GamePhase.PRE)
 
     const renderer = $derived.by(() => {
         if(!canvas){
@@ -17,6 +18,10 @@
         }, { capture: true });
         return renderManager;
     })
+
+    const isRunning = () => {
+        return gameState == GamePhase.RUNNING;
+    }
 
     $effect(() => {
         renderer;
@@ -33,6 +38,9 @@
         if(renderer?.KM_highScore !== undefined){
             highScore = renderer.KM_highScore;
         }
+        if(renderer?.gameState !== undefined){
+            gameState = renderer.gameState;
+        }
     })
 
 </script>
@@ -47,6 +55,13 @@
         <div on:click={() => {renderer?.pauseToggle()}}>
             <img id="pauseBtn" src="/game/pause.svg"/>
         </div>
+        {#if !isRunning()}
+            <div id="blur">
+                <div id="pauseUI">
+
+                </div>
+            </div>
+        {/if}
     </div>
 </section>
 
