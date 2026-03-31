@@ -117,13 +117,18 @@
 									{bar.label}
 								</span>
 
-								<!-- Bar -->
-								<img
-										src={bar.src}
-										alt={bar.label}
-										class="block size-[98%] select-none object-fill transition-all duration-200 {isActive ? 'brightness-125' : 'brightness-100'}"
-										draggable="false"
-								/>
+								<div class="relative block size-[98%]">
+									<img
+											src={bar.src}
+											alt={bar.label}
+											class="block h-full w-full select-none object-fill"
+											draggable="false"
+									/>
+									<div
+											class="pointer-events-none absolute inset-0 mix-blend-soft-light transition-colors duration-200 {isActive ? 'bg-white/26' : 'bg-white/0'}"
+											aria-hidden="true"
+									></div>
+								</div>
 
 								<!-- Outline -->
 								<img
