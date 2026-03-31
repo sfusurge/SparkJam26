@@ -43,8 +43,10 @@ const spawnCoords: number[][] = [
     [0.61, 1.206],
 ]
 const skiTrackLen: number = 1.35;
+const collisionWindow: number = 20;
 
 const backgroundFrames: number = 15000;
+const slowSpeed: number = 0.005;
 
 const destination: number = 4173;
 const duration: number = 400000;
@@ -66,10 +68,8 @@ export class GameRenderer {
     renderHandle = -1;
 
     currentTime = 0;
-    delta = 0;
 
     staticObj: component[] = [];
-    obstaclesList: component[] = [];
     dynamicObjs: {[id: string]: component} = {};
     skiCourse: obstacleItem[] = [];
 
@@ -81,6 +81,9 @@ export class GameRenderer {
     currentDistanceInKM: number = $state(0);
 
     obstacleCache: number = 0;
+
+    collision: boolean = false;
+    collisionSlowDur: number = 1;
 
     constructor(canvas: HTMLCanvasElement, mobileMode:boolean){
         this.canvas = canvas;
@@ -104,6 +107,12 @@ export class GameRenderer {
     }
 
     reset(){
+        this.currentTime = 0;
+        this.currentDistanceInKM = 0;
+        this.obstacleCache = 0;
+        this.collision = false;
+        this.collisionSlowDur = 1;
+
         this.skiCourse = [];
         this.generateSkiCourse();
     }
@@ -201,6 +210,7 @@ export class GameRenderer {
         };
         keybinds['arrowleft'] = () => {
             this.inputCallback('a');
+            this.collision = true;
         }
         keybinds['arrowright'] = () => {
             this.inputCallback('d');
@@ -216,8 +226,16 @@ export class GameRenderer {
     }
 
     eventLoop(time: number){
-        this.delta = (time - this.currentTime) / 1000;
+        let delta = (time - this.currentTime);
         this.currentTime = time;
+        if(this.collision == true){
+            if(this.collisionSlowDur > 0){
+                this.collisionSlowDur -= slowSpeed;
+            }else{
+                this.collisionSlowDur = 0;
+            }
+            this.currentTime -= delta * (1 - this.collisionSlowDur);
+        }
 
         this.currentDistanceInKM = Math.trunc((this.currentTime / duration) * destination);
 
