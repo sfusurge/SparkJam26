@@ -26,13 +26,39 @@
 
 				const wrapper = document.createElement('span');
 				wrapper.setAttribute('data-person-hover-root', '');
-				wrapper.className = 'group relative inline-block align-baseline';
+				wrapper.className =
+					'relative inline-block cursor-site select-none align-baseline';
 
 				const preview = document.createElement('div');
 				preview.setAttribute('aria-hidden', 'true');
 				preview.className =
-					'workshop-person-hover-preview pointer-events-none absolute bottom-full left-1/2 z-20 mb-2 h-[258px] w-[211px] -translate-x-1/2 overflow-hidden rounded-[7px] border-2 border-rams-orange opacity-0 transition-opacity duration-150 group-hover:opacity-100';
+					'workshop-person-hover-preview pointer-events-none fixed z-[9999] h-[258px] w-[211px] overflow-hidden rounded-[7px] border-2 border-rams-orange opacity-0 transition-opacity duration-150';
 				preview.style.setProperty('--person-photo-url', `url("${src}")`);
+
+				const gapPx = 12;
+				const placeAtCursor = (e: MouseEvent) => {
+					preview.style.left = `${e.clientX}px`;
+					preview.style.top = `${e.clientY}px`;
+					preview.style.transform = `translate(-50%, calc(-100% - ${gapPx}px))`;
+				};
+
+				const onMove = (e: MouseEvent) => placeAtCursor(e);
+				const onEnter = (e: MouseEvent) => {
+					placeAtCursor(e);
+					preview.classList.remove('opacity-0');
+					preview.classList.add('opacity-100');
+				};
+				const onLeave = () => {
+					preview.classList.remove('opacity-100');
+					preview.classList.add('opacity-0');
+					wrapper.removeEventListener('mousemove', onMove);
+				};
+
+				wrapper.addEventListener('mouseenter', (e) => {
+					wrapper.addEventListener('mousemove', onMove);
+					onEnter(e as MouseEvent);
+				});
+				wrapper.addEventListener('mouseleave', onLeave);
 
 				span.parentNode?.insertBefore(wrapper, span);
 				wrapper.appendChild(preview);
