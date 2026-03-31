@@ -120,6 +120,7 @@
 							day={event.day}
 							title={event.title}
 							bodyHtml={event.bodyHtml}
+							personPhotos={event.personPhotos}
 							badges={event.badges}
 							registerUrl={event.registerUrl}
 					/>

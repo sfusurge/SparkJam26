@@ -7,6 +7,9 @@
 			"title": "A Look Into Designing for Riot Games",
 			"registerUrl": "#",
 			"bodyHtml": "<p>Learn all about the powerful no-code tool, with Framer Campus Leader and Nokia designer <span class=\"underline\">Zariyan Mansoor</span>.</p>",
+			"personPhotos": [
+				{ "name": "Zariyan Mansoor", "photoSrc": "/people/placeholder.png" }
+			],
 			"badges": [
 				{ "kind": "pill", "text": "WORKSHOP", "variant": "strawberry-moon" },
 				{ "kind": "pill", "text": "11:00am PST", "variant": "sparky-yellow" },
@@ -20,6 +23,10 @@
 			"title": "Intro to Framer",
 			"registerUrl": "#",
 			"bodyHtml": "<p>Ever wonder how the UI in TFT is put together? Join <span class=\"underline\">Dave Felton</span> and <span class=\"underline\">Another Name</span> for this inside look.</p>",
+			"personPhotos": [
+				{ "name": "Dave Felton", "photoSrc": "/people/placeholder.png" },
+				{ "name": "Another Name", "photoSrc": "/people/placeholder.png" }
+			],
 			"badges": [
 				{ "kind": "speaker-session", "text": "Speaker Session" },
 				{ "kind": "pill", "text": "6:00pm PST", "variant": "sparky-yellow" },
@@ -33,6 +40,10 @@
 			"title": "Intro to Framer",
 			"registerUrl": "#",
 			"bodyHtml": "<p>Ever wonder how the UI in TFT is put together? Join <span class=\"underline\">Dave Felton</span> and <span class=\"underline\">Another Name</span> for this inside look.</p>",
+			"personPhotos": [
+				{ "name": "Dave Felton", "photoSrc": "/people/placeholder.png" },
+				{ "name": "Another Name", "photoSrc": "/people/placeholder.png" }
+			],
 			"badges": [
 				{ "kind": "speaker-session", "text": "Speaker Session" },
 				{ "kind": "pill", "text": "6:00pm PST", "variant": "sparky-yellow" },
@@ -46,6 +57,10 @@
 			"title": "Intro to Framer",
 			"registerUrl": "#",
 			"bodyHtml": "<p>Ever wonder how the UI in TFT is put together? Join <span class=\"underline\">Dave Felton</span> and <span class=\"underline\">Another Name</span> for this inside look.</p>",
+			"personPhotos": [
+				{ "name": "Dave Felton", "photoSrc": "/people/placeholder.png" },
+				{ "name": "Another Name", "photoSrc": "/people/placeholder.png" }
+			],
 			"badges": [
 				{ "kind": "speaker-session", "text": "Speaker Session" },
 				{ "kind": "pill", "text": "6:00pm PST", "variant": "sparky-yellow" },
@@ -59,6 +74,10 @@
 			"title": "Intro to Framer",
 			"registerUrl": "#",
 			"bodyHtml": "<p>Ever wonder how the UI in TFT is put together? Join <span class=\"underline\">Dave Felton</span> and <span class=\"underline\">Another Name</span> for this inside look.</p>",
+			"personPhotos": [
+				{ "name": "Dave Felton", "photoSrc": "/people/placeholder.png" },
+				{ "name": "Another Name", "photoSrc": "/people/placeholder.png" }
+			],
 			"badges": [
 				{ "kind": "speaker-session", "text": "Speaker Session" },
 				{ "kind": "pill", "text": "6:00pm PST", "variant": "sparky-yellow" },
@@ -72,6 +91,10 @@
 			"title": "Intro to Framer",
 			"registerUrl": "#",
 			"bodyHtml": "<p>Ever wonder how the UI in TFT is put together? Join <span class=\"underline\">Dave Felton</span> and <span class=\"underline\">Another Name</span> for this inside look.</p>",
+			"personPhotos": [
+				{ "name": "Dave Felton", "photoSrc": "/people/placeholder.png" },
+				{ "name": "Another Name", "photoSrc": "/people/placeholder.png" }
+			],
 			"badges": [
 				{ "kind": "speaker-session", "text": "Speaker Session" },
 				{ "kind": "pill", "text": "6:00pm PST", "variant": "sparky-yellow" },
@@ -85,6 +108,10 @@
 			"title": "Intro to Framer",
 			"registerUrl": "#",
 			"bodyHtml": "<p>Ever wonder how the UI in TFT is put together? Join <span class=\"underline\">Dave Felton</span> and <span class=\"underline\">Another Name</span> for this inside look.</p>",
+			"personPhotos": [
+				{ "name": "Dave Felton", "photoSrc": "/people/placeholder.png" },
+				{ "name": "Another Name", "photoSrc": "/people/placeholder.png" }
+			],
 			"badges": [
 				{ "kind": "speaker-session", "text": "Speaker Session" },
 				{ "kind": "pill", "text": "6:00pm PST", "variant": "sparky-yellow" },
@@ -98,6 +125,10 @@
 			"title": "Intro to Framer",
 			"registerUrl": "#",
 			"bodyHtml": "<p>Ever wonder how the UI in TFT is put together? Join <span class=\"underline\">Dave Felton</span> and <span class=\"underline\">Another Name</span> for this inside look.</p>",
+			"personPhotos": [
+				{ "name": "Dave Felton", "photoSrc": "/people/placeholder.png" },
+				{ "name": "Another Name", "photoSrc": "/people/placeholder.png" }
+			],
 			"badges": [
 				{ "kind": "speaker-session", "text": "Speaker Session" },
 				{ "kind": "pill", "text": "6:00pm PST", "variant": "sparky-yellow" },

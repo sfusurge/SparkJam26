@@ -22,9 +22,10 @@
     interface Props {
         width: number;
         height: number;
+        topOffset?: number;
     }
 
-    const { width, height }: Props = $props();
+    const { width, height, topOffset = 0 }: Props = $props();
 
     let container = $state<HTMLDivElement>();
     const svgs: Record<
@@ -339,23 +340,28 @@
 </script>
 
 <div
-        class="mouseCollider"
-        style="width:{width}px; height:{height}px; position:absolute; top:0; left:0; z-index:10;"
-        bind:this={mouseCollider}
-        onpointerup={(e) => {
-        onmouseup(e);
-    }}
+        class="physics-layer"
+        style="position:absolute; left:0; top:{topOffset}px; width:{width}px; height:{height}px; z-index:10;"
 >
-    {#key [puffX, puffY]}
-        <div class="puff" style="--x: {puffX}px; --y:{puffY}px;" in:puff={{ duration: 200 }}></div>
-    {/key}
-</div>
+    <div
+            class="mouseCollider"
+            style="width:{width}px; height:{height}px; position:absolute; top:0; left:0; z-index:10;"
+            bind:this={mouseCollider}
+            onpointerup={(e) => {
+            onmouseup(e);
+        }}
+    >
+        {#key [puffX, puffY]}
+            <div class="puff" style="--x: {puffX}px; --y:{puffY}px;" in:puff={{ duration: 200 }}></div>
+        {/key}
+    </div>
 
-<div
-        class="physicsContainer"
-        bind:this={container}
-        style="width:{width}px; height:{height}px; "
-></div>
+    <div
+            class="physicsContainer"
+            bind:this={container}
+            style="width:{width}px; height:{height}px; "
+    ></div>
+</div>
 
 <style>
     @keyframes fadeout {
@@ -380,6 +386,10 @@
 
         opacity: 0;
         pointer-events: none;
+    }
+
+    .physics-layer {
+        max-width: 100dvw;
     }
 
     .physicsContainer {

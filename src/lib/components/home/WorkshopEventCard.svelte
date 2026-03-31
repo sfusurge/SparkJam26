@@ -1,6 +1,54 @@
 <script lang="ts">
 	import Button from '$lib/components/ui/Button.svelte';
-	import type { CalendarBadge, CalendarPillVariant } from '$lib/data/calendar-events.js';
+	import type {
+		CalendarBadge,
+		CalendarPersonPhoto,
+		CalendarPillVariant
+	} from '$lib/data/calendar-events.js';
+
+	type PersonPhotoHoverArgs = {
+		bodyHtml: string;
+		personPhotos: CalendarPersonPhoto[];
+	};
+
+	/** Wraps underlined names and shows a headshot above the name on hover. */
+	function personPhotoHover(node: HTMLElement, args: PersonPhotoHoverArgs) {
+		let personPhotos = args.personPhotos;
+
+		const apply = () => {
+			const map = new Map(personPhotos.map((p) => [p.name.trim(), p.photoSrc]));
+			for (const span of node.querySelectorAll<HTMLSpanElement>('span.underline')) {
+				if (span.closest('[data-person-hover-root]')) continue;
+				const name = span.textContent?.trim();
+				if (!name) continue;
+				const src = map.get(name);
+				if (!src) continue;
+
+				const wrapper = document.createElement('span');
+				wrapper.setAttribute('data-person-hover-root', '');
+				wrapper.className = 'group relative inline-block align-baseline';
+
+				const preview = document.createElement('div');
+				preview.setAttribute('aria-hidden', 'true');
+				preview.className =
+					'workshop-person-hover-preview pointer-events-none absolute bottom-full left-1/2 z-20 mb-2 h-[258px] w-[211px] -translate-x-1/2 overflow-hidden rounded-[7px] border-2 border-rams-orange opacity-0 transition-opacity duration-150 group-hover:opacity-100';
+				preview.style.setProperty('--person-photo-url', `url("${src}")`);
+
+				span.parentNode?.insertBefore(wrapper, span);
+				wrapper.appendChild(preview);
+				wrapper.appendChild(span);
+			}
+		};
+
+		queueMicrotask(apply);
+
+		return {
+			update(next: PersonPhotoHoverArgs) {
+				personPhotos = next.personPhotos;
+				queueMicrotask(apply);
+			}
+		};
+	}
 
 	const pillVariantClass: Record<CalendarPillVariant, string> = {
 		'strawberry-moon': 'bg-strawberry-moon',
@@ -13,6 +61,7 @@
 		day,
 		title,
 		bodyHtml,
+		personPhotos,
 		badges,
 		registerUrl = '#'
 	}: {
@@ -20,6 +69,7 @@
 		day: string;
 		title: string;
 		bodyHtml: string;
+		personPhotos: CalendarPersonPhoto[];
 		badges: CalendarBadge[];
 		registerUrl?: string;
 	} = $props();
@@ -51,7 +101,8 @@
 				{title}
 			</h3>
 			<div
-				class="font-sans text-2xl font-normal leading-[1.11] tracking-[-0.02em] [&_p]:m-0"
+				class="workshop-event-body font-sans text-2xl font-normal leading-[1.11] tracking-[-0.02em] [&_p]:m-0"
+				use:personPhotoHover={{ bodyHtml, personPhotos }}
 			>
 				<!-- eslint-disable-next-line svelte/no-at-html-tags -- static site copy from repo JSON -->
 				{@html bodyHtml}
@@ -92,3 +143,27 @@
 		</div>
 	</div>
 </article>
+
+<style>
+	/* Photo + texture overlay — photo URL from --person-photo-url */
+	:global(.workshop-person-hover-preview) {
+		background-color: lightgray;
+		background-image: var(--person-photo-url);
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	:global(.workshop-person-hover-preview)::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		border-radius: inherit;
+		background-image: url('/people/texture.png');
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		opacity: 0.1;
+		pointer-events: none;
+	}
+</style>

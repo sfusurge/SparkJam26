@@ -11,6 +11,10 @@
 	const physicsFloorExtra = 100;
 	let titleHeight = $derived(Math.max(Math.min(height * 0.85, 1280), 600));
 	let physicsHeight = $derived(titleHeight + physicsFloorExtra);
+	let physicsTopOffset = $derived(Math.round(height * 0.15));
+	let physicsPlayHeight = $derived(
+		Math.max(120, Math.min(physicsHeight, height - physicsTopOffset)),
+	);
 </script>
 
 <svelte:window bind:innerWidth={_width} bind:innerHeight={height} />
@@ -20,7 +24,7 @@
 	<FullBleedMedia src="/footer/footer.png" class="mt-20" bind:mediaWidth={width} bind:mediaHeight={height}>
 		{#snippet overlay()}
 			{#if width && height}
-				<GravityClickSection {width} height={physicsHeight} />
+				<GravityClickSection {width} height={physicsPlayHeight} topOffset={physicsTopOffset} />
 			{/if}
 		{/snippet}
 		{#if children}
