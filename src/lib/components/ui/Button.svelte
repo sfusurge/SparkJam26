@@ -11,17 +11,17 @@
 
 	const variantClass: Record<ButtonVariant, string> = {
 		'header-cta':
-			'inline-flex shrink-0 items-center justify-center rounded-[10px] border-2 border-solid border-canvas-grey bg-boba-black px-[15px] py-[10px] font-sans text-[24px] font-extrabold leading-none tracking-[-0.72px] text-canvas-grey no-underline transition-colors duration-200 hover:bg-citrouille hover:text-boba-black hover:border-boba-black',
+			'inline-flex shrink-0 items-center justify-center rounded-[10px] border-2 border-solid border-canvas-grey bg-boba-black px-[15px] py-[10px] font-sans text-[24px] font-extrabold leading-none tracking-[-0.72px] text-canvas-grey no-underline hover:bg-citrouille hover:text-boba-black hover:border-boba-black',
 		'hero-cta':
-			'inline-flex items-center justify-center rounded-[12px] border-2 border-solid border-boba-black bg-canvas-grey px-[30px] py-4 font-sans text-[clamp(24px,4.5vw,40px)] font-extrabold leading-none tracking-[-0.03em] text-boba-black no-underline transition-colors duration-200 ease-out hover:bg-boba-black hover:border-canvas-grey hover:text-canvas-grey',
+			'inline-flex items-center justify-center rounded-[12px] border-2 border-solid border-boba-black bg-canvas-grey px-[30px] py-4 font-sans text-[clamp(24px,4.5vw,40px)] font-extrabold leading-none tracking-[-0.03em] text-boba-black no-underline hover:bg-boba-black hover:border-canvas-grey hover:text-canvas-grey',
 		'section-primary':
-			'inline-flex w-fit items-center justify-center rounded-xl border-2 border-canvas-grey bg-boba-black px-8 py-2 text-center font-sans text-[40px] font-extrabold tracking-[-0.03em] text-canvas-grey no-underline transition-colors duration-200 hover:bg-citrouille hover:text-boba-black hover:border-boba-black',
+			'inline-flex w-fit items-center justify-center rounded-xl border-2 border-canvas-grey bg-boba-black px-8 py-2 text-center font-sans text-[40px] font-extrabold tracking-[-0.03em] text-canvas-grey no-underline hover:bg-citrouille hover:text-boba-black hover:border-boba-black',
 		'section-secondary':
-			'inline-flex w-fit items-center justify-center rounded-xl border-2 border-boba-black bg-canvas-grey px-8 py-2 text-center font-sans text-[40px] font-extrabold tracking-[-0.03em] text-boba-black transition-colors duration-200 hover:bg-boba-black hover:text-canvas-grey hover:border-canvas-grey',
+			'inline-flex w-fit items-center justify-center rounded-xl border-2 border-boba-black bg-canvas-grey px-8 py-2 text-center font-sans text-[40px] font-extrabold tracking-[-0.03em] text-boba-black hover:bg-boba-black hover:text-canvas-grey hover:border-canvas-grey',
 		'register-row':
-			'inline-flex h-[44px] w-full shrink-0 items-center justify-center gap-2.5 rounded-md border border-boba-black bg-boba-black px-5 font-sans text-2xl font-semibold leading-none tracking-[-0.03em] text-canvas-grey transition-all duration-200 hover:bg-citrouille hover:text-boba-black hover:border-boba-black sm:w-[231px] no-underline',
+			'inline-flex h-[44px] w-full shrink-0 items-center justify-center gap-2.5 rounded-md border border-boba-black bg-boba-black px-5 font-sans text-2xl font-semibold leading-none tracking-[-0.03em] text-canvas-grey  hover:bg-citrouille hover:text-boba-black hover:border-boba-black sm:w-[231px] no-underline',
 		'credits-team':
-			'inline-flex items-center justify-center rounded-2xl border border-boba-black bg-touched-grass px-6 py-4 text-center font-sans text-lg font-semibold tracking-[-0.02em] text-boba-black no-underline transition-all duration-200 hover:bg-touch-grass hover:text-white md:text-2xl'
+			'inline-flex items-center justify-center rounded-2xl border border-boba-black bg-touched-grass px-6 py-4 text-center font-sans text-lg font-semibold tracking-[-0.02em] text-boba-black no-underline hover:bg-touch-grass hover:text-white md:text-2xl'
 	};
 
 	const {

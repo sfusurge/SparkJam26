@@ -130,7 +130,7 @@
 										src={bar.select}
 										alt=""
 										aria-hidden="true"
-										class="pointer-events-none absolute -top-[5px] left-1/2 h-full w-[192px] translate-x-[calc(-50%_+_var(--bar-shift))] select-none object-fill transition-opacity duration-200 {isActive ? 'opacity-100' : 'opacity-0'}"
+										class="pointer-events-none absolute -top-[5px] left-1/2 h-full w-[192px] translate-x-[calc(-50%_+_var(--bar-shift))] select-none object-fill transition-opacity duration-200 {selected === i ? 'opacity-100' : 'opacity-0'}"
 										draggable="false"
 								/>
 							</div>

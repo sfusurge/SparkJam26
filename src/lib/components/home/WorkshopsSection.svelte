@@ -17,7 +17,7 @@
 	);
 </script>
 
-<section class="relative mx-auto mt-24 w-full max-w-[1334px] px-[3%]">
+<section class="workshops-section relative mx-auto mt-24 w-full max-w-[1334px] px-[3%]">
 	<SectionBadge label="04" class="rotate-15" />
 
 	<div class="relative mt-14">
@@ -67,13 +67,16 @@
 							</span>
 						</div>
 						<div
-							class="flex h-[72px] w-[151px] items-center justify-center gap-3 rounded-lg border border-boba-black bg-canvas-grey px-2"
+							class="flex h-[72px] w-[151px] items-center justify-center gap-3 rounded-[60px] border border-solid border-boba-black bg-canvas-grey px-2"
 						>
 							<IconSquareButton
 								onclick={() => (showWorkshops = !showWorkshops)}
 								aria-label={showWorkshops ? 'Hide workshops' : 'Show workshops'}
 							>
-								<img src="/workshop/pink.svg" alt="" class="size-full" />
+								<div
+									class="size-full border border-solid border-boba-black bg-strawberry-moon mask-[url('/workshop/pink.svg')] mask-contain mask-center mask-no-repeat transition-colors duration-200 group-hover:bg-canvas-grey"
+									aria-hidden="true"
+								></div>
 								{#if showWorkshops}
 									<img
 										src="/workshop/pinkfill.svg"
@@ -87,7 +90,10 @@
 								onclick={() => (showSpeakerSessions = !showSpeakerSessions)}
 								aria-label={showSpeakerSessions ? 'Hide speaker sessions' : 'Show speaker sessions'}
 							>
-								<img src="/workshop/green.svg" alt="" class="size-full" />
+								<div
+									class="size-full border border-solid border-boba-black bg-touched-grass mask-[url('/workshop/green.svg')] mask-contain mask-center mask-no-repeat transition-colors duration-200 group-hover:bg-canvas-grey"
+									aria-hidden="true"
+								></div>
 								{#if showSpeakerSessions}
 									<img
 										src="/workshop/greenfill.svg"
@@ -117,3 +123,11 @@
 		</div>
 	</div>
 </section>
+
+<style>
+	/* rams-orange hover for underlined copy in workshop cards only */
+	.workshops-section :global(.underline:hover),
+	.workshops-section :global(u:hover) {
+		color: #ff4500;
+	}
+</style>
