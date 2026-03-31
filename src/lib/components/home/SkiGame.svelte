@@ -5,6 +5,7 @@
     let canvas: HTMLCanvasElement | undefined;
 
     let mileageDisplay = $state(0);
+    let highScore = $state(0);
 
     const renderer = $derived.by(() => {
         if(!canvas){
@@ -29,18 +30,30 @@
         if(renderer?.currentDistanceInKM !== undefined){
             mileageDisplay = renderer.currentDistanceInKM;
         }
+        if(renderer?.KM_highScore !== undefined){
+            highScore = renderer.KM_highScore;
+        }
     })
 
 </script>
 
 <section>
     <canvas bind:this={canvas} height="800" width="1400"></canvas>
-    <div id="mileage">{mileageDisplay} KM travelled</div>
+    <div id="stats">
+        <div id="mileage">{mileageDisplay} KM travelled</div>
+        <p id="highScore">High Score: {highScore} KM</p>
+    </div>
 </section>
 
 <style>
     canvas{
         background: #45A2FF;
+    }
+
+    #stats{
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
     }
 
     #mileage{
@@ -54,5 +67,13 @@
 
         font-weight: 600;
         font-size: xx-large;
+    }
+
+    #highScore{
+        width: 100%;
+        padding-right: 20px;
+
+        font-weight: 600;
+        color: white;
     }
 </style>

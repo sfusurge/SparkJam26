@@ -23,7 +23,7 @@ const loadSprites = (names: string[]) => {
 
 const envSprites = loadSprites(["mountains.svg"]);
 const obstacleSprites = loadSprites(["redCone", "blueCone", "redBall.svg", "blueBall.svg"]);
-const otterSprites = loadSprites(["otterSkiing.svg"]);
+const otterSprites = loadSprites(["otterSkiing", "fall1", "fall2", "fall3"]);
 
 const positionRange: boundRange = {min: 0, max: 4};
 const defaultPos: number = 2;
@@ -44,11 +44,12 @@ const spawnCoords: number[][] = [
 ]
 const skiTrackLen: number = 1.35;
 
-const backgroundFrames: number = 15000;
+const backgroundFrames: number = 30000;
 const slowSpeed: number = 0.15;
 
 const destination: number = 4173;
 const duration: number = 400000;
+const gameSpeed: number = 1.5;
 const obstacleVisibilityWindow: number = 2500;
 
 const obstacleGenerationSpacing: boundRange = {min: 500, max: 2000};
@@ -66,6 +67,7 @@ export class GameRenderer {
     pkg: RenderPkg;
     renderHandle = -1;
 
+    pTime = 0;
     currentTime = 0;
 
     staticObj: component[] = [];
@@ -78,6 +80,7 @@ export class GameRenderer {
     state: string = "play";
 
     currentDistanceInKM: number = $state(0);
+    KM_highScore: number = $state(0);
 
     obstacleCache: number = 0;
 
@@ -224,13 +227,18 @@ export class GameRenderer {
     }
 
     eventLoop(time: number){
-        let delta = (time - this.currentTime);
-        this.currentTime = time;
+        let d = (time - this.pTime);
+        this.pTime = time;
+
+        let delta = d * gameSpeed;
+        this.currentTime += delta;
+
         if(this.collision == true){
             if(this.collisionSlowDur > 0){
                 this.collisionSlowDur -= slowSpeed * this.collisionSlowDur / 2;
             }else{
                 this.collisionSlowDur = 0;
+                this.gameOver();
             }
             this.currentTime -= delta * (1 - this.collisionSlowDur);
         }
@@ -239,6 +247,12 @@ export class GameRenderer {
 
         this.render();
         this.renderHandle = requestAnimationFrame(this.eventLoop.bind(this));
+    }
+
+    gameOver(){
+        if(this.KM_highScore < this.currentDistanceInKM){
+            this.KM_highScore = this.currentDistanceInKM;
+        }
     }
 
     render() {
