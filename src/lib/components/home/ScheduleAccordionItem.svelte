@@ -15,7 +15,7 @@
 	class="group rounded-2xl max-sm:text-[22px] border border-boba-black px-6 py-4 open:pb-6 [&_summary::-webkit-details-marker]:hidden {panelClass}"
 >
 	<summary
-		class="flex cursor-pointer list-none items-center justify-between gap-4 font-sans text-[40px] font-extrabold tracking-[-0.02em]"
+		class="max-sm:text-[22px] flex cursor-pointer list-none items-center justify-between gap-4 font-sans text-[40px] font-extrabold tracking-[-0.02em]"
 	>
 		{title}
 		<img

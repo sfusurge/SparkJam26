@@ -7,7 +7,7 @@
 		</div>
 		<a
 			href="https://portal.sfusurge.com/apply"
-			class="inline-flex shrink-0 items-center justify-center rounded-[10px] border-2 border-solid border-canvas-grey bg-boba-black px-[15px] py-[10px] font-sans text-[24px] font-extrabold leading-none tracking-[-0.72px] text-canvas-grey no-underline"
+			class="inline-flex shrink-0 items-center justify-center rounded-[10px] border-2 border-solid border-canvas-grey bg-boba-black px-[15px] py-[10px] font-sans text-[24px] max-sm:text-[18px] font-extrabold leading-none tracking-[-0.72px] text-canvas-grey no-underline"
 		>
 			Apply Now
 		</a>

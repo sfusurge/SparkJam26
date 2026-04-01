@@ -16,8 +16,8 @@
 	);
 </script>
 
-<section class="relative mx-auto mt-24 w-full max-w-[1334px] px-[3%]">
-	<SectionBadge label="04" class="rotate-15" />
+<section class="relative mx-auto mt-24 w-full max-w-[1334px] px-[3%] max-sm:-ml-19 max-sm:w-[155%]">
+	<SectionBadge label="04" class="rotate-15 max-sm:scale-70 max-sm:-top-8 max-sm:ml-5" />
 
 	<div class="relative mt-14">
 
@@ -49,7 +49,7 @@
 				>
 					<h2
 						id="s04-title"
-						class="max-w-[min(100%,1285px)] font-sans text-[clamp(2rem,5vw,3rem)] font-extrabold leading-none tracking-[-0.03em] text-boba-black"
+						class="max-w-[min(100%,1285px)] max-sm:text-[30px] font-sans text-[clamp(2rem,5vw,3rem)] font-extrabold leading-none tracking-[-0.03em] text-boba-black"
 					>
 						Spark Your Learnin', then Start Your Jammin'
 					</h2>

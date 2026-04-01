@@ -28,7 +28,7 @@
 		<div class="border rounded-xl border-boba-black border-b-0 bg-citrouille px-8 py-8 max-sm:row-start-1">
 			<h2
 				id="s02-title"
-				class="font-sans text-[48px] max-sm:text-[32px] font-extrabold leading-none tracking-[-0.03em]"
+				class="font-sans text-[48px] max-sm:text-[30px] font-extrabold leading-none tracking-[-0.03em]"
 			>
 				It’s True, We’re Going Tip to Tip.
 			</h2>
