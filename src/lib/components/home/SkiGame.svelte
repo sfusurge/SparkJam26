@@ -1,12 +1,12 @@
 <script lang="ts">
   import { onDestroy } from "svelte";
-  import { GamePhase, GameRenderer } from "../ski_game/SkiGame.svelte.ts";
+  import { GamePhase, GameRenderer, type GamePhaseType } from "../ski_game/SkiGame.svelte.ts";
 
     let canvas: HTMLCanvasElement | undefined;
 
     let mileageDisplay = $state(0);
     let highScore = $state(0);
-    let gameState = $state(GamePhase.PRE)
+    let gameState : GamePhaseType = $state(GamePhase.PRE)
 
     const renderer = $derived.by(() => {
         if(!canvas){
@@ -52,7 +52,7 @@
             <div id="mileage">{mileageDisplay} KM travelled</div>
             <p id="highScore">High Score: {highScore} KM</p>
         </div>
-        <div on:click={() => {renderer?.pauseToggle()}}>
+        <div onclick={() => {renderer?.pauseToggle()}}>
             <img id="pauseBtn" src="/game/pause.svg"/>
         </div>
         {#if !isRunning()}
