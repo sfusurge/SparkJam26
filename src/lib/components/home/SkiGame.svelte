@@ -55,14 +55,17 @@
         <div onclick={() => {renderer?.pauseToggle()}}>
             <img id="pauseBtn" src="/game/pause.svg"/>
         </div>
-        {#if !isRunning()}
-            <div id="blur">
-                <div id="pauseUI">
-
-                </div>
-            </div>
-        {/if}
     </div>
+    <!-- {#if isRunning()}
+        <div id="blur">
+            <div id="menuUI">
+
+            </div>
+            <div id="gameOverUI">
+
+            </div>
+        </div>
+    {/if} -->
 </section>
 
 <style>
@@ -75,6 +78,16 @@
         top: -775px;
         left: 1025px;
         display: flex;
+    }
+
+    #blur{
+        position: relative;
+        top: -875px;
+        left: 0px;
+
+        height: 800px;
+        width: 1400px;
+        background-color: #00000033;
     }
 
     #pauseBtn{
