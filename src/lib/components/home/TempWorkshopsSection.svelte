@@ -46,27 +46,27 @@
                         <img
                                 src="/shapes/2D - Triangle.svg"
                                 alt=""
-                                class="shape-img absolute -right-[4%] bottom-[10%] w-[143px] rotate-[22.52deg]"
+                                class="shape-img absolute -right-[10%] bottom-[10%] w-[143px] rotate-[22.52deg]"
                         />
                         <img
-                                src="/shapes/2D - Circle.svg"
+                                src="/workshop/Yellow_Circle.svg"
                                 alt=""
                                 class="shape-img absolute -left-[10%] -bottom-[10%] w-[60px]"
                         />
                         <img
                                 src="/shapes/2D - Circle.svg"
                                 alt=""
-                                class="shape-img absolute -right-[9%] -top-[10%] w-[60px]"
+                                class="shape-img absolute -right-[10%] -top-[10%] w-[60px]"
                         />
                         <img
-                                src="/shapes/2D-North-Star.svg"
+                                src="/workshop/Pink_North_Star.svg"
                                 alt=""
                                 class="shape-img absolute -right-[20%] -top-[7%] w-[141px] rotate-15"
                         />
                         <img
-                                src="/shapes/2D-North-Star (1).svg"
+                                src="/workshop/Orange_North_Star.svg"
                                 alt=""
-                                class="shape-img absolute -left-[20%] bottom-[12%] w-[141px] -rotate-[77.28deg]"
+                                class="shape-img absolute -left-[20%] -bottom-[6%] w-[141px] -rotate-[77.28deg]"
                         />
                     </div>
                 </div>
