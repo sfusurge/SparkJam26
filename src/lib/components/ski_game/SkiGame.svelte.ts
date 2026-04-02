@@ -343,11 +343,11 @@ export class GameRenderer {
         this.staticObj[0].x = p;
         this.staticObj[1].x = p2;
 
-        if(this.currentDistanceInKM > destination && this.waterlooAnim < this.waterlooFinish){
+        // if(this.waterlooAnim < this.waterlooFinish && this.currentDistanceInKM > destination){
             
 
-            this.waterlooAnim++;
-        }
+        //     this.waterlooAnim++;
+        // }
 
         // this.obstaclesObj.forEach(obj => {
         //     obj.update();
