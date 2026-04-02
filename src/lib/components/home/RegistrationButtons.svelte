@@ -22,7 +22,7 @@
 			</div>
 
 			<div
-				class="pointer-events-auto absolute left-[86.5%] top-[10%] z-[1] w-[13.68%] min-w-[100px] max-w-[190px] origin-center transition-transform duration-300 hover:rotate-12"
+				class="pointer-events-auto absolute left-[90.5%] top-[-20%] z-[1] w-[12.68%] min-w-[100px] max-w-[190px] rotate-85 origin-center transition-transform duration-300 hover:rotate-60"
 				aria-hidden="true"
 			>
 				<div class="relative aspect-square w-full">
@@ -35,7 +35,7 @@
 			</div>
 
 			<div
-				class="pointer-events-auto absolute left-[75%] top-[85%] z-[1] w-[20%] min-w-[100px] max-w-[500px] origin-center transition-transform duration-300 hover:-rotate-6"
+				class="pointer-events-auto absolute left-[73%] top-[75%] z-[1] w-[25%] min-w-[100px] max-w-[500px] origin-center transition-transform duration-300 hover:-rotate-25"
 				aria-hidden="true"
 			>
 				<div class="relative aspect-square w-full">
@@ -48,7 +48,7 @@
 			</div>
 
 			<div
-				class="pointer-events-auto absolute left-[2.5%] top-[98%] z-[1] w-[13.68%] min-w-[50px] max-w-[50px] origin-center"
+				class="pointer-events-auto absolute left-[1.5%] top-[80%] z-[1] w-[13.68%] min-w-[50px] max-w-[50px] origin-center"
 				aria-hidden="true"
 			>
 				<div class="relative aspect-square w-full">
@@ -61,7 +61,7 @@
 			</div>
 
 			<div
-				class="pointer-events-auto absolute left-[-5%] top-[100%] z-[1] w-[13.68%] min-w-[100px] max-w-[200px] origin-center transition-transform duration-300 hover:-rotate-12"
+				class="pointer-events-auto absolute left-[-13%] top-[81%] z-[1] w-[21.68%] min-w-[100px] max-w-[400px] origin-center transition-transform duration-300 hover:-rotate-12"
 				aria-hidden="true"
 			>
 				<div class="relative aspect-square w-full">

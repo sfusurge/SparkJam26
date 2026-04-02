@@ -30,7 +30,7 @@ const loadSprites = (names: string[]) => {
     })
 }
 
-const envSprites = loadSprites(["mountains.svg"]);
+const envSprites = loadSprites(["mountains.svg", "Pattern.svg", "waterlooWelcome"]);
 const obstacleSprites = loadSprites(["redCone", "blueCone", "redBall.svg", "blueBall.svg"]);
 const otterSprites = loadSprites(["otterSkiing", "fall1", "fall2", "fall3"]);
 
@@ -69,6 +69,9 @@ const randWholeNum = (range: number) => {
 
 const slopeAngle = 49.5 * Math.PI / 180;
 
+const waterlooOffscreen = [0.65, 1];
+const waterlooAppear = [0.65, 0.8];
+
 export class GameRenderer {
     canvas: HTMLCanvasElement;
     ctx: CanvasRenderingContext2D;
@@ -88,8 +91,6 @@ export class GameRenderer {
     ottPosition: number = defaultPos;
     ottID: string = "OTT";
 
-    state: string = "play";
-
     currentDistanceInKM: number = $state(0);
     KM_highScore: number = $state(0);
 
@@ -97,6 +98,10 @@ export class GameRenderer {
 
     collision: boolean = false;
     collisionSlowDur: number = 1;
+
+    waterlooID: string = "water";
+    waterlooAnim: number = 0;
+    waterlooFinish: number = 20; 
 
     constructor(canvas: HTMLCanvasElement, mobileMode:boolean){
         this.canvas = canvas;
@@ -183,10 +188,26 @@ export class GameRenderer {
             )
         );
 
+        this.staticObj.push(
+            new cImg(this.pkg,
+                -.225, 0.34,
+                [envSprites[1]], 0,
+                () => {
+                    this.ctx.rotate(2 * Math.PI / 180);
+                }
+            )
+        );
+
         this.dynamicObjs[this.ottID] = new cImg(
             this.pkg,
             positionCoords[this.ottPosition][0], positionCoords[this.ottPosition][1],
             otterSprites
+        );
+
+        this.dynamicObjs[this.waterlooID] = new cImg(
+            this.pkg,
+            waterlooOffscreen[0], waterlooOffscreen[1],
+            [envSprites[2]]
         );
 
         // otter position debug
@@ -246,8 +267,6 @@ export class GameRenderer {
         keybinds['arrowright'] = () => {
             this.inputCallback('d');
         }
-        // this.canvas.addEventListener("click", (e) => {
-        // }, { capture: true });
     }
 
     inputCallback(k: string){
@@ -317,14 +336,18 @@ export class GameRenderer {
             obj.update();
         });
 
-        if(this.state == "play"){
-            let bgHalf = backgroundFrames / 2
-            let p = ((backgroundFrames - (this.currentTime % backgroundFrames))/bgHalf) - 1.01;
-            let p2 = ((backgroundFrames - (this.currentTime + bgHalf) % backgroundFrames)) / bgHalf - 1.01;
+        let bgHalf = backgroundFrames / 2
+        let p = ((backgroundFrames - (this.currentTime % backgroundFrames))/bgHalf) - 1.01;
+        let p2 = ((backgroundFrames - (this.currentTime + bgHalf) % backgroundFrames)) / bgHalf - 1.01;
 
-            this.staticObj[0].x = p;
-            this.staticObj[1].x = p2;
-        }
+        this.staticObj[0].x = p;
+        this.staticObj[1].x = p2;
+
+        // if(this.waterlooAnim < this.waterlooFinish && this.currentDistanceInKM > destination){
+            
+
+        //     this.waterlooAnim++;
+        // }
 
         // this.obstaclesObj.forEach(obj => {
         //     obj.update();
@@ -365,12 +388,11 @@ export class GameRenderer {
                 obstacleRender(obst);
             }
         }
-        Object.keys(this.dynamicObjs).forEach(k => {
-            this.dynamicObjs[k].update();
-        })
+        this.dynamicObjs[this.ottID].update();
         obstacles.forEach(o => {
             obstacleRender(o);
         })
+        this.dynamicObjs[this.waterlooID].update();
     }
 
     xStd(x: number) {

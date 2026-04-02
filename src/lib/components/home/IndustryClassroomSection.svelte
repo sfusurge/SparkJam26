@@ -6,12 +6,9 @@
 	<SectionBadge label="01" class="-rotate-15" />
 
 	<div class="relative mt-14">
-
+		
 		<div class="absolute -bottom-24 left-0 w-[1px] bg-boba-black"></div>
 		<div class="absolute -bottom-24 right-0 w-[1px] bg-boba-black"></div>
-
-		<div class="absolute top-0 left-0 w-full h-[1px] bg-boba-black"></div>
-		<div class="absolute bottom-0 left-0 w-full h-[1px] bg-boba-black"></div>
 
 		<div class="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-[1px] bg-boba-black"></div>
 		<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-screen h-[1px] bg-boba-black"></div>
