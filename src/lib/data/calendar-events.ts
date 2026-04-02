@@ -9,6 +9,7 @@ export type CalendarBadge =
 export type CalendarPersonPhoto = {
 	name: string;
 	photoSrc: string;
+	url: string;
 };
 
 export type CalendarEvent = {
