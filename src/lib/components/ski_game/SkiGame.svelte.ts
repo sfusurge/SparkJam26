@@ -76,7 +76,7 @@ export class GameRenderer {
     pkg: RenderPkg;
     renderHandle = -1;
 
-    gameState: GamePhaseType = $state(GamePhase.RUNNING);
+    gameState: GamePhaseType = $state(GamePhase.PRE);
 
     pTime = 0;
     currentTime = 0;
@@ -132,14 +132,10 @@ export class GameRenderer {
         this.generateSkiCourse();
     }
 
-    startGame(){
+    pauseToggle(){
         if(this.gameState == GamePhase.PRE){
             this.gameState = GamePhase.RUNNING;
-        }
-    }
-
-    pauseToggle(){
-        if(this.gameState == GamePhase.RUNNING){
+        }else if(this.gameState == GamePhase.RUNNING){
             this.gameState = GamePhase.PAUSED;
         }else if(this.gameState == GamePhase.PAUSED){
             this.gameState = GamePhase.RUNNING;

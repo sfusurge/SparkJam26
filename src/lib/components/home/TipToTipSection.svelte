@@ -1,11 +1,13 @@
 <script lang="ts">
 	import SectionBadge from './SectionBadge.svelte';
+    import SkiGame from './SkiGame.svelte';
 </script>
 
 <section class="relative mt-24 mx-auto w-full max-w-[1334px] px-[3%]" aria-labelledby="s02-title">
-	<SectionBadge label="02" class="rotate-[11deg]" />
+	<SkiGame/>
 
-	<div class="relative mt-14">
+	<div class="relative">
+		<SectionBadge label="02" class="rotate-[-20deg] translate-x-[-40px]" />
 
 		<div class="absolute -top-24 -bottom-30 left-0 w-[1px] bg-boba-black"></div>
 		<div class="absolute -top-24 -bottom-30 right-0 w-[1px] bg-boba-black"></div>

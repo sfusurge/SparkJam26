@@ -4,7 +4,6 @@
 	import HomePage from '$lib/components/home/HomePage.svelte';
 	import IndustryClassroomSection from '$lib/components/home/IndustryClassroomSection.svelte';
 	import ScheduleSection from '$lib/components/home/ScheduleSection.svelte';
-	import SkiGame from '$lib/components/home/SkiGame.svelte';
 	import SponsorsSection from '$lib/components/home/SponsorsSection.svelte';
 	import ChartSection from '$lib/components/home/ChartSection.svelte';
 	import TipToTipSection from '$lib/components/home/TipToTipSection.svelte';
@@ -14,7 +13,6 @@
 <HomePage>
 	<HomeHero />
 	<IndustryClassroomSection />
-	<SkiGame />
 	<TipToTipSection />
 	<ScheduleSection />
 	<WorkshopsSection />
