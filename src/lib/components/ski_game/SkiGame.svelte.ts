@@ -71,6 +71,7 @@ const slopeAngle = 49.5 * Math.PI / 180;
 
 const waterlooOffscreen = [0.65, 1];
 const waterlooAppear = [0.65, 0.8];
+const waterlooPause = 5000;
 
 export class GameRenderer {
     canvas: HTMLCanvasElement;
@@ -325,10 +326,20 @@ export class GameRenderer {
         this.staticObj[0].x = p;
         this.staticObj[1].x = p2;
 
+        //waterloo arrival animation
         if(this.waterlooAnim < this.waterlooFinish && this.currentDistanceInKM > destination){
+            let prog = (this.waterlooAnim % (this.waterlooFinish / 2)) + 1;
+            let inc = (waterlooOffscreen[1] - waterlooAppear[1])/(this.waterlooFinish / 2) * prog;
             
-
-            this.waterlooAnim++;
+            if(this.currentTime > duration + waterlooPause){
+                this.dynamicObjs[this.waterlooID]
+                .setPosition(waterlooOffscreen[0], waterlooAppear[1] + inc);
+                this.waterlooAnim++;
+            }else if(this.waterlooAnim < 10){
+                this.dynamicObjs[this.waterlooID]
+                .setPosition(waterlooOffscreen[0], waterlooOffscreen[1] - inc);
+                this.waterlooAnim++;
+            }
         }
     }
 
