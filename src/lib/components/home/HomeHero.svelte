@@ -6,6 +6,7 @@
 	<div
 		class="relative mx-auto aspect-[1411/819] w-full max-w-[1392px]"
 	>
+	
 		<img
 			src="/logosection/SJ_Background.png"
 			alt=""
@@ -13,8 +14,10 @@
 			aria-hidden="true"
 		/>
 
+		
+
 		<div
-			class="pointer-events-auto absolute left-0 top-[55%] z-2 w-[min(26.85%,373px)] origin-center transition-transform duration-300 hover:-rotate-2 max-[480px]:w-[min(42%,280px)]"
+			class="pointer-events-auto absolute left-0 top-[55%] z-2 w-[min(26.85%,373px)] origin-center transition-transform duration-300 hover:-rotate-15 max-[480px]:w-[min(42%,280px)]"
 			aria-hidden="true"
 		>
 			<div class="relative aspect-square w-full">
@@ -36,7 +39,7 @@
 		</div>
 
 		<div
-			class="pointer-events-auto absolute left-[84%] top-[31.2%] z-[1] w-[13.68%] min-w-[100px] max-w-[190px] origin-center transition-transform duration-300 hover:-rotate-2 max-[640px]:left-[78%]"
+			class="pointer-events-auto absolute left-[84%] top-[31.2%] z-[1] w-[13.68%] min-w-[100px] max-w-[190px] origin-center transition-transform duration-300 hover:-rotate-15 max-[640px]:left-[78%]"
 			aria-hidden="true"
 		>
 			<div class="relative aspect-square w-full">
