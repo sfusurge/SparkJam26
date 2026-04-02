@@ -108,7 +108,7 @@
         top: -0px;
         right: 0px;
         margin-top: 1%;
-        margin-right: 4%;
+        margin-right: 5%;
         display: flex;
     }
 
@@ -118,7 +118,9 @@
         left: 0px;
 
         height: 800px;
-        width: 1300px;
+        width: 94%;
+        margin-left: 3%;
+        margin-right: 3%;
         background-color: #00000033;
 
         display: flex;
@@ -128,7 +130,7 @@
 
     #pauseBtn{
         padding-top: 2.5px;
-        padding-left: 20px;
+        padding-left: 10px;
     }
 
     #highScore{
