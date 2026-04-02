@@ -216,24 +216,6 @@ export class GameRenderer {
         //     this.dynamicObjs[this.ottID].setPosition(positionCoords[this.ottPosition][0], positionCoords[this.ottPosition][1]);
         // }, 200);
         
-        // this.obstaclesObj.push(
-        //     new cImg(this.pkg,
-        //         .5, 0.34,
-        //         [obstacleSprites[0]]
-        //     ),
-        //     new cImg(this.pkg,
-        //         .6, 0.34,
-        //         [obstacleSprites[1]]
-        //     ),
-        //     new cImg(this.pkg,
-        //         .5, 0.6,
-        //         [obstacleSprites[2]]
-        //     ),
-        //     new cImg(this.pkg,
-        //         .6, 0.6,
-        //         [obstacleSprites[3]]
-        //     ),
-        // )
     }
 
     generateSkiCourse(){
@@ -343,15 +325,11 @@ export class GameRenderer {
         this.staticObj[0].x = p;
         this.staticObj[1].x = p2;
 
-        // if(this.waterlooAnim < this.waterlooFinish && this.currentDistanceInKM > destination){
+        if(this.waterlooAnim < this.waterlooFinish && this.currentDistanceInKM > destination){
             
 
-        //     this.waterlooAnim++;
-        // }
-
-        // this.obstaclesObj.forEach(obj => {
-        //     obj.update();
-        // });
+            this.waterlooAnim++;
+        }
     }
 
     renderObstacles() {
