@@ -100,8 +100,10 @@ export class cImg extends component {
     }
 
     update() {
+        this.ctx.save();
         this.SpecialSetup();
         this.ctx.drawImage(this.spriteForms[this.currentSprite], this.xStd(this.x), this.yStd(this.y));
+        this.ctx.restore();
     }
 }
 
