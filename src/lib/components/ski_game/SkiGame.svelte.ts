@@ -210,13 +210,6 @@ export class GameRenderer {
             waterlooOffscreen[0], waterlooOffscreen[1],
             [envSprites[2]]
         );
-
-        // otter position debug
-        // setInterval(() => {
-        //     this.ottPosition = Math.trunc(this.currentTime/1000) % 5;
-        //     this.dynamicObjs[this.ottID].setPosition(positionCoords[this.ottPosition][0], positionCoords[this.ottPosition][1]);
-        // }, 200);
-        
     }
 
     generateSkiCourse(){
@@ -384,19 +377,19 @@ export class GameRenderer {
         this.dynamicObjs[this.waterlooID].update();
     }
 
+    calculateSlopeCoordXY(lane: number, position: number){
+        let len = position * skiTrackLen;
+        let x = spawnCoords[lane][0] - len * Math.cos(slopeAngle);
+        let y = spawnCoords[lane][1] - len * Math.sin(slopeAngle);
+        return [x, y];
+    }
+
     xStd(x: number) {
         return x * this.pkg.w;
     }
 
     yStd(y: number) {
         return y * this.pkg.h;
-    }
-
-    calculateSlopeCoordXY(lane: number, position: number){
-        let len = position * skiTrackLen;
-        let x = spawnCoords[lane][0] - len * Math.cos(slopeAngle);
-        let y = spawnCoords[lane][1] - len * Math.sin(slopeAngle);
-        return [x, y];
     }
 
     destroy() {
