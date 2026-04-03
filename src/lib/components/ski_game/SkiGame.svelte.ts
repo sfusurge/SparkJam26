@@ -130,6 +130,8 @@ export class GameRenderer {
         this.currentDistanceInKM = 0;
         this.obstacleCache = 0;
 
+        this.ottPosition = defaultPos;
+        this.updateOttPosition();
         this.collision = false;
         this.collisionSlowDur = 1;
         (this.dynamicObjs[this.ottID] as cImg).currentSprite = 0;
@@ -191,10 +193,11 @@ export class GameRenderer {
 
         this.staticObj.push(
             new cImg(this.pkg,
-                -.225, 0.34,
+                -.225, 0.38,
                 [envSprites[1]], 0,
                 () => {
                     this.ctx.rotate(2 * Math.PI / 180);
+                    this.ctx.scale(0.9, 0.9);
                 }
             )
         );
@@ -228,13 +231,13 @@ export class GameRenderer {
         keybinds['d'] = () => {
             if(this.ottPosition > positionRange.min){
                 this.ottPosition--;
-                this.dynamicObjs[this.ottID].setPosition(positionCoords[this.ottPosition][0], positionCoords[this.ottPosition][1]);
+                this.updateOttPosition();
             }
         };
         keybinds['a'] = () => {
             if(this.ottPosition < positionRange.max){
                 this.ottPosition++;
-                this.dynamicObjs[this.ottID].setPosition(positionCoords[this.ottPosition][0], positionCoords[this.ottPosition][1]);
+                this.updateOttPosition();
             }
         };
         keybinds['arrowleft'] = () => {
@@ -243,6 +246,10 @@ export class GameRenderer {
         keybinds['arrowright'] = () => {
             this.inputCallback('d');
         }
+    }
+
+    updateOttPosition(){
+        this.dynamicObjs[this.ottID].setPosition(positionCoords[this.ottPosition][0], positionCoords[this.ottPosition][1]);
     }
 
     inputCallback(k: string){

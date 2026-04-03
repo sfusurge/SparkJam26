@@ -62,7 +62,7 @@
 </script>
 
 <section id="ski-section">
-    <canvas bind:this={canvas} height="800" width="1300px"></canvas>
+    <canvas bind:this={canvas} height="700" width="1300"></canvas>
     <div id="gameUI">
         <div id="stats">
             <div class="mileage">{mileageDisplay} KM travelled</div>
