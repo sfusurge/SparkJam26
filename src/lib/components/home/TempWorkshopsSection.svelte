@@ -26,7 +26,7 @@
         <div class="absolute top-0 left-1/2 h-[1px] w-screen -translate-x-1/2 bg-boba-black"></div>
         <div class="absolute bottom-0 left-1/2 h-[1px] w-screen -translate-x-1/2 bg-boba-black"></div>
 
-        <div class="overflow-hidden rounded-xl border-2 border-boba-black bg-boba-black">
+        <div class="overflow-hidden rounded-xl border-1 border-boba-black bg-boba-black">
             <div
                     class="relative flex min-h-[420px] items-center justify-center rounded-xl bg-cover bg-center bg-no-repeat sm:min-h-[560px] lg:min-h-[850px]"
                     style="background-image: url('/dark_bg.png')"
