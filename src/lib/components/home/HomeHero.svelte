@@ -12,7 +12,6 @@
 			class="pointer-events-none mx-auto block size-[94%] z-1 object-cover select-none"
 			aria-hidden="true"
 		/>
-
 		<div
 			class="pointer-events-auto absolute left-0 top-[55%] z-2 w-[min(26.85%,373px)] origin-center transition-transform duration-300 hover:-rotate-2 max-[480px]:w-[min(42%,280px)]"
 			aria-hidden="true"

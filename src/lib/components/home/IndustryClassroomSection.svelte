@@ -7,8 +7,8 @@
 
 	<div class="relative mt-14">
 		
-		<div class="absolute -bottom-24 left-0 w-[1px] bg-boba-black"></div>
-		<div class="absolute -bottom-24 right-0 w-[1px] bg-boba-black"></div>
+		<div class="absolute -top-76.5 -bottom-24 left-0 w-[1px] bg-boba-black"></div>
+		<div class="absolute -top-76.5 -bottom-24 right-0 w-[1px] bg-boba-black"></div>
 
 		<div class="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-[1px] bg-boba-black"></div>
 		<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-screen h-[1px] bg-boba-black"></div>
@@ -27,7 +27,7 @@
     </div>
 
 		<div class="grid gap-0 bg-boba-black grid-cols-[minmax(0,467px)_1fr]">
-			<div class="flex items-end justify-center overflow-hidden rounded-xl border border-boba-black bg-strawberry-moon min-h-94.5">
+			<div class="flex items-end justify-center overflow-hidden rounded-xl border-1 border-boba-black bg-strawberry-moon min-h-94.5">
 				<img
 					src={'/Otter Elements.svg'}
 					alt="SparkJam characters"

@@ -5,12 +5,13 @@
 
 <section class="relative mt-24 mx-auto w-full max-w-[1334px] px-[3%]" aria-labelledby="s02-title">
 	<SkiGame/>
+	
 
 	<div class="relative">
-		<SectionBadge label="02" class="rotate-[-20deg] translate-x-[-40px]" />
+		<SectionBadge label="02" class="rotate-15 translate-x-[-40px]" />
 
-		<div class="absolute -top-24 -bottom-30 left-0 w-[1px] bg-boba-black"></div>
-		<div class="absolute -top-24 -bottom-30 right-0 w-[1px] bg-boba-black"></div>
+		<div class="absolute -top-250 -bottom-30 left-0 w-[1px] bg-boba-black"></div>
+		<div class="absolute -top-250 -bottom-30 right-0 w-[1px] bg-boba-black"></div>
 		<div class="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-[1px] bg-boba-black"></div>
 		<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-screen h-[1px] bg-boba-black"></div>
 
