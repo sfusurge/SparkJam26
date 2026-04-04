@@ -6,9 +6,21 @@
 	import ScheduleSection from '$lib/components/home/ScheduleSection.svelte';
 	import SkiGame from '$lib/components/home/SkiGame.svelte';
 	import SponsorsSection from '$lib/components/home/SponsorsSection.svelte';
-	import StatsSection from '$lib/components/home/StatsSection.svelte';
+	import ChartSection from '$lib/components/home/ChartSection.svelte';
+	import ChartSectionMobile from '$lib/components/home/ChartSectionMobile.svelte';
 	import TipToTipSection from '$lib/components/home/TipToTipSection.svelte';
 	import WorkshopsSection from '$lib/components/home/WorkshopsSection.svelte';
+	import { writable } from 'svelte/store';
+	import { onMount } from 'svelte';
+
+	const isMobile = writable(false);
+
+	onMount(() => {
+		const check = () => isMobile.set(window.innerWidth < 640);
+		check();
+		window.addEventListener('resize', check);
+		return () => window.removeEventListener('resize', check);
+	});
 </script>
 
 <HomePage>
@@ -18,7 +30,12 @@
 	<TipToTipSection />
 	<ScheduleSection />
 	<WorkshopsSection />
-	<StatsSection />
-	<RegistrationButtons />
-	<SponsorsSection />
+	{#if $isMobile}
+		<ChartSectionMobile />
+	{:else}	
+		<ChartSection />
+	{/if}
+	
+	<RegistrationButtons {isMobile} />
+	<SponsorsSection {isMobile} />
 </HomePage>

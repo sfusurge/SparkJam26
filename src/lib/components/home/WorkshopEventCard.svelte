@@ -1,5 +1,80 @@
 <script lang="ts">
-	import type { CalendarBadge, CalendarPillVariant } from '$lib/data/calendar-events.js';
+	import Button from '$lib/components/ui/Button.svelte';
+	import type {
+		CalendarBadge,
+		CalendarPersonPhoto,
+		CalendarPillVariant
+	} from '$lib/data/calendar-events.js';
+
+	type PersonPhotoHoverArgs = {
+		bodyHtml: string;
+		personPhotos: CalendarPersonPhoto[];
+	};
+
+	/** Wraps underlined names and shows a headshot above the name on hover. */
+	function personPhotoHover(node: HTMLElement, args: PersonPhotoHoverArgs) {
+		let personPhotos = args.personPhotos;
+
+		const apply = () => {
+			const map = new Map(personPhotos.map((p) => [p.name.trim(), p.photoSrc]));
+			for (const span of node.querySelectorAll<HTMLSpanElement>('span.underline')) {
+				if (span.closest('[data-person-hover-root]')) continue;
+				const name = span.textContent?.trim();
+				if (!name) continue;
+				const src = map.get(name);
+				if (!src) continue;
+
+				const wrapper = document.createElement('span');
+				wrapper.setAttribute('data-person-hover-root', '');
+				wrapper.className =
+					'relative inline-block cursor-site select-none align-baseline';
+
+				const preview = document.createElement('div');
+				preview.setAttribute('aria-hidden', 'true');
+				preview.className =
+					'workshop-person-hover-preview pointer-events-none fixed z-[9999] h-[258px] w-[211px] overflow-hidden rounded-[7px] border-2 border-rams-orange opacity-0 transition-opacity duration-150';
+				preview.style.setProperty('--person-photo-url', `url("${src}")`);
+
+				const gapPx = 12;
+				const placeAtCursor = (e: MouseEvent) => {
+					preview.style.left = `${e.clientX}px`;
+					preview.style.top = `${e.clientY}px`;
+					preview.style.transform = `translate(-50%, calc(-100% - ${gapPx}px))`;
+				};
+
+				const onMove = (e: MouseEvent) => placeAtCursor(e);
+				const onEnter = (e: MouseEvent) => {
+					placeAtCursor(e);
+					preview.classList.remove('opacity-0');
+					preview.classList.add('opacity-100');
+				};
+				const onLeave = () => {
+					preview.classList.remove('opacity-100');
+					preview.classList.add('opacity-0');
+					wrapper.removeEventListener('mousemove', onMove);
+				};
+
+				wrapper.addEventListener('mouseenter', (e) => {
+					wrapper.addEventListener('mousemove', onMove);
+					onEnter(e as MouseEvent);
+				});
+				wrapper.addEventListener('mouseleave', onLeave);
+
+				span.parentNode?.insertBefore(wrapper, span);
+				wrapper.appendChild(preview);
+				wrapper.appendChild(span);
+			}
+		};
+
+		queueMicrotask(apply);
+
+		return {
+			update(next: PersonPhotoHoverArgs) {
+				personPhotos = next.personPhotos;
+				queueMicrotask(apply);
+			}
+		};
+	}
 
 	const pillVariantClass: Record<CalendarPillVariant, string> = {
 		'strawberry-moon': 'bg-strawberry-moon',
@@ -12,6 +87,7 @@
 		day,
 		title,
 		bodyHtml,
+		personPhotos,
 		badges,
 		registerUrl = '#'
 	}: {
@@ -19,6 +95,7 @@
 		day: string;
 		title: string;
 		bodyHtml: string;
+		personPhotos: CalendarPersonPhoto[];
 		badges: CalendarBadge[];
 		registerUrl?: string;
 	} = $props();
@@ -27,7 +104,7 @@
 </script>
 
 <article
-	class="flex flex-col gap-8 border-b border-boba-black bg-canvas-grey px-8 py-10 lg:flex-row lg:items-start lg:justify-between lg:gap-10 lg:px-16"
+	class="flex flex-col gap-8 border-b border-boba-black bg-canvas-grey px-8 py-10 last:border-b-0 lg:flex-row lg:items-start lg:justify-between lg:gap-10 lg:px-16"
 >
 	<div
 		class="relative flex size-[138px] shrink-0 flex-col overflow-hidden rounded-[9px] border-2 border-boba-black bg-canvas-grey"
@@ -50,7 +127,8 @@
 				{title}
 			</h3>
 			<div
-				class="font-sans text-2xl font-normal leading-[1.11] tracking-[-0.02em] [&_p]:m-0"
+				class="workshop-event-body font-sans text-2xl font-normal leading-[1.11] tracking-[-0.02em] [&_p]:m-0"
+				use:personPhotoHover={{ bodyHtml, personPhotos }}
 			>
 				<!-- eslint-disable-next-line svelte/no-at-html-tags -- static site copy from repo JSON -->
 				{@html bodyHtml}
@@ -80,28 +158,38 @@
 				{/each}
 			</div>
 
-			<a
+			<Button
+				variant="register-row"
 				href={registerUrl}
-				class="inline-flex h-[44px] w-full shrink-0 items-center justify-center gap-2.5 rounded-md border border-boba-black bg-boba-black px-5 font-sans text-2xl font-semibold leading-none tracking-[-0.03em] text-canvas-grey transition-opacity hover:opacity-90 sm:w-[231px]"
-				{...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+				target={isExternal ? '_blank' : undefined}
+				rel={isExternal ? 'noopener noreferrer' : undefined}
 			>
 				Register Now
-				<svg
-					class="size-4 shrink-0 text-canvas-grey"
-					viewBox="0 0 17 16"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-					aria-hidden="true"
-				>
-					<path
-						d="M4.5 11.5L12.5 3.5M12.5 3.5H6.5M12.5 3.5V9.5"
-						stroke="currentColor"
-						stroke-width="1.5"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-					/>
-				</svg>
-			</a>
+			</Button>
 		</div>
 	</div>
 </article>
+
+<style>
+	/* Photo + texture overlay — photo URL from --person-photo-url */
+	:global(.workshop-person-hover-preview) {
+		background-color: lightgray;
+		background-image: var(--person-photo-url);
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	:global(.workshop-person-hover-preview)::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		border-radius: inherit;
+		background-image: url('/people/texture.png');
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		opacity: 0.1;
+		pointer-events: none;
+	}
+</style>

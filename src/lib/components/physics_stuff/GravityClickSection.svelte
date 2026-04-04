@@ -13,7 +13,7 @@
         Body,
         type World,
     } from "matter-js";
-    import { onMount } from "svelte";
+    import { onMount, onDestroy } from "svelte";
     import "./pathseg.js";
     // @ts-ignore
     import PolyDecomp from "poly-decomp";
@@ -22,9 +22,10 @@
     interface Props {
         width: number;
         height: number;
+        topOffset?: number;
     }
 
-    const { width, height }: Props = $props();
+    const { width, height, topOffset = 0 }: Props = $props();
 
     let container = $state<HTMLDivElement>();
     const svgs: Record<
@@ -73,6 +74,8 @@
     let mouseCollider: HTMLDivElement | undefined = $state();
     let rightBoundRect: Body | undefined = undefined;
     let botBoundRect: Body | undefined = undefined;
+    let runner: ReturnType<typeof Runner.create> | undefined = undefined;
+    let footerVisibleObserver: IntersectionObserver | undefined = undefined;
 
     function addShape(
         x: number,
@@ -122,9 +125,7 @@
         });
         world = engine.world;
 
-        const runner = Runner.create();
-
-        Runner.run(runner, engine);
+        runner = Runner.create();
 
         // fetch svgs in js
         async function loadSvgs(url: string) {
@@ -151,22 +152,25 @@
             ),
         );
 
-        // pre-defined pile
+        // Pre-defined pile: spawn above the viewport so when the runner starts (scroll
+        // activation), items fall from the top of the page into the canvas.
         const rng = Math.random;
-        const getXPos = () => {
-            return rng() * 300 + width / 2 - 150;
-        };
-        addShape(getXPos(), -300, svgs.asterisk.verticies!, svgs.asterisk.img);
-        addShape(width / 2, -450, svgs.otter.verticies!, svgs.otter.img);
-        addShape(getXPos(), rng() * -200, svgs.box.verticies!, svgs.box.img);
-        addShape(getXPos(), -300, svgs.surge.verticies!, svgs.surge.img);
-        addShape(getXPos(), -80, svgs.bundle.verticies!, svgs.bundle.img);
-        addShape(getXPos(), -80, svgs.bundle.verticies!, svgs.bundle.img);
-        addShape(getXPos(), -300, svgs.pencil.verticies!, svgs.pencil.img);
-        addShape(getXPos(), -300, svgs.pencil.verticies!, svgs.pencil.img);
-        addShape(getXPos(), -200, svgs.arrow.verticies!, svgs.arrow.img);
-        addShape(getXPos(), -200, svgs.arrow.verticies!, svgs.arrow.img);
-        addShape(getXPos(), -300, svgs.star.verticies!, svgs.star.img);
+        const viewportTopOffset =
+            typeof window !== "undefined" ? window.innerHeight : Math.max(height, 800);
+        const fallBand = 420;
+        const getXPos = () => rng() * Math.max(width - 80, 40) + 40;
+        const getFallY = () => -viewportTopOffset - rng() * fallBand;
+        addShape(getXPos(), getFallY(), svgs.asterisk.verticies!, svgs.asterisk.img);
+        addShape(width / 2 + (rng() - 0.5) * 120, getFallY(), svgs.otter.verticies!, svgs.otter.img);
+        addShape(getXPos(), getFallY(), svgs.box.verticies!, svgs.box.img);
+        addShape(getXPos(), getFallY(), svgs.surge.verticies!, svgs.surge.img);
+        addShape(getXPos(), getFallY(), svgs.bundle.verticies!, svgs.bundle.img);
+        addShape(getXPos(), getFallY(), svgs.bundle.verticies!, svgs.bundle.img);
+        addShape(getXPos(), getFallY(), svgs.pencil.verticies!, svgs.pencil.img);
+        addShape(getXPos(), getFallY(), svgs.pencil.verticies!, svgs.pencil.img);
+        addShape(getXPos(), getFallY(), svgs.arrow.verticies!, svgs.arrow.img);
+        addShape(getXPos(), getFallY(), svgs.arrow.verticies!, svgs.arrow.img);
+        addShape(getXPos(), getFallY(), svgs.star.verticies!, svgs.star.img);
 
         // world boundry
 
@@ -210,6 +214,28 @@
         });
 
         initialized = true;
+
+        footerVisibleObserver = new IntersectionObserver(
+            (entries) => {
+                if (!entries.some((e) => e.isIntersecting) || !runner || !engine) return;
+                Runner.run(runner, engine);
+                footerVisibleObserver?.disconnect();
+                footerVisibleObserver = undefined;
+            },
+            { root: null, rootMargin: "0px", threshold: 0.12 },
+        );
+        if (container) {
+            footerVisibleObserver.observe(container);
+        }
+    });
+
+    onDestroy(() => {
+        footerVisibleObserver?.disconnect();
+        footerVisibleObserver = undefined;
+        if (runner) {
+            Runner.stop(runner);
+            runner = undefined;
+        }
     });
 
     $effect(() => {
@@ -262,6 +288,12 @@
         }
     });
 
+    $effect(() => {
+        if (height > 200 && botBoundRect) {
+            Body.set(botBoundRect, "position", { x: width / 2, y: height - 10 });
+        }
+    });
+
     const maxObjs = 15;
     let spawnedObjsCount = $state(0);
 
@@ -308,23 +340,28 @@
 </script>
 
 <div
-        class="mouseCollider"
-        style="width:{width}px; height:{height}px; position:absolute; top:0; left:0; z-index:10;"
-        bind:this={mouseCollider}
-        onpointerup={(e) => {
-        onmouseup(e);
-    }}
+        class="physics-layer"
+        style="position:absolute; left:0; top:{topOffset}px; width:{width}px; height:{height}px; z-index:10;"
 >
-    {#key [puffX, puffY]}
-        <div class="puff" style="--x: {puffX}px; --y:{puffY}px;" in:puff={{ duration: 200 }}></div>
-    {/key}
-</div>
+    <div
+            class="mouseCollider"
+            style="width:{width}px; height:{height}px; position:absolute; top:0; left:0; z-index:10;"
+            bind:this={mouseCollider}
+            onpointerup={(e) => {
+            onmouseup(e);
+        }}
+    >
+        {#key [puffX, puffY]}
+            <div class="puff" style="--x: {puffX}px; --y:{puffY}px;" in:puff={{ duration: 200 }}></div>
+        {/key}
+    </div>
 
-<div
-        class="physicsContainer"
-        bind:this={container}
-        style="width:{width}px; height:{height}px; "
-></div>
+    <div
+            class="physicsContainer"
+            bind:this={container}
+            style="width:{width}px; height:{height}px; "
+    ></div>
+</div>
 
 <style>
     @keyframes fadeout {
@@ -349,6 +386,10 @@
 
         opacity: 0;
         pointer-events: none;
+    }
+
+    .physics-layer {
+        max-width: 100dvw;
     }
 
     .physicsContainer {

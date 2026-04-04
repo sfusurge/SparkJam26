@@ -8,6 +8,11 @@ export default {
 			fontFamily: {
 				sans: ['PPMori', 'sans-serif']
 			},
+			cursor: {
+				site: `url('/cursors/cursor.svg') 1 2, auto`,
+				pointer: `url('/cursors/select_cursor.svg') 4 5, pointer`,
+				text: `url('/cursors/text_highlight_cursor.svg') 16 1, text`
+			},
 			colors: {
 				'strawberry-moon': '#ff73a6',
 				'citrouille': '#ff8e24',

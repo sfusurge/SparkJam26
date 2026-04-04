@@ -5,7 +5,7 @@
 </script>
 
 <div
-	class="absolute left-0 top-0 z-10 rounded border border-boba-black bg-canvas-grey px-3 py-2 font-sans text-[32px] font-extrabold transition-transform duration-300 {isRotatedLeft
+	class="absolute left-3 -top-9 z-10 rounded border border-boba-black bg-canvas-grey px-3 py-2 font-sans text-[32px] font-extrabold transition-transform duration-300 {isRotatedLeft
 		? 'hover:rotate-[25deg]'
 		: 'hover:-rotate-[25deg]'} {className}"
 >

@@ -1,4 +1,8 @@
-<section class="relative overflow-visible mt-2 max-sm:-mt-15 pb-16 md:pb-24" aria-labelledby="hero-heading">
+<script lang="ts">
+	import Button from '$lib/components/ui/Button.svelte';
+</script>
+
+<section class="relative overflow-visible mt-8 max-sm:-mt-15 pb-16 md:pb-24" aria-labelledby="hero-heading">
 	<div
 		class="relative mx-auto aspect-[1411/819] w-full max-w-[1392px] h-[811px]"
 	>
@@ -23,7 +27,7 @@
 		</div>
 
 		<div
-			class="pointer-events-auto absolute left-[3.23%] top-[68.06%] z-[1] w-[5.1%] min-w-[48px] max-w-[71px] origin-center transition-transform duration-300 hover:rotate-6"
+			class="pointer-events-auto absolute left-[6.23%] top-[63%] z-[1] w-[5.1%] min-w-[48px] max-w-[71px] origin-center transition-transform duration-300 hover:rotate-6"
 			aria-hidden="true"
 		>
 			<div class="relative aspect-square w-full">
@@ -32,7 +36,7 @@
 		</div>
 
 		<div
-			class="pointer-events-auto absolute left-[84%] top-[31.2%] z-[1] w-[13.68%] min-w-[100px] max-w-[190px] origin-center transition-transform duration-300 hover:rotate-[32deg] max-[640px]:left-[78%]"
+			class="pointer-events-auto absolute left-[84%] top-[31.2%] z-[1] w-[13.68%] min-w-[100px] max-w-[190px] origin-center transition-transform duration-300 hover:-rotate-2 max-[640px]:left-[78%]"
 			aria-hidden="true"
 		>
 			<div class="relative aspect-square w-full">
@@ -66,12 +70,13 @@
 			>
 				May 11 - 23
 			</p>
-			<a
+			<Button
+				variant="hero-cta"
 				href="/apply"
-				class=" max-sm:mt-[175%] max-sm:-ml-10 mt-[min(18vw,9rem)] inline-flex self-end rotate-[7.78deg] items-center justify-center rounded-xl border-2 border-boba-black bg-canvas-grey px-5 py-1 font-sans text-[clamp(24px,4.5vw,40px)] font-extrabold tracking-[-0.03em] text-boba-black no-underline shadow-[4px_4px_0_var(--color-boba-black)] transition hover:-translate-y-0.5"
+				class="mt-[min(18vw,9rem)] max-sm:translate-y-85 inline-flex self-end rotate-[7.78deg] items-center justify-center rounded-xl border-2 border-boba-black bg-canvas-grey px-5 py-1 font-sans text-[clamp(24px,4.5vw,40px)] font-extrabold tracking-[-0.03em] text-boba-black no-underline shadow-[4px_4px_0_var(--color-boba-black)] transition hover:-translate-y-0.5"
 			>
 				Get Jammin’
-			</a>
+			</Button>
 		</div>
 	</div>
 </section>

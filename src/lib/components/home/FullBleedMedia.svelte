@@ -23,13 +23,13 @@
 	<div class="relative w-full overflow-hidden" bind:clientWidth={mediaWidth} bind:clientHeight={mediaHeight}>
 		<img {src} {alt} class="block w-full" aria-hidden={alt === '' ? true : undefined} />
 		{#if overlay}
-			<div class="absolute inset-0 z-50">
+			<div class="absolute inset-0 z-10">
 				{@render overlay()}
 			</div>
 		{/if}
 	</div>
 	{#if children}
-		<div class="relative z-40">
+		<div class="relative z-50">
 			{@render children()}
 		</div>
 	{/if}

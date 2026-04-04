@@ -9,22 +9,38 @@
 		panelClass: string;
 		children: Snippet;
 	} = $props();
+
+	let open = $state(false);
+
+	function toggle() {
+		open = !open;
+	}
 </script>
 
-<details
-	class="group rounded-2xl max-sm:text-[22px] border border-boba-black px-6 py-4 open:pb-6 [&_summary::-webkit-details-marker]:hidden {panelClass}"
+<div
+		class="group rounded-2xl max-sm:text-[22px] border border-boba-black overflow-hidden {panelClass}"
+		class:open
 >
-	<summary
-		class="max-sm:text-[22px] flex cursor-pointer list-none items-center justify-between gap-4 font-sans text-[40px] font-extrabold tracking-[-0.02em]"
+	<button
+			onclick={toggle}
+			class="max-sm:text-[22px] flex w-full cursor-pointer items-center justify-between gap-4 font-sans text-[40px] font-extrabold tracking-[-0.02em] px-6 py-4"
+			aria-expanded={open}
 	>
 		{title}
 		<img
-			src={'/shapes/accordionChevron.svg'}
-			alt=""
-			class="size-[62px] shrink-0 transition group-open:rotate-180"
+				src={'/shapes/accordionChevron.svg'}
+				alt=""
+				class="size-[62px] shrink-0 transition-transform duration-300 hover:invert {open ? 'rotate-180' : ''}"
 		/>
-	</summary>
-	<div class="mt-4 font-sans text-2xl leading-snug max-sm:text-[22px]">
-		{@render children()}
+	</button>
+
+	<div
+		class="grid transition-all duration-300 ease-in-out {open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}"
+	>
+		<div class="overflow-hidden">
+			<div class="bg-white px-6 pb-6 pt-4 max-sm:text-[22px] font-sans text-2xl leading-snug border-t border-boba-black">
+				{@render children()}
+			</div>
+		</div>
 	</div>
-</details>
+</div>
