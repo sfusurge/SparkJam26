@@ -14,7 +14,6 @@
 			class="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 h-[811px] w-auto min-w-[100vw] object-cover z-0 select-none md:static md:inset-auto md:left-auto md:-translate-x-0 md:h-auto md:w-full md:min-w-0 md:object-contain"
 			aria-hidden="true"
 		/>
-
 		<div
 			class="pointer-events-auto absolute left-0 top-[55%] z-2 w-[min(26.85%,373px)] origin-center transition-transform duration-300 hover:-rotate-2 max-[480px]:w-[min(42%,280px)]"
 			aria-hidden="true"

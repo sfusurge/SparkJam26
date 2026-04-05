@@ -16,24 +16,42 @@
 		let personPhotos = args.personPhotos;
 
 		const apply = () => {
-			const map = new Map(personPhotos.map((p) => [p.name.trim(), p.photoSrc]));
+			const map = new Map(
+				personPhotos.map((p) => [
+					p.name.trim(),
+					{ photoSrc: p.photoSrc, url: p.url.trim() || '#' }
+				])
+			);
 			for (const span of node.querySelectorAll<HTMLSpanElement>('span.underline')) {
 				if (span.closest('[data-person-hover-root]')) continue;
 				const name = span.textContent?.trim();
 				if (!name) continue;
-				const src = map.get(name);
-				if (!src) continue;
+				const entry = map.get(name);
+				if (!entry) continue;
+
+				const link = document.createElement('a');
+				link.href = entry.url;
+				link.className = span.className;
+				for (const attr of span.attributes) {
+					if (attr.name === 'class') continue;
+					link.setAttribute(attr.name, attr.value);
+				}
+				if (entry.url.startsWith('http://') || entry.url.startsWith('https://')) {
+					link.target = '_blank';
+					link.rel = 'noopener noreferrer';
+				}
+				while (span.firstChild) link.appendChild(span.firstChild);
+				span.replaceWith(link);
 
 				const wrapper = document.createElement('span');
 				wrapper.setAttribute('data-person-hover-root', '');
-				wrapper.className =
-					'relative inline-block cursor-site select-none align-baseline';
+				wrapper.className = 'relative inline-block select-none align-baseline';
 
 				const preview = document.createElement('div');
 				preview.setAttribute('aria-hidden', 'true');
 				preview.className =
 					'workshop-person-hover-preview pointer-events-none fixed z-[9999] h-[258px] w-[211px] overflow-hidden rounded-[7px] border-2 border-rams-orange opacity-0 transition-opacity duration-150';
-				preview.style.setProperty('--person-photo-url', `url("${src}")`);
+				preview.style.setProperty('--person-photo-url', `url("${entry.photoSrc}")`);
 
 				const gapPx = 12;
 				const placeAtCursor = (e: MouseEvent) => {
@@ -60,9 +78,9 @@
 				});
 				wrapper.addEventListener('mouseleave', onLeave);
 
-				span.parentNode?.insertBefore(wrapper, span);
+				link.parentNode?.insertBefore(wrapper, link);
 				wrapper.appendChild(preview);
-				wrapper.appendChild(span);
+				wrapper.appendChild(link);
 			}
 		};
 
