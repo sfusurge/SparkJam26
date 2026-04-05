@@ -83,7 +83,8 @@ export class GameRenderer {
     ctx: CanvasRenderingContext2D;
     mobile: boolean;
     pkg: RenderPkg;
-    renderHandle = -1;
+    renderHandle: number|null = -1;
+    observer: IntersectionObserver|null = null;
 
     gameState: GamePhaseType = $state(GamePhase.PRE);
 
@@ -125,7 +126,23 @@ export class GameRenderer {
         this.setupEvents();
         this.reset();
 
-        this.renderHandle = requestAnimationFrame(this.eventLoop.bind(this));
+        this.observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    if(!this.renderHandle){
+                        this.renderHandle = requestAnimationFrame(this.eventLoop.bind(this));
+                    }
+                } else {
+                    if(this.renderHandle){
+                        cancelAnimationFrame(this.renderHandle);
+                        this.renderHandle = null;
+                    }
+                }
+            });
+        }, {threshold: 0.1});
+
+        this.observer.observe(this.canvas);
+        
     }
 
     reset(){
@@ -427,6 +444,8 @@ export class GameRenderer {
     }
 
     destroy() {
-        cancelAnimationFrame(this.renderHandle);
+        if(this.renderHandle){
+            cancelAnimationFrame(this.renderHandle);
+        }
     }
 }
