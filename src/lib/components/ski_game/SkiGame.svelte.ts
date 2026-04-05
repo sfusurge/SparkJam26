@@ -30,13 +30,14 @@ const loadSprites = (names: string[]) => {
     })
 }
 
-const envSprites = loadSprites(["mountains.svg", "Pattern.svg", "waterlooWelcome"]);
+const envSprites = loadSprites(["mountains.svg", "Pattern.svg", "waterlooWelcome", "Sign"]);
 const obstacleSprites = loadSprites(["redCone", "blueCone", "redBall.svg", "blueBall.svg"]);
 const otterSprites = loadSprites(["otterSkiing", "fall1", "fall2", "fall3"]);
 
 const positionRange: boundRange = {min: 0, max: 4};
 const defaultPos: number = 2;
 
+const ottID: string = "OTT";
 const positionCoords: number[][] = [
     [0.17, 0.37],
     [0.13, 0.404],
@@ -69,9 +70,13 @@ const randWholeNum = (range: number) => {
 
 const slopeAngle = 49.5 * Math.PI / 180;
 
+const waterlooID: string = "water";
 const waterlooOffscreen = [0.65, 1];
 const waterlooAppear = [0.65, 0.8];
 const waterlooPause = 5000;
+
+const signID: string = "sign";
+const signStartPos:number[] = [0.6, .8];
 
 export class GameRenderer {
     canvas: HTMLCanvasElement;
@@ -90,7 +95,6 @@ export class GameRenderer {
     skiCourse: obstacleItem[] = [];
 
     ottPosition: number = defaultPos;
-    ottID: string = "OTT";
 
     currentDistanceInKM: number = $state(0);
     KM_highScore: number = $state(0);
@@ -99,8 +103,7 @@ export class GameRenderer {
 
     collision: boolean = false;
     collisionSlowDur: number = 1;
-
-    waterlooID: string = "water";
+    
     waterlooAnim: number = 0;
     waterlooFinish: number = 20; 
 
@@ -134,7 +137,7 @@ export class GameRenderer {
         this.updateOttPosition();
         this.collision = false;
         this.collisionSlowDur = 1;
-        (this.dynamicObjs[this.ottID] as cImg).currentSprite = 0;
+        (this.dynamicObjs[ottID] as cImg).currentSprite = 0;
 
         this.skiCourse = [];
         this.generateSkiCourse();
@@ -202,16 +205,22 @@ export class GameRenderer {
             )
         );
 
-        this.dynamicObjs[this.ottID] = new cImg(
+        this.dynamicObjs[ottID] = new cImg(
             this.pkg,
             positionCoords[this.ottPosition][0], positionCoords[this.ottPosition][1],
             otterSprites
         );
 
-        this.dynamicObjs[this.waterlooID] = new cImg(
+        this.dynamicObjs[waterlooID] = new cImg(
             this.pkg,
             waterlooOffscreen[0], waterlooOffscreen[1],
             [envSprites[2]]
+        );
+
+        this.dynamicObjs[signID] = new cImg(
+            this.pkg,
+            signStartPos[0], signStartPos[1],
+            [envSprites[3]]
         );
     }
 
@@ -249,7 +258,7 @@ export class GameRenderer {
     }
 
     updateOttPosition(){
-        this.dynamicObjs[this.ottID].setPosition(positionCoords[this.ottPosition][0], positionCoords[this.ottPosition][1]);
+        this.dynamicObjs[ottID].setPosition(positionCoords[this.ottPosition][0], positionCoords[this.ottPosition][1]);
     }
 
     inputCallback(k: string){
@@ -263,7 +272,7 @@ export class GameRenderer {
         this.pTime = time;
 
         const ottImg = () => {
-            return(this.dynamicObjs[this.ottID] as cImg);
+            return(this.dynamicObjs[ottID] as cImg);
         }
 
         let delta = d * gameSpeed;
@@ -315,7 +324,10 @@ export class GameRenderer {
     }
 
     renderEnv() {
-        this.staticObj.forEach(obj => {
+        this.staticObj.forEach((obj, i) => {
+            if(this.currentTime < obstacleVisibilityWindow && i == 2){
+                this.dynamicObjs[signID].update();
+            }
             obj.update();
         });
 
@@ -332,15 +344,28 @@ export class GameRenderer {
             let inc = (waterlooOffscreen[1] - waterlooAppear[1])/(this.waterlooFinish / 2) * prog;
             
             if(this.currentTime > duration + waterlooPause){
-                this.dynamicObjs[this.waterlooID]
+                this.dynamicObjs[waterlooID]
                 .setPosition(waterlooOffscreen[0], waterlooAppear[1] + inc);
                 this.waterlooAnim++;
             }else if(this.waterlooAnim < 10){
-                this.dynamicObjs[this.waterlooID]
+                this.dynamicObjs[waterlooID]
                 .setPosition(waterlooOffscreen[0], waterlooOffscreen[1] - inc);
                 this.waterlooAnim++;
             }
         }
+
+        if(this.currentTime < obstacleVisibilityWindow){
+            let c = this.calculateSignCoordXY(this.currentTime/obstacleVisibilityWindow);
+            this.dynamicObjs[signID].setPosition(c[0], c[1]);
+        }
+    }
+
+    calculateSignCoordXY(progress:number){
+        let len = progress * skiTrackLen;
+        let ang = 52 * Math.PI / 180;
+        let x = signStartPos[0] - len * Math.cos(ang);
+        let y = signStartPos[1] - len * Math.sin(ang);
+        return [x, y];
     }
 
     renderObstacles() {
@@ -377,11 +402,11 @@ export class GameRenderer {
                 obstacleRender(obst);
             }
         }
-        this.dynamicObjs[this.ottID].update();
+        this.dynamicObjs[ottID].update();
         obstacles.forEach(o => {
             obstacleRender(o);
         })
-        this.dynamicObjs[this.waterlooID].update();
+        this.dynamicObjs[waterlooID].update();
     }
 
     calculateSlopeCoordXY(lane: number, position: number){
