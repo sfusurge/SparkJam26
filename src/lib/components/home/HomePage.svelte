@@ -15,7 +15,7 @@
 	<Header />
 
 
-	<main class="relative z-10 mx-auto w-full max-w-[1512px] pb-0 px-15">
+	<main class="relative z-10 mx-auto w-full max-w-[1512px] pb-0 px-15 max-lg:px-0">
 
 		{@render children()}
 	</main>

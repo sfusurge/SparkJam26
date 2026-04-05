@@ -4,9 +4,9 @@
 </script>
 
 <section class="relative mt-24 w-full max-sm:w-screen" aria-labelledby="s03-title">
-	<div class="mx-auto w-full max-w-[1334px] px-[3%] max-sm:px-0 max-sm:-ml-15">
+	<div class="mx-auto w-full max-w-[1334px] px-[3%] max-sm:px-0">
 		
-		<SectionBadge label="03" class="-rotate-[15deg] max-sm:scale-70 max-sm:-top-8 max-sm:-ml-16" />
+		<SectionBadge label="03" class="-rotate-[15deg] max-sm:scale-70 max-sm:-top-8" />
 		
 		<div class="max-lg:grid-cols-1 relative mt-14 grid gap-0  bg-boba-black grid-cols-[minmax(0,522px)_1fr]">
 
@@ -35,7 +35,7 @@
 				</h2>
 			</div>
 			<div class="space-y-8 border rounded-xl max-sm:rounded-none border-boba-black bg-canvas-grey border-t border-l-0 p-10 max-sm:text-[22px]">
-				<ScheduleAccordionItem title="Spark Week | May 11 - 15th" panelClass="bg-strawberry-moon ">
+				<ScheduleAccordionItem title="Spark Week | May 11 - 15th" panelClass="bg-strawberry-moon">
 					{#snippet children()}
 						<p>Workshops, talks, and skill-building across both coasts.</p>
 					{/snippet}

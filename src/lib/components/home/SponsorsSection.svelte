@@ -5,7 +5,7 @@
 </script>
 
 <section class="relative mt-12 mx-auto w-full max-sm:w-screen" aria-label="Sponsors">
-	<div class="mx-auto w-full max-w-[1334px] px-[3%] max-sm:px-[3px] max-sm:-ml-15">
+	<div class="mx-auto w-full max-w-[1334px] px-[3%] max-sm:px-[3px]">
 		{#if !$isMobile}	
 			<div class="absolute -inset-y-23 left-[3%] w-[1px] bg-boba-black"></div>
 			<div class="absolute -inset-y-21.5 right-[3%] w-[1px] bg-boba-black"></div>

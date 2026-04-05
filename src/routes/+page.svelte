@@ -16,7 +16,7 @@
 	const isMobile = writable(false);
 
 	onMount(() => {
-		const check = () => isMobile.set(window.innerWidth < 640);
+		const check = () => isMobile.set(window.innerWidth < 750);
 		check();
 		window.addEventListener('resize', check);
 		return () => window.removeEventListener('resize', check);
@@ -24,10 +24,10 @@
 </script>
 
 <HomePage>
-	<HomeHero />
-	<IndustryClassroomSection />
+	<HomeHero {isMobile} />
+	<IndustryClassroomSection {isMobile} />
 	<SkiGame />
-	<TipToTipSection />
+	<TipToTipSection {isMobile} />
 	<ScheduleSection />
 	<WorkshopsSection />
 	{#if $isMobile}

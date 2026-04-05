@@ -1,22 +1,24 @@
 <script lang="ts">
 	import SectionBadge from './SectionBadge.svelte';
+	import type { Writable } from 'svelte/store';
+	const { isMobile } = $props() as { isMobile: Writable<boolean> }
 </script>
 
 <section class="relative mt-24 w-full max-sm:w-screen" aria-labelledby="s01-title">
-	<div class="mx-auto w-full max-w-[1334px] px-[3%] max-sm:px-0 max-sm:-ml-15">
-		<SectionBadge label="01" class="-rotate-15 max-sm:scale-70 max-sm:-top-8 max-sm:-ml-16" />
+	<div class="mx-auto w-full max-w-[1334px] px-[3%] max-sm:px-0">
+		<SectionBadge label="01" class="-rotate-15 max-sm:scale-70 max-sm:-top-8" />
 
 		<div class="relative mt-14">
+			{#if !$isMobile}
+				<div class="absolute -bottom-24 left-0 w-[1px] bg-boba-black"></div>
+				<div class="absolute -bottom-24 right-0 w-[1px] bg-boba-black"></div>
 
-			<div class="absolute -bottom-24 left-0 w-[1px] bg-boba-black"></div>
-			<div class="absolute -bottom-24 right-0 w-[1px] bg-boba-black"></div>
+				<div class="absolute top-0 left-0 w-full h-[1px] bg-boba-black"></div>
+				<div class="absolute bottom-0 left-0 w-full h-[1px] bg-boba-black"></div>
 
-			<div class="absolute top-0 left-0 w-full h-[1px] bg-boba-black"></div>
-			<div class="absolute bottom-0 left-0 w-full h-[1px] bg-boba-black"></div>
-
-			<div class="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-[1px] bg-boba-black"></div>
-			<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-screen h-[1px] bg-boba-black"></div>
-
+				<div class="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-[1px] bg-boba-black"></div>
+				<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-screen h-[1px] bg-boba-black"></div>
+			{/if}
 			<div class="pointer-events-none absolute -z-10 top-0 left-0" aria-hidden="true">
 				<div class="size-3 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-boba-black"></div>
 			</div>

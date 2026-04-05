@@ -23,7 +23,7 @@
 >
 	<button
 			onclick={toggle}
-			class="max-sm:text-[22px] flex w-full cursor-pointer items-center justify-between gap-4 font-sans text-[40px] font-extrabold tracking-[-0.02em] px-6 py-4"
+			class="max-sm:text-[22px] max-sm:text-left flex w-full cursor-pointer items-center justify-between gap-4 font-sans text-[40px] font-extrabold tracking-[-0.02em] px-6 py-4"
 			aria-expanded={open}
 	>
 		{title}

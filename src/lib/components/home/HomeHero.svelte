@@ -1,10 +1,12 @@
 <script lang="ts">
 	import Button from '$lib/components/ui/Button.svelte';
+	import type { Writable } from 'svelte/store';
+	const { isMobile } = $props() as { isMobile: Writable<boolean> };
 </script>
 
-<section class="relative overflow-visible mt-8 max-sm:-mt-15 pb-16 md:pb-24" aria-labelledby="hero-heading">
+<section class="relative overflow-visible mt-8 pb-16" aria-labelledby="hero-heading">
 	<div
-		class="relative mx-auto aspect-[1411/819] w-full max-w-[1392px] h-[811px]"
+		class="relative mx-auto aspect-[1411/819] w-full max-w-[1392px] h-[811px] md:h-[511px] max-sm:-mt-18"
 	>
 		<img
 			src="/logosection/SJ_Background.png"
@@ -21,19 +23,20 @@
 				<img
 					src="/shapes/2D-North-Star.svg"
 					alt=""
-					class="absolute inset-[11.02%] block size-full max-w-none object-contain max-sm:top-60 max-sm:size-40 max-sm:-left-35"
+					class="absolute inset-[11.02%] block size-full max-w-none object-contain max-sm:top-60 max-sm:size-40 max-sm:-left-18"
 				/>
 			</div>
 		</div>
-
-		<div
-			class="pointer-events-auto absolute left-[6.23%] top-[63%] z-[1] w-[5.1%] min-w-[48px] max-w-[71px] origin-center transition-transform duration-300 hover:rotate-6"
-			aria-hidden="true"
-		>
-			<div class="relative aspect-square w-full">
-				<img src="/shapes/2D%20-%20Circle.svg" alt="" class="block size-full object-contain" />
+		{#if !$isMobile}
+			<div
+				class="pointer-events-auto absolute left-[6.23%] top-[63%] z-[1] w-[5.1%] min-w-[48px] max-w-[71px] origin-center transition-transform duration-300 hover:rotate-6"
+				aria-hidden="true"
+			>
+				<div class="relative aspect-square w-full">
+					<img src="/shapes/2D%20-%20Circle.svg" alt="" class="block size-full object-contain" />
+				</div>
 			</div>
-		</div>
+		{/if}
 
 		<div
 			class="pointer-events-auto absolute left-[84%] top-[31.2%] z-[1] w-[13.68%] min-w-[100px] max-w-[190px] origin-center transition-transform duration-300 hover:-rotate-2 max-[640px]:left-[78%]"
@@ -43,7 +46,7 @@
 				<img
 					src="/shapes/2D%20-%20Triangle.svg"
 					alt=""
-					class="absolute inset-x-[9.76%] bottom-[25%] top-[4.2%] block size-full max-w-none object-contain max-sm:left-15"
+					class="absolute inset-x-[9.76%] bottom-[25%] top-[4.2%] block size-full max-w-none object-contain max-sm:left-10"
 				/>
 			</div>
 		</div>
