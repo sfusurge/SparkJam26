@@ -134,10 +134,10 @@ export class GameRenderer {
         this.obstacleCache = 0;
 
         this.ottPosition = defaultPos;
+        (this.dynamicObjs[ottID] as cImg).currentSprite = 0;
         this.updateOttPosition();
         this.collision = false;
         this.collisionSlowDur = 1;
-        (this.dynamicObjs[ottID] as cImg).currentSprite = 0;
 
         this.skiCourse = [];
         this.generateSkiCourse();
