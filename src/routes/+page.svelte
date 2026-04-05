@@ -9,6 +9,7 @@
 	import ChartSectionMobile from '$lib/components/home/ChartSectionMobile.svelte';
 	import TipToTipSection from '$lib/components/home/TipToTipSection.svelte';
 	import WorkshopsSection from '$lib/components/home/WorkshopsSection.svelte';
+	import SkiGame from '$lib/components/home/SkiGame.svelte';
 	import { writable } from 'svelte/store';
 	import { onMount } from 'svelte';
 
@@ -29,7 +30,6 @@
 	<TipToTipSection {isMobile} />
 	<ScheduleSection />
 	<WorkshopsSection />
-  <TempWorkshopsSection />
 	{#if $isMobile}
 		<ChartSectionMobile />
 	{:else}	
