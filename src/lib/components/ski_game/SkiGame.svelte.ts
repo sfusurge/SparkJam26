@@ -129,13 +129,13 @@ export class GameRenderer {
         this.observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if(entry.isIntersecting){
-                    if(!this.renderHandle){
+                    if(this.renderHandle == -1){
                         this.renderHandle = requestAnimationFrame(this.eventLoop.bind(this));
                     }
                 } else {
                     if(this.renderHandle){
                         cancelAnimationFrame(this.renderHandle);
-                        this.renderHandle = null;
+                        this.renderHandle = -1;
                     }
                 }
             });

@@ -12,6 +12,7 @@
 	import SkiGame from '$lib/components/home/SkiGame.svelte';
 	import { writable } from 'svelte/store';
 	import { onMount } from 'svelte';
+	import TempWorkshopsSection from "$lib/components/home/TempWorkshopsSection.svelte";
 
 	const isMobile = writable(false);
 
@@ -29,7 +30,8 @@
 	<SkiGame />
 	<TipToTipSection {isMobile} />
 	<ScheduleSection />
-	<WorkshopsSection />
+	<TempWorkshopsSection/>
+<!--	<WorkshopsSection />-->
 	{#if $isMobile}
 		<ChartSectionMobile />
 	{:else}	
