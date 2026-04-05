@@ -18,12 +18,12 @@
 </script>
 
 <div
-		class="group rounded-2xl max-sm:text-[22px] border border-boba-black overflow-hidden {panelClass}"
+		class="group rounded-2xl border border-boba-black overflow-hidden {panelClass}"
 		class:open
 >
 	<button
 			onclick={toggle}
-			class="max-sm:text-[22px] max-sm:text-left flex w-full cursor-pointer items-center justify-between gap-4 font-sans text-[40px] font-extrabold tracking-[-0.02em] px-6 py-4"
+			class="flex w-full cursor-pointer items-center justify-between gap-4 font-sans text-[40px] font-extrabold tracking-[-0.02em] px-6 py-4"
 			aria-expanded={open}
 	>
 		{title}
@@ -35,10 +35,10 @@
 	</button>
 
 	<div
-		class="grid transition-all duration-300 ease-in-out {open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}"
+			class="grid transition-all duration-300 ease-in-out {open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}"
 	>
 		<div class="overflow-hidden">
-			<div class="bg-white px-6 pb-6 pt-4 max-sm:text-[22px] font-sans text-2xl leading-snug border-t border-boba-black">
+			<div class="bg-white px-6 pb-6 pt-4 font-sans text-2xl leading-snug border-t border-boba-black">
 				{@render children()}
 			</div>
 		</div>
