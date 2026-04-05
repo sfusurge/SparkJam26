@@ -1,17 +1,20 @@
 <script lang="ts">
 	import SectionBadge from './SectionBadge.svelte';
+	import SkiGame from './SkiGame.svelte';
 	import type { Writable } from 'svelte/store';
 	const { isMobile } = $props() as { isMobile: Writable<boolean> }
 </script>
 
 <section class="relative mt-24 w-full max-sm:w-screen" aria-labelledby="s02-title">
-	<div class="mx-auto w-full max-w-[1334px] px-[3%] max-sm:px-0">
-		<SectionBadge label="02" class="-rotate-15 max-sm:scale-70 max-sm:-top-8 " />
+	<div class="relative mx-auto w-full max-w-[1334px] px-[3%] max-sm:px-0">
+		<SkiGame />
 
-		<div class="relative mt-14">
+		<div class="relative">
+			<SectionBadge label="02" class="rotate-15 translate-x-[-40px] max-sm:translate-x-0 max-sm:scale-70 max-sm:-top-8" />
+
 			{#if !$isMobile}
-				<div class="absolute -top-24 -bottom-30 left-0 w-[1px] bg-boba-black"></div>
-				<div class="absolute -top-24 -bottom-30 right-0 w-[1px] bg-boba-black"></div>
+				<div class="absolute -top-250 -bottom-30 left-0 w-[1px] bg-boba-black"></div>
+				<div class="absolute -top-250 -bottom-30 right-0 w-[1px] bg-boba-black"></div>
 				<div class="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-[1px] bg-boba-black"></div>
 				<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-screen h-[1px] bg-boba-black"></div>
 			{/if}
@@ -30,8 +33,7 @@
 
 			<div class="grid gap-0 bg-boba-black grid-cols-[1fr_minmax(0,467px)] max-lg:grid-cols-1">
 				<div class="flex min-h-0 flex-col">
-				<!--max-sm:row-start-1-->
-					<div class="border rounded-xl max-sm:rounded-none border-boba-black border-b-0 bg-citrouille px-8 py-9 max-sm:row-start-1">
+					<div class="border rounded-xl max-sm:rounded-none border-boba-black border-b-0 bg-citrouille px-8 py-9">
 						<h2
 							id="s02-title"
 							class="font-sans text-[48px] max-sm:text-[32px] font-extrabold leading-none tracking-[-0.03em]"
@@ -40,7 +42,6 @@
 						</h2>
 					</div>
 					<div class="flex-1 rounded-xl max-sm:rounded-none border border-boba-black bg-sparky-yellow p-15 max-sm:px-8 max-sm:py-16">
-					<!--max-sm:row-start-1-->
 						<p class="font-sans text-[32px] leading-[1.11] tracking-[-0.02em] max-sm:text-[22px]">
 							This year, SparkJam is going across Canada. Students based in British Columbia can attend the event
 							at Simon Fraser University; and students in Toronto can attend at the University of Waterloo!

@@ -4,7 +4,7 @@
 </script>
 
 <section class="relative mt-24 w-full max-sm:w-screen" aria-labelledby="s03-title">
-	<div class="mx-auto w-full max-w-[1334px] px-[3%] max-sm:px-0">
+	<div class="relative mx-auto w-full max-w-[1334px] px-[3%] max-sm:px-0">
 		
 		<SectionBadge label="03" class="-rotate-[15deg] max-sm:scale-70 max-sm:-top-8" />
 		

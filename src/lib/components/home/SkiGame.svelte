@@ -61,46 +61,43 @@
 
 </script>
 
-<section class="relative mt-24 w-full max-sm:w-screen" aria-labelledby="s01-title">
-	<div class="mx-auto w-full max-w-[1334px] px-[3%] max-sm:px-0">
-        <div id="ski-section" class="relative">
-            <canvas bind:this={canvas} height="700" width="1300"></canvas>
-            <div id="gameUI">
-                <div id="stats">
-                    <div class="mileage">{mileageDisplay} KM travelled</div>
-                    <div id="highScore">High Score: {highScore} KM</div>
+<div id="ski-section" class="relative">
+    <canvas bind:this={canvas} height="700" width="1300"></canvas>
+    <div id="gameUI">
+        <div id="stats">
+            <div class="mileage">{mileageDisplay} KM travelled</div>
+            <div id="highScore">High Score: {highScore} KM</div>
+        </div>
+        <button onclick={() => {renderer?.pauseToggle()}}>
+            <img id="pauseBtn" src="/game/pause.svg"/>
+        </button>
+    </div>
+    {#if !isRunning()}
+        <div id="blur">
+            {#if isPause()}
+                <div id="menuUI">
+                    <div class="orangeText text-7xl font-extrabold">From VANCOUVER to OTTERLOO</div>
+                    <div class="orangeText text-5xl font-extrabold">a skiing adventure</div>
+                    <button><img id="playBtn" src="/game/play.svg" onclick={playGame}/></button>
+                    <div>CLICK TO PLAY</div>
                 </div>
-                <button onclick={() => {renderer?.pauseToggle()}}>
-                    <img id="pauseBtn" src="/game/pause.svg"/>
-                </button>
-            </div>
-            {#if !isRunning()}
-                <div id="blur">
-                    {#if isPause()}
-                        <div id="menuUI">
-                            <div class="orangeText text-7xl font-extrabold">From VANCOUVER to OTTERLOO</div>
-                            <div class="orangeText text-5xl font-extrabold">a skiing adventure</div>
-                            <button><img id="playBtn" src="/game/play.svg" onclick={playGame}/></button>
-                            <div>CLICK TO PLAY</div>
-                        </div>
-                    {/if}
-                    {#if isOver()}
-                        <div id="gameOverUI">
-                            <div class="orangeText text-7xl font-extrabold">GAMEOVER</div>
-                            <div class="mileage">{mileageDisplay} KM travelled</div>
-                            <button><img id="restartBtn" src="/game/restart.svg" onclick={restartGame}/></button>
-                            <div>CLICK TO PLAY AGAIN</div>
-                        </div>
-                    {/if}
+            {/if}
+            {#if isOver()}
+                <div id="gameOverUI">
+                    <div class="orangeText text-7xl font-extrabold">GAMEOVER</div>
+                    <div class="mileage">{mileageDisplay} KM travelled</div>
+                    <button><img id="restartBtn" src="/game/restart.svg" onclick={restartGame}/></button>
+                    <div>CLICK TO PLAY AGAIN</div>
                 </div>
             {/if}
         </div>
-    </div>
-</section>
+    {/if}
+</div>
 
 <style>
     #ski-section{
         overflow: hidden;
+        border-radius: 0.75rem;
     }
 
     canvas{
@@ -114,6 +111,7 @@
         margin-top: 1%;
         margin-right: 2%;
         display: flex;
+        align-items: flex-start;
     }
 
     #blur{

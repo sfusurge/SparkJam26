@@ -43,32 +43,32 @@
                         <img
                                 src="/shapes/2D-Star.svg"
                                 alt=""
-                                class="shape-img absolute -left-[48%] -top-6 w-[114px] -rotate-[24.08deg]"
+                                class="shape-img pointer-events-auto absolute -left-[48%] -top-6 w-[114px] -rotate-[24.08deg] origin-center transition-transform duration-300 hover:rotate-6"
                         />
                         <img
                                 src="/shapes/2D - Triangle.svg"
                                 alt=""
-                                class="shape-img absolute -right-[54%] -bottom-8 w-[143px] rotate-[22.52deg]"
+                                class="shape-img pointer-events-auto absolute -right-[54%] -bottom-8 w-[143px] rotate-[22.52deg] origin-center transition-transform duration-300 hover:-rotate-6"
                         />
                         <img
                                 src="/workshop/Yellow_Circle.svg"
                                 alt=""
-                                class="shape-img absolute -left-[10%] -bottom-[10%] w-[60px] max-sm:translate-y-36 sm:translate-y-0"
+                                class="shape-img pointer-events-auto absolute -left-[10%] -bottom-[10%] w-[60px] max-sm:translate-y-36 sm:translate-y-0 origin-center transition-transform duration-300 hover:rotate-6"
                         />
                         <img
                                 src="/shapes/2D - Circle.svg"
                                 alt=""
-                                class="shape-img absolute -right-[10%] -top-[10%] w-[60px] max-sm:-translate-y-36 sm:translate-y-0"
+                                class="shape-img pointer-events-auto absolute -right-[10%] -top-[10%] w-[60px] max-sm:-translate-y-36 sm:translate-y-0 origin-center transition-transform duration-300 hover:-rotate-6"
                         />
                         <img
                                 src="/workshop/Pink_North_Star.svg"
                                 alt=""
-                                class="shape-img absolute -right-[20%] -top-[7%] w-[141px] rotate-15 max-sm:-translate-y-36 sm:translate-y-0"
+                                class="shape-img pointer-events-auto absolute -right-[20%] -top-[7%] w-[141px] rotate-15 max-sm:-translate-y-36 sm:translate-y-0 origin-center transition-transform duration-300 hover:-rotate-2"
                         />
                         <img
                                 src="/workshop/Orange_North_Star.svg"
                                 alt=""
-                                class="shape-img absolute -left-[20%] -bottom-[6%] w-[141px] -rotate-[77.28deg] max-sm:translate-y-36 sm:translate-y-0"
+                                class="shape-img pointer-events-auto absolute -left-[20%] -bottom-[6%] w-[141px] -rotate-[77.28deg] max-sm:translate-y-36 sm:translate-y-0 origin-center transition-transform duration-300 hover:-rotate-6"
                         />
                     </div>
                 </div>

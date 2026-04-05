@@ -9,7 +9,6 @@
 	import ChartSectionMobile from '$lib/components/home/ChartSectionMobile.svelte';
 	import TipToTipSection from '$lib/components/home/TipToTipSection.svelte';
 	import WorkshopsSection from '$lib/components/home/WorkshopsSection.svelte';
-	import SkiGame from '$lib/components/home/SkiGame.svelte';
 	import { writable } from 'svelte/store';
 	import { onMount } from 'svelte';
 	import TempWorkshopsSection from "$lib/components/home/TempWorkshopsSection.svelte";
@@ -27,7 +26,6 @@
 <HomePage>
 	<HomeHero {isMobile} />
 	<IndustryClassroomSection {isMobile} />
-	<SkiGame />
 	<TipToTipSection {isMobile} />
 	<ScheduleSection />
 	<TempWorkshopsSection/>
