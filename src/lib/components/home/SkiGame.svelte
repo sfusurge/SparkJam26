@@ -70,9 +70,9 @@
                     <div class="mileage">{mileageDisplay} KM travelled</div>
                     <div id="highScore">High Score: {highScore} KM</div>
                 </div>
-                <div onclick={() => {renderer?.pauseToggle()}}>
+                <button onclick={() => {renderer?.pauseToggle()}}>
                     <img id="pauseBtn" src="/game/pause.svg"/>
-                </div>
+                </button>
             </div>
             {#if !isRunning()}
                 <div id="blur">
@@ -80,7 +80,7 @@
                         <div id="menuUI">
                             <div class="orangeText text-7xl font-extrabold">From VANCOUVER to OTTERLOO</div>
                             <div class="orangeText text-5xl font-extrabold">a skiing adventure</div>
-                            <img id="playBtn" src="/game/play.svg" onclick={playGame}/>
+                            <button><img id="playBtn" src="/game/play.svg" onclick={playGame}/></button>
                             <div>CLICK TO PLAY</div>
                         </div>
                     {/if}
@@ -88,7 +88,7 @@
                         <div id="gameOverUI">
                             <div class="orangeText text-7xl font-extrabold">GAMEOVER</div>
                             <div class="mileage">{mileageDisplay} KM travelled</div>
-                            <img id="restartBtn" src="/game/restart.svg" onclick={restartGame}/>
+                            <button><img id="restartBtn" src="/game/restart.svg" onclick={restartGame}/></button>
                             <div>CLICK TO PLAY AGAIN</div>
                         </div>
                     {/if}
