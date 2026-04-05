@@ -258,7 +258,9 @@ export class GameRenderer {
     }
 
     updateOttPosition(){
-        this.dynamicObjs[ottID].setPosition(positionCoords[this.ottPosition][0], positionCoords[this.ottPosition][1]);
+        if(this.gameState == GamePhase.RUNNING && (this.dynamicObjs[ottID] as cImg).currentSprite == 0){
+            this.dynamicObjs[ottID].setPosition(positionCoords[this.ottPosition][0], positionCoords[this.ottPosition][1]);
+        }   
     }
 
     inputCallback(k: string){
