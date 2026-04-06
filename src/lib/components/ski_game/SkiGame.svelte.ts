@@ -59,7 +59,7 @@ const slowSpeed: number = 0.15;
 
 const destination: number = 4173;
 const duration: number = 400000;
-const gameSpeed: number = 1.5;
+const gameSpeed: number = 1.25;
 const obstacleVisibilityWindow: number = 2500;
 
 const obstacleGenerationSpacing: boundRange = {min: 500, max: 2000};
@@ -302,7 +302,7 @@ export class GameRenderer {
             return(this.dynamicObjs[ottID] as cImg);
         }
 
-        let delta = d * gameSpeed;
+        let delta = d * (gameSpeed + 3 * (this.currentTime/duration));
         if(this.gameState == GamePhase.RUNNING){
             
             this.currentTime += delta;
