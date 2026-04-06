@@ -22,7 +22,7 @@
 		class="relative mx-auto aspect-[1411/819] w-full max-w-[1392px] max-sm:aspect-auto max-sm:min-h-[811px] max-sm:overflow-hidden"
 	>
 		<img
-			src="/logosection/SJ_Background.png"
+			src="/logosection/SJ_Background.webp"
 			alt=""
 			class="pointer-events-none mx-auto block size-[94%] z-1 object-cover select-none max-sm:absolute max-sm:top-0 max-sm:left-1/2 max-sm:-translate-x-1/2 max-sm:h-[811px] max-sm:w-auto max-sm:min-w-[100vw]"
 			aria-hidden="true"

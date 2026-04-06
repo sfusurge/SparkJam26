@@ -30,7 +30,7 @@
         <div class="overflow-hidden rounded-xl max-sm:rounded-none border-1 border-boba-black bg-boba-black">
             <div
                     class="relative flex min-h-[420px] items-center justify-center rounded-xl max-sm:rounded-none bg-cover bg-center bg-no-repeat sm:min-h-[560px] lg:min-h-[850px]"
-                    style="background-image: url('/dark_bg.png')"
+                    style="background-image: url('/dark_b.webp')"
             >
                 <div class="dot-bg bg-sparky-yellow"></div>
 
@@ -75,7 +75,7 @@
                 </div>
 
                 <img
-                        src="/workshop/outline.png"
+                        src="/workshop/outline.webp"
                         alt=""
                         class="pointer-events-none absolute left-1/2 top-1/2 z-1 w-full max-w-[min(100%,840px)] -translate-x-1/2 -translate-y-1/2 object-contain"
                         style="aspect-ratio: 840.258 / 591.974;"
@@ -107,7 +107,7 @@
                                     class="relative inline-flex max-w-full rotate-[8.954deg] items-center justify-center px-3 py-1 sm:px-3 sm:py-1 md:px-5 md:py-2.5"
                             >
                                 <img
-                                        src="/workshop/thick_talkstar.png"
+                                        src="/workshop/thick_talkstar.webp"
                                         alt=""
                                         class="absolute inset-0 h-full w-full object-fill"
                                 />
@@ -162,12 +162,12 @@
         background-image: radial-gradient(circle, rgba(255, 204, 53) 4.5px, transparent 1px);
         background-size: 12px 12px;
 
-        mask-image: url('/workshop/mask.png');
+        mask-image: url('/workshop/mask.webp');
         mask-size: contain;
         mask-repeat: no-repeat;
         mask-position: center;
 
-        -webkit-mask-image: url('/workshop/mask.png');
+        -webkit-mask-image: url('/workshop/mask.webp');
         -webkit-mask-size: contain;
         -webkit-mask-repeat: no-repeat;
         -webkit-mask-position: center;
@@ -187,12 +187,12 @@
 
     /* Same mask as dots so copy and pills stay inside the visible blob */
     .workshop-mask-clip {
-        mask-image: url('/workshop/mask.png');
+        mask-image: url('/workshop/mask.webp');
         mask-size: contain;
         mask-repeat: no-repeat;
         mask-position: center;
 
-        -webkit-mask-image: url('/workshop/mask.png');
+        -webkit-mask-image: url('/workshop/mask.webp');
         -webkit-mask-size: contain;
         -webkit-mask-repeat: no-repeat;
         -webkit-mask-position: center;

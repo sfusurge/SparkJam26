@@ -97,7 +97,7 @@
 <style>
     #ski-section{
         overflow: hidden;
-        border-radius: 0.75rem;
+        border-radius: 0 0 0.75rem 0.75rem;
     }
 
     canvas{
