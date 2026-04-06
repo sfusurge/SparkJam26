@@ -4,7 +4,7 @@
 	const bars = [
 		{
 			src: '/chart/bar1.svg',
-			select: '/chart/bar1_select.png',
+			select: '/chart/bar1_select.webp',
 			label: '10+ schools',
 			pillClass: 'bg-citrouille',
 			height: 'h-[94px]',
@@ -13,7 +13,7 @@
 		},
 		{
 			src: '/chart/bar2.svg',
-			select: '/chart/bar2_select.png',
+			select: '/chart/bar2_select.webp',
 			label: '30 Teams',
 			pillClass: 'bg-touch-grass',
 			height: 'h-[184px]',
@@ -22,7 +22,7 @@
 		},
 		{
 			src: '/chart/bar3.svg',
-			select: '/chart/bar3_select.png',
+			select: '/chart/bar3_select.webp',
 			label: '40+ Mentors',
 			pillClass: 'bg-touched-grass',
 			height: 'h-[254px]',
@@ -31,7 +31,7 @@
 		},
 		{
 			src: '/chart/bar4.svg',
-			select: '/chart/bar4_select.png',
+			select: '/chart/bar4_select.webp',
 			label: '100 + Jammers',
 			pillClass: 'bg-strawberry-moon',
 			height: 'h-[464px]',
@@ -58,26 +58,26 @@
 
 	<div class="relative mt-14">
 		<!-- Corners -->
-		<div class="pointer-events-none absolute -z-10 top-0 left-0">
+		<div class="pointer-events-none absolute -z-10 top-0 left-0 max-sm:hidden">
 			<div class="size-3 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-boba-black"></div>
 		</div>
-		<div class="pointer-events-none absolute -z-10 top-0 right-0">
+		<div class="pointer-events-none absolute -z-10 top-0 right-0 max-sm:hidden">
 			<div class="size-3 translate-x-1/2 -translate-y-1/2 rotate-45 bg-boba-black"></div>
 		</div>
-		<div class="pointer-events-none absolute -z-10 bottom-0 left-0">
+		<div class="pointer-events-none absolute -z-10 bottom-0 left-0 max-sm:hidden">
 			<div class="size-3 -translate-x-1/2 translate-y-1/2 rotate-45 bg-boba-black"></div>
 		</div>
-		<div class="pointer-events-none absolute -z-10 bottom-0 right-0">
+		<div class="pointer-events-none absolute -z-10 bottom-0 right-0 max-sm:hidden">
 			<div class="size-3 translate-x-1/2 translate-y-1/2 rotate-45 bg-boba-black"></div>
 		</div>
 
 		<!-- Borders -->
-		<div class="absolute -top-24 -bottom-30 left-0 w-[1px] bg-boba-black"></div>
-		<div class="absolute -top-24 -bottom-30 right-0 w-[1px] bg-boba-black"></div>
-		<div class="absolute top-0 left-1/2 h-[1px] w-screen -translate-x-1/2 bg-boba-black"></div>
-		<div class="absolute bottom-0 left-1/2 h-[1px] w-screen -translate-x-1/2 bg-boba-black"></div>
+		<div class="absolute -top-24 -bottom-30 left-0 w-[1px] bg-boba-black max-sm:hidden"></div>
+		<div class="absolute -top-24 -bottom-30 right-0 w-[1px] bg-boba-black max-sm:hidden"></div>
+		<div class="absolute top-0 left-1/2 h-[1px] w-screen -translate-x-1/2 bg-boba-black max-sm:hidden"></div>
+		<div class="absolute bottom-0 left-1/2 h-[1px] w-screen -translate-x-1/2 bg-boba-black max-sm:hidden"></div>
 
-		<div class="overflow-hidden rounded-xl border-1 border-boba-black bg-boba-black">
+		<div class="overflow-hidden rounded-xl max-sm:rounded-none border-1 border-boba-black bg-boba-black">
 			<!-- Header -->
 			<div class="border-b border-boba-black bg-citrouille px-8 py-9">
 				<h2
@@ -91,7 +91,7 @@
 			<!-- Chart -->
 			<div
 					class="relative min-h-[600px] bg-cover bg-center bg-no-repeat"
-					style="background-image: url('/chart/chart_bg.png')"
+					style="background-image: url('/chart/chart_b.webp')"
 			>
 				<div class="flex h-full min-h-[600px] items-end justify-center px-8 pb-10 pt-10">
 					{#each bars as bar, i}

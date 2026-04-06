@@ -203,7 +203,7 @@
 		position: absolute;
 		inset: 0;
 		border-radius: inherit;
-		background-image: url('/people/texture.png');
+		background-image: url('/people/texture.webp');
 		background-position: center;
 		background-size: cover;
 		background-repeat: no-repeat;

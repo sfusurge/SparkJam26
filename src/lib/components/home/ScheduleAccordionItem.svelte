@@ -2,10 +2,12 @@
 	import type { Snippet } from 'svelte';
 	const {
 		title,
+		date,
 		panelClass,
 		children
 	}: {
 		title: string;
+		date?: string;
 		panelClass: string;
 		children: Snippet;
 	} = $props();
@@ -23,10 +25,18 @@
 >
 	<button
 			onclick={toggle}
-			class="max-sm:text-[22px] max-sm:text-left flex w-full cursor-pointer items-center justify-between gap-4 font-sans text-[40px] font-extrabold tracking-[-0.02em] px-6 py-4"
+			class="max-sm:text-[24px] max-sm:text-left max-sm:py-[30px] max-sm:px-6 flex w-full cursor-pointer items-center justify-between gap-4 font-sans text-[40px] font-extrabold tracking-[-0.02em] px-6 py-4"
 			aria-expanded={open}
 	>
-		{title}
+		{#if date}
+			<span class="hidden max-sm:flex flex-col leading-[1.11] tracking-[-0.48px]">
+				<span>{title}</span>
+				<span>{date}</span>
+			</span>
+			<span class="max-sm:hidden">{title} | {date}</span>
+		{:else}
+			{title}
+		{/if}
 		<img
 				src={'/shapes/accordionChevron.svg'}
 				alt=""

@@ -61,46 +61,53 @@
 
 </script>
 
-<section class="relative mt-24 w-full max-sm:w-screen" aria-labelledby="s01-title">
-	<div class="mx-auto w-full max-w-[1334px] px-[3%] max-sm:px-0">
-        <div id="ski-section" class="relative">
-            <canvas bind:this={canvas} height="700" width="1300"></canvas>
-            <div id="gameUI">
-                <div id="stats">
-                    <div class="mileage">{mileageDisplay} KM travelled</div>
-                    <div id="highScore">High Score: {highScore} KM</div>
+<div id="ski-section" class="relative">
+    <canvas bind:this={canvas} height="700" width="1300"></canvas>
+    <div id="gameUI">
+        <div id="stats">
+            <div class="mileage">{mileageDisplay} KM travelled</div>
+            <div id="highScore">High Score: {highScore} KM</div>
+        </div>
+        <button onclick={() => {renderer?.pauseToggle()}}>
+            <img id="pauseBtn" src="/game/pause.svg"/>
+        </button>
+    </div>
+    {#if !isRunning()}
+        <div id="blur">
+            {#if isPause()}
+                <div id="menuUI">
+                    <div class="orangeText text-7xl font-extrabold text-center">From VANCOUVER to OTTERLOO</div>
+                    <div class="orangeText text-5xl font-extrabold">a skiing adventure</div>
+                    <button><img id="playBtn" src="/game/play.svg" onclick={playGame}/></button>
+                    <div>CLICK TO PLAY</div>
                 </div>
-                <button onclick={() => {renderer?.pauseToggle()}}>
-                    <img id="pauseBtn" src="/game/pause.svg"/>
-                </button>
-            </div>
-            {#if !isRunning()}
-                <div id="blur">
-                    {#if isPause()}
-                        <div id="menuUI">
-                            <div class="orangeText text-7xl font-extrabold">From VANCOUVER to OTTERLOO</div>
-                            <div class="orangeText text-5xl font-extrabold">a skiing adventure</div>
-                            <button><img id="playBtn" src="/game/play.svg" onclick={playGame}/></button>
-                            <div>CLICK TO PLAY</div>
-                        </div>
-                    {/if}
-                    {#if isOver()}
-                        <div id="gameOverUI">
-                            <div class="orangeText text-7xl font-extrabold">GAMEOVER</div>
-                            <div class="mileage">{mileageDisplay} KM travelled</div>
-                            <button><img id="restartBtn" src="/game/restart.svg" onclick={restartGame}/></button>
-                            <div>CLICK TO PLAY AGAIN</div>
-                        </div>
-                    {/if}
+            {/if}
+            {#if isOver()}
+                <div id="gameOverUI">
+                    <div class="orangeText text-7xl font-extrabold">GAMEOVER</div>
+                    <div class="mileage">{mileageDisplay} KM travelled</div>
+                    <button><img id="restartBtn" src="/game/restart.svg" onclick={restartGame}/></button>
+                    <div>CLICK TO PLAY AGAIN</div>
                 </div>
             {/if}
         </div>
-    </div>
-</section>
+    {/if}
+    {#if isRunning()}
+        <div id="mobileControls">
+            <button id="leftBtn" onclick={() => renderer?.inputCallback('a')}>
+                <img src="/game/left.webp" alt="Move left" />
+            </button>
+            <button id="rightBtn" onclick={() => renderer?.inputCallback('d')}>
+                <img src="/game/right.webp" alt="Move right" />
+            </button>
+        </div>
+    {/if}
+</div>
 
 <style>
     #ski-section{
         overflow: hidden;
+        border-radius: 0.75rem 0.75rem 0 0;
     }
 
     canvas{
@@ -114,6 +121,7 @@
         margin-top: 1%;
         margin-right: 2%;
         display: flex;
+        align-items: flex-start;
     }
 
     #blur{
@@ -178,5 +186,106 @@
 
         font-weight: 600;
         font-size: xx-large;
+    }
+
+    #mobileControls {
+        display: none;
+    }
+
+    @media (max-width: 640px) {
+        #ski-section {
+            border-radius: 0;
+        }
+
+        #blur {
+            height: 100%;
+        }
+
+        #gameUI {
+            margin-top: 3%;
+            margin-right: 3%;
+            gap: 6px;
+        }
+
+        #pauseBtn {
+            width: 36px;
+            height: 36px;
+            padding-top: 1px;
+            padding-left: 6px;
+        }
+
+        #stats {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .mileage {
+            font-size: medium;
+            padding: 2px 10px;
+        }
+
+        #highScore {
+            font-size: small;
+            padding-right: 2px;
+        }
+
+        #menuUI, #gameOverUI {
+            width: 85%;
+            padding: 16px;
+            gap: 8px;
+            border-radius: 12px;
+        }
+
+        .orangeText {
+            font-size: 1.5rem;
+            -webkit-text-stroke: 0.5px black;
+        }
+
+        #menuUI .text-5xl,
+        #gameOverUI .text-5xl {
+            font-size: 1.1rem;
+        }
+
+        #playBtn, #restartBtn {
+            width: 56px;
+            height: 56px;
+        }
+
+        #mobileControls {
+            display: flex;
+            position: absolute;
+            top: 20%;
+            left: 0;
+            right: 0;
+            justify-content: space-between;
+            padding: 0 12px;
+            pointer-events: none;
+        }
+
+        #leftBtn {
+            transform: rotate(-15.978deg);
+        }
+
+        #rightBtn {
+            transform: rotate(15.978deg);
+        }
+
+        #leftBtn, #rightBtn {
+            pointer-events: all;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        #leftBtn:active, #rightBtn:active {
+            opacity: 1;
+        }
+
+        #leftBtn img, #rightBtn img {
+            width: 64px;
+            height: 64px;
+            object-fit: contain;
+        }
     }
 </style>

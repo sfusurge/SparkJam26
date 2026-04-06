@@ -4,7 +4,7 @@
 	const bars = [
 		{
 			src: '/chart/bar1.svg',
-			select: '/chart/bar1_select.png',
+			select: '/chart/bar1_select.webp',
 			label: '10+ schools',
 			pillClass: 'bg-citrouille',
 			height: 'h-[94px]',
@@ -13,7 +13,7 @@
 		},
 		{
 			src: '/chart/bar2.svg',
-			select: '/chart/bar2_select.png',
+			select: '/chart/bar2_select.webp',
 			label: '30 Teams',
 			pillClass: 'bg-touch-grass',
 			height: 'h-[184px]',
@@ -22,7 +22,7 @@
 		},
 		{
 			src: '/chart/bar3.svg',
-			select: '/chart/bar3_select.png',
+			select: '/chart/bar3_select.webp',
 			label: '40+ Mentors',
 			pillClass: 'bg-touched-grass',
 			height: 'h-[254px]',
@@ -31,7 +31,7 @@
 		},
 		{
 			src: '/chart/bar4.svg',
-			select: '/chart/bar4_select.png',
+			select: '/chart/bar4_select.webp',
 			label: '100 + Jammers',
 			pillClass: 'bg-strawberry-moon',
 			height: 'h-[464px]',
@@ -98,7 +98,7 @@
 				<!-- Chart -->
 				<div
 						class="relative min-h-[600px] bg-cover bg-center bg-no-repeat"
-						style="background-image: url('/chart/chart_bg.png')"
+						style="background-image: url('/chart/chart_b.webp')"
 				>
 					<div class="absolute top-10 left-1/2 -translate-x-1/2 flex gap-4 z-20">
 						<button onclick={scrollPrev} aria-label="Scroll Left" disabled={selected === 0}>
