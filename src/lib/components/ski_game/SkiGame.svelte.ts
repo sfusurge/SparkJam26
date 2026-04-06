@@ -144,6 +144,11 @@ export class GameRenderer {
         this.observer.observe(this.canvas);
     }
 
+    windowChange(mobile: boolean){
+        this.mobile = mobile;
+        this.ctx.clearRect(-200, -200, this.pkg.w * 2, this.pkg.h * 2);
+    }
+
     reset(){
         this.currentTime = 0;
         this.currentDistanceInKM = 0;
@@ -338,7 +343,7 @@ export class GameRenderer {
     }
 
     render() {
-        this.ctx.clearRect(this.mobile ? -100 : 0, this.mobile ? -100 : 0, this.pkg.w, this.pkg.h);
+        this.ctx.clearRect(0, 0, this.pkg.w, this.pkg.h);
         // update canvas size before rendering to avoid flicker
         if (this.canvas.width !== this.pkg.w || this.canvas.height !== this.pkg.h) {
             this.canvas.width = this.pkg.w;

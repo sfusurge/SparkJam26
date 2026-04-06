@@ -18,7 +18,7 @@
         }
         const renderManager = new GameRenderer(canvas, mobileCheck());
         window.addEventListener("resize", () => {
-            renderManager.mobile = mobileCheck();
+            renderManager.windowChange(mobileCheck());
         })
         window.addEventListener("keydown", (e) => {
             renderManager.inputCallback(e.key.toLowerCase());
