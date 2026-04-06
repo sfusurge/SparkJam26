@@ -192,6 +192,44 @@
         display: none;
     }
 
+    @media (max-width: 800px) {
+        #mobileControls {
+            display: flex;
+            position: absolute;
+            top: 20%;
+            left: 0;
+            right: 0;
+            justify-content: space-between;
+            padding: 0 12px;
+            pointer-events: none;
+        }
+
+        #leftBtn {
+            transform: rotate(-15.978deg);
+        }
+
+        #rightBtn {
+            transform: rotate(15.978deg);
+        }
+
+        #leftBtn, #rightBtn {
+            pointer-events: all;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        #leftBtn:active, #rightBtn:active {
+            opacity: 1;
+        }
+
+        #leftBtn img, #rightBtn img {
+            width: 64px;
+            height: 64px;
+            object-fit: contain;
+        }
+    }
+
     @media (max-width: 640px) {
         #ski-section {
             border-radius: 0;
@@ -250,42 +288,6 @@
         #playBtn, #restartBtn {
             width: 56px;
             height: 56px;
-        }
-
-        #mobileControls {
-            display: flex;
-            position: absolute;
-            top: 20%;
-            left: 0;
-            right: 0;
-            justify-content: space-between;
-            padding: 0 12px;
-            pointer-events: none;
-        }
-
-        #leftBtn {
-            transform: rotate(-15.978deg);
-        }
-
-        #rightBtn {
-            transform: rotate(15.978deg);
-        }
-
-        #leftBtn, #rightBtn {
-            pointer-events: all;
-            background: none;
-            border: none;
-            padding: 0;
-        }
-
-        #leftBtn:active, #rightBtn:active {
-            opacity: 1;
-        }
-
-        #leftBtn img, #rightBtn img {
-            width: 64px;
-            height: 64px;
-            object-fit: contain;
         }
     }
 </style>
