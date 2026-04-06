@@ -1,8 +1,12 @@
 <script lang="ts">
 	import Button from '$lib/components/ui/Button.svelte';
+	import Countdown from '$lib/components/ui/Countdown.svelte';
 
 	import type { Writable } from 'svelte/store';
 	const { isMobile } = $props() as { isMobile: Writable<boolean> };
+
+	const TARGET = new Date('2026-04-10T02:00:00Z');
+	let applicationsOpen = $state(Date.now() >= TARGET.getTime());
 </script>
 
 <section class="relative mt-28" aria-label="Links and logo">
@@ -78,7 +82,11 @@
 				</div>
 			{/if}
 			<div class="flex flex-col items-center gap-6 max-md:py-20 max-sm:py-8">
-				<Button class="max-lg:text-[22px]" variant="section-primary" href="https://portal.sfusurge.com/application">Get Jammin'</Button>
+				{#if applicationsOpen}
+					<Button class="max-lg:text-[22px]" variant="section-primary" href="https://portal.sfusurge.com/application">Get Jammin'</Button>
+				{:else}
+					<Countdown vertical large onExpired={() => applicationsOpen = true} />
+				{/if}
 				<Button class="max-lg:text-[22px]" variant="section-secondary" as="span">FAQ &amp; More Info</Button>
 				<Button class="max-lg:text-[22px]" variant="section-secondary" as="span">Mentor Registration</Button>
 				<Button class="max-lg:text-[22px]" variant="section-secondary" as="span">Judge Registration</Button>

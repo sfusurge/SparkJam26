@@ -1,7 +1,11 @@
 <script lang="ts">
 	import Button from '$lib/components/ui/Button.svelte';
 	import type { Writable } from 'svelte/store';
+
 	const { isMobile } = $props() as { isMobile: Writable<boolean> };
+
+	const TARGET = new Date('2026-04-10T02:00:00Z');
+	let applicationsOpen = $state(Date.now() >= TARGET.getTime());
 </script>
 
 <section class="relative overflow-visible max-sm:-mt-[60px] md:mt-8 pb-16 md:pb-24" aria-labelledby="hero-heading">
@@ -74,13 +78,15 @@
 			>
 				May 11 - 23
 			</p>
-			<Button
-				variant="hero-cta"
-				href="https://portal.sfusurge.com/application"
-				class="mt-[min(18vw,9rem)] max-sm:translate-y-85 self-end max-sm:self-center rotate-[7.78deg]"
-			>
-				Get Jammin’
-			</Button>
+{#if applicationsOpen}
+				<Button
+					variant="hero-cta"
+					href="https://portal.sfusurge.com/application"
+					class="mt-[min(18vw,9rem)] max-sm:translate-y-85 self-end max-sm:self-center rotate-[7.78deg]"
+				>
+					Get Jammin'
+				</Button>
+			{/if}
 		</div>
 	</div>
 </section>

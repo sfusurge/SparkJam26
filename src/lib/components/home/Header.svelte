@@ -1,15 +1,15 @@
 <script lang="ts">
-	import Button from '$lib/components/ui/Button.svelte';
+	import Countdown from '$lib/components/ui/Countdown.svelte';
 </script>
 
 <header class="header-bar z-100 w-full" aria-label="Site">
 	<div class="header-bar__ios-glow" aria-hidden="true"></div>
 	<div class="header-bar__glass" aria-hidden="true"></div>
-	<div class="relative z-10 mx-auto flex h-[60px] w-full max-w-[1512px] items-center justify-between px-7 max-sm:pr-[12px]">
+		<div class="relative z-10 mx-auto flex h-[60px] w-full max-w-[1512px] items-center justify-between px-7">
 		<div class="h-[31px] w-[12.5px] shrink-0">
 			<img alt="Surge" class="block size-full max-w-none" src="/2D-Surge-Logo.svg" />
 		</div>
-		<Button variant="header-cta" class="max-sm:text-[18px]" href="https://portal.sfusurge.com/application">Apply Now</Button>
+		<Countdown />
 	</div>
 </header>
 
