@@ -20,11 +20,11 @@
 </script>
 
 <div class="relative mx-0 w-full {className}">
-	<div class="relative w-full h-full overflow-hidden" bind:clientWidth={mediaWidth} bind:clientHeight={mediaHeight}>
-	<img {src} {alt} class="block w-full max-sm:h-full" aria-hidden={alt === '' ? true : undefined} />
+	<div class="relative w-full overflow-hidden" bind:clientWidth={mediaWidth} bind:clientHeight={mediaHeight}>
+		<img {src} {alt} class="block w-full h-[1041px] object-cover md:h-auto" aria-hidden={alt === '' ? true : undefined} />
 		{#if overlay}
 			<div class="absolute inset-0 z-10">
-			{@render overlay()}
+				{@render overlay()}
 			</div>
 		{/if}
 	</div>
