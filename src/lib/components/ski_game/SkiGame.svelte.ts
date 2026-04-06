@@ -240,16 +240,18 @@ export class GameRenderer {
         );
     }
 
-    generateSkiCourse(){
-        let counter = 0;
-        while(counter < duration){
+    generateSkiCourse(start = 0){
+        this.skiCourse = [];
+        let counter = start;
+        while(counter < start + duration){
             counter += randWholeNum((obstacleGenerationSpacing.max - obstacleGenerationSpacing.min)) + obstacleGenerationSpacing.min;
             this.skiCourse.push({
-                spriteID: randWholeNum(4),
+                spriteID: randWholeNum(obstacleSprites.length),
                 lanePosition: randWholeNum(positionRange.max + 1),
                 trailPosition: counter
             })
         }
+        this.obstacleCache = 0;
     }
 
     setupEvents(){
@@ -425,6 +427,9 @@ export class GameRenderer {
             }else{
                 obstacleRender(obst);
             }
+        }
+        if(this.obstacleCache == this.skiCourse.length){
+            this.generateSkiCourse(this.currentTime)
         }
         this.dynamicObjs[ottID].update();
         obstacles.forEach(o => {
