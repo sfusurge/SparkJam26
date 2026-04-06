@@ -76,7 +76,7 @@
         <div id="blur">
             {#if isPause()}
                 <div id="menuUI">
-                    <div class="orangeText text-7xl font-extrabold">From VANCOUVER to OTTERLOO</div>
+                    <div class="orangeText text-7xl font-extrabold text-center">From VANCOUVER to OTTERLOO</div>
                     <div class="orangeText text-5xl font-extrabold">a skiing adventure</div>
                     <button><img id="playBtn" src="/game/play.svg" onclick={playGame}/></button>
                     <div>CLICK TO PLAY</div>
@@ -176,5 +176,66 @@
 
         font-weight: 600;
         font-size: xx-large;
+    }
+
+    @media (max-width: 640px) {
+        #ski-section {
+            border-radius: 0;
+        }
+
+        #blur {
+            height: 100%;
+        }
+
+        #gameUI {
+            margin-top: 3%;
+            margin-right: 3%;
+            gap: 6px;
+        }
+
+        #pauseBtn {
+            width: 36px;
+            height: 36px;
+            padding-top: 1px;
+            padding-left: 6px;
+        }
+
+        #stats {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .mileage {
+            font-size: medium;
+            padding: 2px 10px;
+        }
+
+        #highScore {
+            font-size: small;
+            padding-right: 2px;
+        }
+
+        #menuUI, #gameOverUI {
+            width: 85%;
+            padding: 16px;
+            gap: 8px;
+            border-radius: 12px;
+        }
+
+        .orangeText {
+            font-size: 1.5rem;
+            -webkit-text-stroke: 0.5px black;
+        }
+
+        #menuUI .text-5xl,
+        #gameOverUI .text-5xl {
+            font-size: 1.1rem;
+        }
+
+        #playBtn, #restartBtn {
+            width: 56px;
+            height: 56px;
+        }
     }
 </style>

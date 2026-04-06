@@ -58,26 +58,26 @@
 
 	<div class="relative mt-14">
 		<!-- Corners -->
-		<div class="pointer-events-none absolute -z-10 top-0 left-0">
+		<div class="pointer-events-none absolute -z-10 top-0 left-0 max-sm:hidden">
 			<div class="size-3 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-boba-black"></div>
 		</div>
-		<div class="pointer-events-none absolute -z-10 top-0 right-0">
+		<div class="pointer-events-none absolute -z-10 top-0 right-0 max-sm:hidden">
 			<div class="size-3 translate-x-1/2 -translate-y-1/2 rotate-45 bg-boba-black"></div>
 		</div>
-		<div class="pointer-events-none absolute -z-10 bottom-0 left-0">
+		<div class="pointer-events-none absolute -z-10 bottom-0 left-0 max-sm:hidden">
 			<div class="size-3 -translate-x-1/2 translate-y-1/2 rotate-45 bg-boba-black"></div>
 		</div>
-		<div class="pointer-events-none absolute -z-10 bottom-0 right-0">
+		<div class="pointer-events-none absolute -z-10 bottom-0 right-0 max-sm:hidden">
 			<div class="size-3 translate-x-1/2 translate-y-1/2 rotate-45 bg-boba-black"></div>
 		</div>
 
 		<!-- Borders -->
-		<div class="absolute -top-24 -bottom-30 left-0 w-[1px] bg-boba-black"></div>
-		<div class="absolute -top-24 -bottom-30 right-0 w-[1px] bg-boba-black"></div>
-		<div class="absolute top-0 left-1/2 h-[1px] w-screen -translate-x-1/2 bg-boba-black"></div>
-		<div class="absolute bottom-0 left-1/2 h-[1px] w-screen -translate-x-1/2 bg-boba-black"></div>
+		<div class="absolute -top-24 -bottom-30 left-0 w-[1px] bg-boba-black max-sm:hidden"></div>
+		<div class="absolute -top-24 -bottom-30 right-0 w-[1px] bg-boba-black max-sm:hidden"></div>
+		<div class="absolute top-0 left-1/2 h-[1px] w-screen -translate-x-1/2 bg-boba-black max-sm:hidden"></div>
+		<div class="absolute bottom-0 left-1/2 h-[1px] w-screen -translate-x-1/2 bg-boba-black max-sm:hidden"></div>
 
-		<div class="overflow-hidden rounded-xl border-1 border-boba-black bg-boba-black">
+		<div class="overflow-hidden rounded-xl max-sm:rounded-none border-1 border-boba-black bg-boba-black">
 			<!-- Header -->
 			<div class="border-b border-boba-black bg-citrouille px-8 py-9">
 				<h2

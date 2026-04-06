@@ -13,15 +13,15 @@
 
 			<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-screen h-[1px] bg-boba-black"></div>
 		{/if}
-		<div class="pointer-events-none absolute -z-10 bottom-0 left-[3%]" aria-hidden="true">
+		<div class="pointer-events-none absolute -z-10 bottom-0 left-[3%] max-sm:hidden" aria-hidden="true">
 			<div class="size-3 -translate-x-1/2 translate-y-1/2 rotate-45 bg-boba-black"></div>
 		</div>
-		<div class="pointer-events-none absolute -z-10 bottom-0 right-[3%]" aria-hidden="true">
+		<div class="pointer-events-none absolute -z-10 bottom-0 right-[3%] max-sm:hidden" aria-hidden="true">
 			<div class="size-3 translate-x-1/2 translate-y-1/2 rotate-45 bg-boba-black"></div>
 		</div>
 
 		<div class="flex flex-col items-center gap-6 pb-20">
-			<div class="relative w-[766px] max-md:max-w-[575px] max-sm:max-w-[322px] max-md:pt-20">
+			<div class="relative w-[766px] max-md:max-w-[575px] max-sm:max-w-[322px] max-md:pt-20 max-sm:pt-10">
 				<img src="/logosection/sj_logo.svg" alt="SparkJam" class="mx-auto h-auto w-full" />
 			</div>
 			{#if !$isMobile}
@@ -77,7 +77,7 @@
 					</div>
 				</div>
 			{/if}
-			<div class="flex flex-col items-center gap-6 max-md:py-20">
+			<div class="flex flex-col items-center gap-6 max-md:py-20 max-sm:py-8">
 				<Button class="max-lg:text-[22px]" variant="section-primary" href="https://portal.sfusurge.com">Get Jammin'</Button>
 				<Button class="max-lg:text-[22px]" variant="section-secondary" as="span">FAQ &amp; More Info</Button>
 				<Button class="max-lg:text-[22px]" variant="section-secondary" as="span">Mentor Registration</Button>

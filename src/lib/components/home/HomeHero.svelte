@@ -5,6 +5,19 @@
 </script>
 
 <section class="relative overflow-visible max-sm:-mt-[60px] md:mt-8 pb-16 md:pb-24" aria-labelledby="hero-heading">
+	<!-- Star lives on the section so it isn't clipped by the overflow-hidden inner wrapper -->
+	<div
+		class="pointer-events-auto absolute left-0 max-sm:-left-[115px] top-[55%] max-sm:top-[75%] z-2 w-[min(26.85%,373px)] max-sm:w-[52%] origin-center transition-transform duration-300 hover:-rotate-2 max-[480px]:w-[min(42%,280px)]"
+		aria-hidden="true"
+	>
+		<div class="relative aspect-square w-full">
+			<img
+				src="/shapes/2D-North-Star.svg"
+				alt=""
+				class="absolute inset-[11.02%] block size-full max-w-none object-contain"
+			/>
+		</div>
+	</div>
 	<div
 		class="relative mx-auto aspect-[1411/819] w-full max-w-[1392px] max-sm:aspect-auto max-sm:min-h-[811px] max-sm:overflow-hidden"
 	>
@@ -14,18 +27,6 @@
 			class="pointer-events-none mx-auto block size-[94%] z-1 object-cover select-none max-sm:absolute max-sm:top-0 max-sm:left-1/2 max-sm:-translate-x-1/2 max-sm:h-[811px] max-sm:w-auto max-sm:min-w-[100vw]"
 			aria-hidden="true"
 		/>
-		<div
-			class="pointer-events-auto absolute left-0 top-[55%] z-2 w-[min(26.85%,373px)] origin-center transition-transform duration-300 hover:-rotate-2 max-[480px]:w-[min(42%,280px)]"
-			aria-hidden="true"
-		>
-			<div class="relative aspect-square w-full">
-				<img
-					src="/shapes/2D-North-Star.svg"
-					alt=""
-					class="absolute inset-[11.02%] block size-full max-w-none object-contain"
-				/>
-			</div>
-		</div>
 
 		{#if !$isMobile}
 			<div
@@ -39,7 +40,7 @@
 		{/if}
 
 		<div
-			class="pointer-events-auto absolute left-[84%] top-[31.2%] z-[1] w-[13.68%] min-w-[100px] max-w-[190px] origin-center transition-transform duration-300 hover:-rotate-2 max-[640px]:left-[78%]"
+			class="pointer-events-auto absolute left-[84%] top-[31.2%] max-sm:top-[47%] z-[1] w-[13.68%] min-w-[100px] max-w-[190px] origin-center transition-transform duration-300 hover:-rotate-2 max-[640px]:left-[86%]"
 			aria-hidden="true"
 		>
 			<div class="relative aspect-square w-full">
@@ -76,7 +77,7 @@
 			<Button
 				variant="hero-cta"
 				href="/apply"
-				class="mt-[min(18vw,9rem)] max-sm:translate-y-85 self-end rotate-[7.78deg]"
+				class="mt-[min(18vw,9rem)] max-sm:translate-y-85 self-end max-sm:self-center rotate-[7.78deg]"
 			>
 				Get Jammin’
 			</Button>

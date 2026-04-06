@@ -8,25 +8,25 @@
 		
 		<SectionBadge label="03" class="-rotate-[15deg] max-sm:scale-70 max-sm:-top-8" />
 		
-		<div class="max-lg:grid-cols-1 relative mt-14 grid gap-0  bg-boba-black grid-cols-[minmax(0,522px)_1fr]">
+		<div class="max-lg:grid-cols-1 relative mt-14 max-sm:mt-8 grid gap-0  bg-boba-black grid-cols-[minmax(0,522px)_1fr]">
 
-			<div class="pointer-events-none absolute -z-10 top-0 left-0" aria-hidden="true">
+			<div class="pointer-events-none absolute -z-10 top-0 left-0 max-sm:hidden" aria-hidden="true">
 				<div class="size-3 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-boba-black"></div>
 			</div>
-			<div class="pointer-events-none absolute -z-10 top-0 right-0" aria-hidden="true">
+			<div class="pointer-events-none absolute -z-10 top-0 right-0 max-sm:hidden" aria-hidden="true">
 				<div class="size-3 translate-x-1/2 -translate-y-1/2 rotate-45 bg-boba-black"></div>
 			</div>
-			<div class="pointer-events-none absolute -z-10 bottom-0 left-0" aria-hidden="true">
+			<div class="pointer-events-none absolute -z-10 bottom-0 left-0 max-sm:hidden" aria-hidden="true">
 				<div class="size-3 -translate-x-1/2 translate-y-1/2 rotate-45 bg-boba-black"></div>
 			</div>
-			<div class="pointer-events-none absolute -z-10 bottom-0 right-0" aria-hidden="true">
+			<div class="pointer-events-none absolute -z-10 bottom-0 right-0 max-sm:hidden" aria-hidden="true">
 				<div class="size-3 translate-x-1/2 translate-y-1/2 rotate-45 bg-boba-black"></div>
 			</div>
 
-			<div class="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-[1px] bg-boba-black"></div>
-			<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-screen h-[1px] bg-boba-black"></div>
+			<div class="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-[1px] bg-boba-black max-sm:hidden"></div>
+			<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-screen h-[1px] bg-boba-black max-sm:hidden"></div>
 			
-			<div class="border rounded-xl max-sm:rounded-none border-boba-black bg-citrouille p-15">
+			<div class="border rounded-xl max-sm:rounded-none border-boba-black bg-citrouille p-15 max-sm:px-[47px] max-sm:py-[43px]">
 				<h2
 					id="s03-title"
 					class="font-sans text-[48px] max-sm:text-[32px] font-extrabold leading-none tracking-[-0.03em]"
@@ -34,23 +34,23 @@
 					Two Weeks: One for Learning, the Other for Building.
 				</h2>
 			</div>
-			<div class="space-y-8 border rounded-xl max-sm:rounded-none border-boba-black bg-canvas-grey border-t border-l-0 p-10 max-sm:text-[22px]">
-				<ScheduleAccordionItem title="Spark Week | May 11 - 15th" panelClass="bg-strawberry-moon">
+			<div class="space-y-8 max-sm:space-y-[18px] border rounded-xl max-sm:rounded-none border-boba-black bg-canvas-grey border-t border-l-0 p-10 max-sm:p-[24px]">
+				<ScheduleAccordionItem title="Spark Week" date="May 11 - 15th" panelClass="bg-strawberry-moon">
 					{#snippet children()}
 						<p>Workshops, talks, and skill-building across both coasts.</p>
 					{/snippet}
 				</ScheduleAccordionItem>
-				<ScheduleAccordionItem title="Jam Week | May 16 - 23rd" panelClass="bg-touched-grass">
+				<ScheduleAccordionItem title="Jam Week" date="May 16 - 23rd" panelClass="bg-touched-grass">
 					{#snippet children()}
 						<p>Teams ship a prototype against a real brief—with mentors in the loop.</p>
 					{/snippet}
 				</ScheduleAccordionItem>
-				<ScheduleAccordionItem title="Opening Ceremony | May 16" panelClass="bg-sparky-yellow">
+				<ScheduleAccordionItem title="Opening Ceremony" date="May 16" panelClass="bg-sparky-yellow">
 					{#snippet children()}
 						<p>Kickoff, teams, and jam expectations.</p>
 					{/snippet}
 				</ScheduleAccordionItem>
-				<ScheduleAccordionItem title="Closing Ceremony | May 23" panelClass="bg-citrouille">
+				<ScheduleAccordionItem title="Closing Ceremony" date="May 23" panelClass="bg-citrouille">
 					{#snippet children()}
 						<p>Final presentations and celebration.</p>
 					{/snippet}
