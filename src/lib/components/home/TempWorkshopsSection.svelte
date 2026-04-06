@@ -29,7 +29,7 @@
 
         <div class="overflow-hidden rounded-xl max-sm:rounded-none border-1 border-boba-black bg-boba-black">
             <div
-                    class="relative flex min-h-[420px] items-center justify-center rounded-xl max-sm:rounded-none bg-cover bg-center bg-no-repeat sm:min-h-[560px] lg:min-h-[850px]"
+                    class="relative flex min-h-[650px] items-center justify-center rounded-xl max-sm:rounded-none bg-cover bg-center bg-no-repeat sm:min-h-[560px] lg:min-h-[850px]"
                     style="background-image: url('/dark_b.webp')"
             >
                 <div class="dot-bg bg-sparky-yellow"></div>
@@ -94,7 +94,7 @@
                             </p>
                             <h2
                                     id="temp-workshops-heading"
-                                    class="w-full max-w-[min(100%,90vw,420px)] rotate-[-5.55deg] font-sans text-[28px] font-extrabold leading-[1.08] tracking-[-0.03em] sm:max-w-[521px] sm:text-4xl sm:leading-[1.05] md:text-[48px]"
+                                    class="w-full max-w-[min(100%,90vw,420px)] rotate-[-5.55deg] font-sans text-[24px] font-extrabold leading-[1.08] tracking-[-0.03em] sm:max-w-[521px] sm:text-4xl sm:leading-[1.05] md:text-[48px]"
                             >
                                 Speaker Session Details<br class="sm:hidden" /> Coming Soon!
                             </h2>

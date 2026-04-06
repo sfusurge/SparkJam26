@@ -8,8 +8,7 @@
 <section class="relative mt-24 w-full max-sm:w-screen" aria-labelledby="s02-title">
 	<div class="relative mx-auto w-full max-w-[1334px] px-[3%] max-sm:px-0">
 		<SkiGame />
-
-		<div class="relative max-sm:mt-8">
+		<div class="relative">
 			<SectionBadge label="02" class="rotate-15 translate-x-[-40px] max-sm:translate-x-0 max-sm:scale-70 max-sm:-top-8" />
 
 			{#if !$isMobile}

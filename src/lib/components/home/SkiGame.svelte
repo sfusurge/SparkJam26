@@ -92,12 +92,22 @@
             {/if}
         </div>
     {/if}
+    {#if isRunning()}
+        <div id="mobileControls">
+            <button id="leftBtn" onclick={() => renderer?.inputCallback('a')}>
+                <img src="/game/left.webp" alt="Move left" />
+            </button>
+            <button id="rightBtn" onclick={() => renderer?.inputCallback('d')}>
+                <img src="/game/right.webp" alt="Move right" />
+            </button>
+        </div>
+    {/if}
 </div>
 
 <style>
     #ski-section{
         overflow: hidden;
-        border-radius: 0 0 0.75rem 0.75rem;
+        border-radius: 0.75rem 0.75rem 0 0;
     }
 
     canvas{
@@ -178,6 +188,10 @@
         font-size: xx-large;
     }
 
+    #mobileControls {
+        display: none;
+    }
+
     @media (max-width: 640px) {
         #ski-section {
             border-radius: 0;
@@ -236,6 +250,42 @@
         #playBtn, #restartBtn {
             width: 56px;
             height: 56px;
+        }
+
+        #mobileControls {
+            display: flex;
+            position: absolute;
+            top: 20%;
+            left: 0;
+            right: 0;
+            justify-content: space-between;
+            padding: 0 12px;
+            pointer-events: none;
+        }
+
+        #leftBtn {
+            transform: rotate(-15.978deg);
+        }
+
+        #rightBtn {
+            transform: rotate(15.978deg);
+        }
+
+        #leftBtn, #rightBtn {
+            pointer-events: all;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        #leftBtn:active, #rightBtn:active {
+            opacity: 1;
+        }
+
+        #leftBtn img, #rightBtn img {
+            width: 64px;
+            height: 64px;
+            object-fit: contain;
         }
     }
 </style>

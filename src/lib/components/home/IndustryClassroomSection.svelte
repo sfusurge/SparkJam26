@@ -10,8 +10,8 @@
 
 		<div class="relative mt-14 max-sm:mt-8">
 			{#if !$isMobile}
-				<div class="absolute -top-76.5 -bottom-24 left-0 w-[1px] bg-boba-black"></div>
-				<div class="absolute -top-76.5 -bottom-24 right-0 w-[1px] bg-boba-black"></div>
+				<div class="absolute -top-76.5 -bottom-24 left-0 w-[1px] bg-boba-black max-[1470px]:hidden"></div>
+				<div class="absolute -top-76.5 -bottom-24 right-0 w-[1px] bg-boba-black max-[1470px]:hidden"></div>
 				<div class="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-[1px] bg-boba-black"></div>
 				<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-screen h-[1px] bg-boba-black"></div>
 			{/if}
