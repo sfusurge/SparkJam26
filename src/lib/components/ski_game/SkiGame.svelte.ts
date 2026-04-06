@@ -73,6 +73,7 @@ const slopeAngle = 49.5 * Math.PI / 180;
 const waterlooID: string = "water";
 const waterlooOffscreen = [0.65, 1];
 const waterlooAppear = [0.65, 0.8];
+const mobileWaterlooOffset = [-0.6, 0.25]
 const waterlooPause = 5000;
 
 const signID: string = "sign";
@@ -376,11 +377,11 @@ export class GameRenderer {
             
             if(this.currentTime > duration + waterlooPause){
                 this.dynamicObjs[waterlooID]
-                .setPosition(waterlooOffscreen[0], waterlooAppear[1] + inc);
+                .setPosition(waterlooOffscreen[0] + (this.mobile ? mobileWaterlooOffset[0] : 0), waterlooAppear[1] + (this.mobile ? mobileWaterlooOffset[1] : 0) + inc);
                 this.waterlooAnim++;
             }else if(this.waterlooAnim < 10){
                 this.dynamicObjs[waterlooID]
-                .setPosition(waterlooOffscreen[0], waterlooOffscreen[1] - inc);
+                .setPosition(waterlooOffscreen[0] + (this.mobile ? mobileWaterlooOffset[0] : 0), waterlooOffscreen[1] + (this.mobile ? mobileWaterlooOffset[1] : 0) - inc);
                 this.waterlooAnim++;
             }
         }
