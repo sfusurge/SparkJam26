@@ -12,7 +12,7 @@
         if(!canvas){
             return undefined;
         }
-        const renderManager = new GameRenderer(canvas, window.innerWidth <= 800);
+        const renderManager = new GameRenderer(canvas, window.innerWidth <= 325);
         window.addEventListener("keydown", (e) => {
             renderManager.inputCallback(e.key.toLowerCase());
         }, { capture: true });

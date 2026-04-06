@@ -81,7 +81,7 @@ const signStartPos:number[] = [0.6, .8];
 export class GameRenderer {
     canvas: HTMLCanvasElement;
     ctx: CanvasRenderingContext2D;
-    mobile: boolean;
+    mobile: boolean = $state(false);
     pkg: RenderPkg;
     renderHandle: number|null = -1;
     observer: IntersectionObserver|null = null;
@@ -286,6 +286,7 @@ export class GameRenderer {
     }
 
     eventLoop(time: number){
+        this.ctx.save();
         let d = (time - this.pTime);
         this.pTime = time;
 
@@ -318,7 +319,12 @@ export class GameRenderer {
             this.currentDistanceInKM = Math.trunc((this.currentTime / duration) * destination);
         }
 
+        if(this.mobile){
+            this.ctx.scale(0.5, 0.5);
+            this.ctx.translate(0, 500);
+        }
         this.render();
+        this.ctx.restore();
         this.renderHandle = requestAnimationFrame(this.eventLoop.bind(this));
     }
 
@@ -330,7 +336,7 @@ export class GameRenderer {
     }
 
     render() {
-        this.ctx.clearRect(0, 0, this.pkg.w, this.pkg.h);
+        this.ctx.clearRect(this.mobile ? -100 : 0, this.mobile ? -100 : 0, this.pkg.w, this.pkg.h);
         // update canvas size before rendering to avoid flicker
         if (this.canvas.width !== this.pkg.w || this.canvas.height !== this.pkg.h) {
             this.canvas.width = this.pkg.w;
