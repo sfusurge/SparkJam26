@@ -344,7 +344,7 @@ export class GameRenderer {
     }
 
     render() {
-        this.ctx.clearRect(0, 0, this.pkg.w, this.pkg.h);
+        this.ctx.clearRect(0, (this.currentTime < obstacleVisibilityWindow) ? -100 : 0, this.pkg.w, this.pkg.h);
         // update canvas size before rendering to avoid flicker
         if (this.canvas.width !== this.pkg.w || this.canvas.height !== this.pkg.h) {
             this.canvas.width = this.pkg.w;
