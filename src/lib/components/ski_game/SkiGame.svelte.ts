@@ -430,7 +430,9 @@ export class GameRenderer {
         obstacles.forEach(o => {
             obstacleRender(o);
         })
-        this.dynamicObjs[waterlooID].update();
+        if(this.waterlooAnim < this.waterlooFinish && this.currentDistanceInKM > destination){
+            this.dynamicObjs[waterlooID].update();
+        }
     }
 
     calculateSlopeCoordXY(lane: number, position: number){
