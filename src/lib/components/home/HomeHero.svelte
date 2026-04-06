@@ -76,7 +76,7 @@
 			</p>
 			<Button
 				variant="hero-cta"
-				href="/apply"
+				href="https://portal.sfusurge.com/application"
 				class="mt-[min(18vw,9rem)] max-sm:translate-y-85 self-end max-sm:self-center rotate-[7.78deg]"
 			>
 				Get Jammin’

@@ -78,7 +78,7 @@
 				</div>
 			{/if}
 			<div class="flex flex-col items-center gap-6 max-md:py-20 max-sm:py-8">
-				<Button class="max-lg:text-[22px]" variant="section-primary" href="https://portal.sfusurge.com">Get Jammin'</Button>
+				<Button class="max-lg:text-[22px]" variant="section-primary" href="https://portal.sfusurge.com/application">Get Jammin'</Button>
 				<Button class="max-lg:text-[22px]" variant="section-secondary" as="span">FAQ &amp; More Info</Button>
 				<Button class="max-lg:text-[22px]" variant="section-secondary" as="span">Mentor Registration</Button>
 				<Button class="max-lg:text-[22px]" variant="section-secondary" as="span">Judge Registration</Button>
