@@ -8,11 +8,18 @@
     let highScore = $state(0);
     let gameState : GamePhaseType = $state(GamePhase.PRE)
 
+    const mobileCheck = () => {
+        return window.innerWidth <= 325;
+    }
+    
     const renderer = $derived.by(() => {
         if(!canvas){
             return undefined;
         }
-        const renderManager = new GameRenderer(canvas, window.innerWidth <= 325);
+        const renderManager = new GameRenderer(canvas, mobileCheck());
+        window.addEventListener("resize", () => {
+            renderManager.mobile = mobileCheck();
+        })
         window.addEventListener("keydown", (e) => {
             renderManager.inputCallback(e.key.toLowerCase());
         }, { capture: true });
