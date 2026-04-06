@@ -61,7 +61,7 @@
 
 </script>
 
-<div id="ski-section" class="relative">
+<div id="ski-section" class="relative border-t border-boba-black">
     <canvas bind:this={canvas} height="700" width="1300"></canvas>
     <div id="gameUI">
         <div id="stats">
@@ -107,7 +107,7 @@
 <style>
     #ski-section{
         overflow: hidden;
-        border-radius: 0.75rem 0.75rem 0 0;
+        border-radius: 0 0 0.75rem 0.75rem;
     }
 
     canvas{
