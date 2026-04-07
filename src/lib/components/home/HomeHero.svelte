@@ -91,7 +91,7 @@
 			</div> 
 
 			<div
-				class="pointer-events-auto absolute left-[28%] top-[57%] z-[11] w-[15%] min-w-[48px] max-w-[150px] rotate-[20deg]"
+				class="pointer-events-auto absolute left-[27%] top-[57%] z-[11] w-[15%] min-w-[48px] max-w-[150px] rotate-[20deg]"
 				aria-hidden="true"
 			>
 				<div class="relative aspect-square w-full">
