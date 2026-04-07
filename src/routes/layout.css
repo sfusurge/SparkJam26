@@ -23,9 +23,38 @@ body {
 	overflow-x: clip;
 	margin: 0;
 	padding: 0;
+	cursor: url('/cursors/cursor.svg') 1 2, auto;
 }
 
 /* Explicit URLs (not @apply) so custom cursors survive cascade after a single Tailwind build. */
 @layer base {
-	/* Standard cursors removed in favor of CustomCursor.svelte */
+	:where(p, h1, h2, h3, h4, h5, h6, li, blockquote, figcaption) {
+		cursor: url('/cursors/text_highlight_cursor.svg') 16 1, text;
+	}
+
+	:where(
+		input[type='text'],
+		input[type='email'],
+		input[type='search'],
+		input[type='password'],
+		input[type='url'],
+		input[type='tel'],
+		textarea
+	) {
+		cursor: url('/cursors/text_highlight_cursor.svg') 16 1, text;
+	}
+
+	:where(
+		a,
+		button,
+		[role='button'],
+		input[type='submit'],
+		input[type='button'],
+		input[type='reset'],
+		label[for],
+		summary,
+		select
+	) {
+		cursor: url('/cursors/select_cursor.svg') 4 5, pointer;
+	}
 }
