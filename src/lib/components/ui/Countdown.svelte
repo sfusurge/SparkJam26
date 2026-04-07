@@ -50,13 +50,15 @@
 		aria-label="Countdown to applications opening"
 		aria-live="polite"
 	>
-		<span class="font-sans text-[24px] font-normal leading-none tracking-[-0.72px] text-boba-black">
+		<span class={large
+			? 'font-sans text-[24px] font-normal leading-none tracking-[-0.72px] text-boba-black'
+			: 'font-sans text-[20px] sm:text-[24px] font-normal leading-none tracking-[-0.72px] text-boba-black'}>
 			Applications Open In
 		</span>
 		<span
 			class={large
-				? 'inline-flex items-center font-sans text-[47.564px] font-extrabold leading-none tracking-[-1.427px] text-boba-black tabular-nums'
-				: 'inline-flex items-center font-sans text-[24px] font-extrabold leading-none tracking-[-0.72px] text-boba-black tabular-nums'}
+				? 'inline-flex items-center font-sans text-[28px] sm:text-[47.564px] font-extrabold leading-none tracking-[-1.427px] text-boba-black tabular-nums'
+				: 'inline-flex items-center font-sans text-[20px] sm:text-[24px] font-extrabold leading-none tracking-[-0.72px] text-boba-black tabular-nums'}
 		>
 			<span class="inline-block w-[2.2ch] text-center">{pad(totalHours)}</span>
 			<span>:</span>
