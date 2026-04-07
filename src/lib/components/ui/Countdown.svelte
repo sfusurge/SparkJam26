@@ -46,13 +46,13 @@
 	<div
 		class={vertical
 			? 'inline-flex flex-col items-center gap-[10px]'
-			: 'inline-flex shrink-0 items-center gap-[21px]'}
+			: 'inline-flex shrink-0 items-center gap-[5px] sm:gap-[21px]'}
 		aria-label="Countdown to applications opening"
 		aria-live="polite"
 	>
 		<span class={large
 			? 'font-sans text-[24px] font-normal leading-none tracking-[-0.72px] text-boba-black'
-			: 'font-sans text-[20px] sm:text-[24px] font-normal leading-none tracking-[-0.72px] text-boba-black'}>
+			: 'font-sans text-[17px] sm:text-[24px] font-normal leading-none tracking-[-0.72px] text-boba-black'}>
 			Applications Open In
 		</span>
 		<span
