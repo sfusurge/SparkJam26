@@ -249,6 +249,7 @@
         #gameUI {
             margin-top: 3%;
             margin-right: 3%;
+            margin-top: 25px;
             gap: 6px;
         }
 
