@@ -14,6 +14,7 @@
 
 	.cat {
 		width: 800px;
+		min-width: 650px;
 		transform-origin: center;
 		animation: wobble 2.5s ease-in-out infinite;
 	}

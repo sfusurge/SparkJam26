@@ -64,7 +64,7 @@
 		</div>
 
 		<div
-				class="pointer-events-auto absolute left-[33%] top-[68%] z-[1] w-[11%] min-w-[48px] max-w-[150px]"
+				class="pointer-events-auto absolute left-[33%] top-[68%] max-sm:left-[3%] max-sm:top-[70%]  z-[1] w-[11%] min-w-[100px] max-w-[150px]"
 				aria-hidden="true"
 			>
 				<div class="relative aspect-square w-full">
@@ -73,7 +73,7 @@
 			</div> 
 
 			<div
-				class="pointer-events-auto absolute right-[22%] top-[40%] z-[1] w-[15%] min-w-[48px] max-w-[170px] rotate-[20deg]"
+				class="pointer-events-auto absolute right-[22%] top-[40%] max-sm:-right-[7%] max-sm:top-[45%] z-[1] w-[15%] min-w-[100px] max-w-[170px] rotate-[20deg]"
 				aria-hidden="true"
 			>
 				<div class="relative aspect-square w-full">
@@ -82,7 +82,7 @@
 			</div> 
 
 			<div
-				class="pointer-events-auto absolute right-[30%] top-[53%] z-[11] w-[15%] min-w-[48px] max-w-[250px] rotate-[20deg]"
+				class="pointer-events-auto absolute right-[30%] top-[53%] max-sm:right-[1%] max-sm:top-[55%] z-[11] w-[15%] min-w-[200px] max-w-[250px] rotate-[20deg]"
 				aria-hidden="true"
 			>
 				<div class="relative aspect-square w-full">
@@ -91,7 +91,7 @@
 			</div> 
 
 			<div
-				class="pointer-events-auto absolute left-[27%] top-[57%] z-[11] w-[15%] min-w-[48px] max-w-[150px] rotate-[20deg]"
+				class="pointer-events-auto absolute left-[27%] top-[57%] max-sm:-left-[10%] max-sm:top-[60%] z-[11] w-[15%] min-w-[125px] max-w-[150px] rotate-[20deg]"
 				aria-hidden="true"
 			>
 				<div class="relative aspect-square w-full">
