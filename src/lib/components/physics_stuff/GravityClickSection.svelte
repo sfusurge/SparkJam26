@@ -204,21 +204,21 @@
             addShape(xPos, getFallY(), s.verticies!, s.img, undefined, undefined, s.scaleMultiplier ?? 1, s.naturalWidth, s.naturalHeight, s.bodyRotation ?? 0);
 
         spawnShape(svgs.ball, width / 2 + (rng() - 0.5) * 120);
-        spawnShape(svgs.ball, getXPos());
+        // spawnShape(svgs.ball, getXPos());
         spawnShape(svgs.orange_triangle, width / 2 + (rng() - 0.5) * 120);
-        spawnShape(svgs.orange_triangle, getXPos());
+        // spawnShape(svgs.orange_triangle, getXPos());
         spawnShape(svgs.box, width / 2 + (rng() - 0.5) * 120);
-        spawnShape(svgs.box, width / 2 + (rng() - 0.5) * 120);
+        // spawnShape(svgs.box, width / 2 + (rng() - 0.5) * 120);
         spawnShape(svgs.cat, width / 2 + (rng() - 0.5) * 120);
-        spawnShape(svgs.cat, getXPos());
+        // spawnShape(svgs.cat, getXPos());
         spawnShape(svgs.star, getXPos());
-        spawnShape(svgs.star, getXPos());
+        // spawnShape(svgs.star, getXPos());
         spawnShape(svgs.fun_star, getXPos());
-        spawnShape(svgs.fun_star, getXPos());
+        // spawnShape(svgs.fun_star, getXPos());
         spawnShape(svgs.green_triangle, width / 2 + (rng() - 0.5) * 120);
-        spawnShape(svgs.green_triangle, width / 2 + (rng() - 0.5) * 120);
+        // spawnShape(svgs.green_triangle, width / 2 + (rng() - 0.5) * 120);
         spawnShape(svgs.squiggle, getXPos());
-        spawnShape(svgs.squiggle, getXPos());
+        // spawnShape(svgs.squiggle, getXPos());
 
 
 
