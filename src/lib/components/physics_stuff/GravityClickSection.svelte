@@ -29,40 +29,46 @@
 
     let container = $state<HTMLDivElement>();
     const svgs: Record<
-        "arrow" | "asterisk" | "box" | "otter" | "pencil" | "star" | "surge" | "bundle",
-        { shape: string; img: string; verticies?: Vector[][] | undefined }
+        "ball" | "box" | "cat" | "fun_star" | "green_triangle" | "orange_triangle" | "squiggle" | "star",
+        { shape: string; img: string; scaleMultiplier?: number; bodyRotation?: number; verticies?: Vector[][] | undefined; naturalWidth?: number; naturalHeight?: number }
     > = {
-        arrow: {
-            img: "/footer/arrow.svg",
-            shape: "/footer/arrowShape.svg",
-        },
-        asterisk: {
-            img: "/footer/asterisk.svg",
-            shape: "/footer/asterisk.svg",
+        ball: {
+            img: "/footer/newshapes/ball.png",
+            shape: "/footer/newshapes/ballShape.svg",
         },
         box: {
-            img: "/footer/box.svg",
-            shape: "/footer/boxShape.svg",
+            img: "/footer/newshapes/box.png",
+            shape: "/footer/newshapes/boxShape.svg",
+            scaleMultiplier: 1,
+            bodyRotation: Math.PI / 2,
         },
-        otter: {
-            img: "/footer/otter.svg",
-            shape: "/footer/otterShape.svg",
+        cat: {
+            img: "/footer/newshapes/cat.png",
+            shape: "/footer/newshapes/catShape.svg",
+            scaleMultiplier: 0.6,
         },
-        pencil: {
-            img: "/footer/pencil.svg",
-            shape: "/footer/pencilShape.svg",
+        fun_star: {
+            img: "/footer/newshapes/funStar.png",
+            shape: "/footer/newshapes/starShape.svg",
+        },
+        green_triangle: {
+            img: "/footer/newshapes/green_triangle.png",
+            shape: "/footer/newshapes/triangleShape.svg",
+            scaleMultiplier: 0.6,
+        },
+        orange_triangle: {
+            img: "/footer/newshapes/orange_triangle.png",
+            shape: "/footer/newshapes/triangleShape.svg",
+            scaleMultiplier: 0.6,
+        },
+        squiggle: {
+            img: "/footer/newshapes/squiggle.png",
+            shape: "/footer/newshapes/squiggleShape.svg",
+            scaleMultiplier: 0.45,
         },
         star: {
-            img: "/footer/star.svg",
-            shape: "/footer/starShape.svg",
-        },
-        surge: {
-            img: "/footer/surge.svg",
-            shape: "/footer/surgeShape.svg",
-        },
-        bundle: {
-            img: "/footer/bundle.svg",
-            shape: "/footer/bundleShape.svg",
+            img: "/footer/newshapes/star.png",
+            shape: "/footer/newshapes/starShape.svg",
         },
     };
 
@@ -84,6 +90,10 @@
         texturePath: string,
         velX?: number,
         velY?: number,
+        scaleMultiplier = 1,
+        naturalWidth?: number,
+        naturalHeight?: number,
+        bodyRotation = 0,
     ) {
         if (!world) return;
 
@@ -95,8 +105,8 @@
                 render: {
                     sprite: {
                         texture: texturePath,
-                        xScale: 0.8,
-                        yScale: 0.8,
+                        xScale: 1,
+                        yScale: 1,
                     },
                 },
                 density: 1.2,
@@ -105,10 +115,25 @@
             },
             true,
         );
-        Body.set(b, "position", {
-            x,
-            y,
-        });
+
+        if (scaleMultiplier !== 1) {
+            Body.scale(b, scaleMultiplier, scaleMultiplier);
+        }
+        if (bodyRotation !== 0) {
+            Body.setAngle(b, bodyRotation);
+        }
+
+        // Derive sprite scale from the body's actual post-decomposition bounds so
+        // the texture always aligns with the collision shape.
+        if (naturalWidth && naturalHeight) {
+            const bodyW = b.bounds.max.x - b.bounds.min.x;
+            const bodyH = b.bounds.max.y - b.bounds.min.y;
+            const s = Math.min(bodyW / naturalWidth, bodyH / naturalHeight);
+            b.render.sprite!.xScale = s;
+            b.render.sprite!.yScale = s;
+        }
+
+        Body.set(b, "position", { x, y });
         if (velX && velY) {
             Body.set(b, "velocity", { x: velX, y: velY });
         }
@@ -143,12 +168,27 @@
             return res;
         }
 
-        // load vertex shapes of each shape
+        function loadImageDimensions(url: string): Promise<{ w: number; h: number }> {
+            return new Promise((resolve) => {
+                const img = new Image();
+                img.onload = () => resolve({ w: img.naturalWidth, h: img.naturalHeight });
+                img.onerror = () => resolve({ w: 0, h: 0 });
+                img.src = url;
+            });
+        }
+
+        // load vertex shapes and image dimensions of each shape
         await Promise.all(
             Object.values(svgs).map((item) =>
-                loadSvgs(item.shape).then((d) => {
-                    item.verticies = Svg2Vertices(d);
-                }),
+                Promise.all([
+                    loadSvgs(item.shape).then((d) => {
+                        item.verticies = Svg2Vertices(d);
+                    }),
+                    loadImageDimensions(item.img).then(({ w, h }) => {
+                        item.naturalWidth = w;
+                        item.naturalHeight = h;
+                    }),
+                ]),
             ),
         );
 
@@ -160,17 +200,27 @@
         const fallBand = 420;
         const getXPos = () => rng() * Math.max(width - 80, 40) + 40;
         const getFallY = () => -viewportTopOffset - rng() * fallBand;
-        addShape(getXPos(), getFallY(), svgs.asterisk.verticies!, svgs.asterisk.img);
-        addShape(width / 2 + (rng() - 0.5) * 120, getFallY(), svgs.otter.verticies!, svgs.otter.img);
-        addShape(getXPos(), getFallY(), svgs.box.verticies!, svgs.box.img);
-        addShape(getXPos(), getFallY(), svgs.surge.verticies!, svgs.surge.img);
-        addShape(getXPos(), getFallY(), svgs.bundle.verticies!, svgs.bundle.img);
-        addShape(getXPos(), getFallY(), svgs.bundle.verticies!, svgs.bundle.img);
-        addShape(getXPos(), getFallY(), svgs.pencil.verticies!, svgs.pencil.img);
-        addShape(getXPos(), getFallY(), svgs.pencil.verticies!, svgs.pencil.img);
-        addShape(getXPos(), getFallY(), svgs.arrow.verticies!, svgs.arrow.img);
-        addShape(getXPos(), getFallY(), svgs.arrow.verticies!, svgs.arrow.img);
-        addShape(getXPos(), getFallY(), svgs.star.verticies!, svgs.star.img);
+        const spawnShape = (s: typeof svgs[keyof typeof svgs], xPos: number) =>
+            addShape(xPos, getFallY(), s.verticies!, s.img, undefined, undefined, s.scaleMultiplier ?? 1, s.naturalWidth, s.naturalHeight, s.bodyRotation ?? 0);
+
+        spawnShape(svgs.ball, width / 2 + (rng() - 0.5) * 120);
+        spawnShape(svgs.ball, getXPos());
+        spawnShape(svgs.orange_triangle, width / 2 + (rng() - 0.5) * 120);
+        spawnShape(svgs.orange_triangle, getXPos());
+        spawnShape(svgs.box, width / 2 + (rng() - 0.5) * 120);
+        spawnShape(svgs.box, width / 2 + (rng() - 0.5) * 120);
+        spawnShape(svgs.cat, width / 2 + (rng() - 0.5) * 120);
+        spawnShape(svgs.cat, getXPos());
+        spawnShape(svgs.star, getXPos());
+        spawnShape(svgs.star, getXPos());
+        spawnShape(svgs.fun_star, getXPos());
+        spawnShape(svgs.fun_star, getXPos());
+        spawnShape(svgs.green_triangle, width / 2 + (rng() - 0.5) * 120);
+        spawnShape(svgs.green_triangle, width / 2 + (rng() - 0.5) * 120);
+        spawnShape(svgs.squiggle, getXPos());
+        spawnShape(svgs.squiggle, getXPos());
+
+
 
         // world boundry
 
@@ -316,6 +366,10 @@
                 randShape.img,
                 Math.random() * 20 - 10,
                 -Math.random() * 20,
+                randShape.scaleMultiplier ?? 1,
+                randShape.naturalWidth,
+                randShape.naturalHeight,
+                randShape.bodyRotation ?? 0,
             );
             spawnedObjsCount++;
         } else {
