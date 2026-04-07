@@ -87,9 +87,9 @@
 				{:else}
 					<Countdown vertical large onExpired={() => applicationsOpen = true} />
 				{/if}
-				<Button class="max-lg:text-[22px]" variant="section-secondary" as="span">FAQ &amp; More Info</Button>
-				<Button class="max-lg:text-[22px]" variant="section-secondary" as="span">Mentor Registration</Button>
-				<Button class="max-lg:text-[22px]" variant="section-secondary" as="span">Judge Registration</Button>
+				<Button class="max-lg:text-[22px]" variant="section-secondary" href="https://www.notion.so/sfusurge/SparkJam-2026-33b82a4e7706807cbad9e289ad89ed78">FAQ &amp; More Info</Button>
+				<Button class="max-lg:text-[22px]" variant="section-secondary">Mentor Registration</Button>
+				<Button class="max-lg:text-[22px]" variant="section-secondary">Judge Registration</Button>
 			</div>
 		</div>
 	</div>

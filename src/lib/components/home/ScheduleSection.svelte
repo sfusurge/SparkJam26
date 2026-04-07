@@ -37,22 +37,22 @@
 			<div class="space-y-8 max-sm:space-y-[18px] border rounded-xl max-sm:rounded-none border-boba-black bg-canvas-grey border-t border-l-0 p-10 max-sm:p-[24px]">
 				<ScheduleAccordionItem title="Spark Week" date="May 11 - 15th" panelClass="bg-strawberry-moon">
 					{#snippet children()}
-						<p>Workshops, talks, and skill-building across both coasts.</p>
+						<p>Between May 11 - 15th, there will be drop in Workshops, Talks, Side Events, Resources and more; to help students prepare before they jam.</p>
 					{/snippet}
 				</ScheduleAccordionItem>
 				<ScheduleAccordionItem title="Jam Week" date="May 16 - 23rd" panelClass="bg-touched-grass">
 					{#snippet children()}
-						<p>Teams ship a prototype against a real brief—with mentors in the loop.</p>
+						<p>Between May 16 - 23rd, students will have the chance to work on their project in groups of four, designing a solution to one of three briefs.</p>
 					{/snippet}
 				</ScheduleAccordionItem>
 				<ScheduleAccordionItem title="Opening Ceremony" date="May 16" panelClass="bg-sparky-yellow">
 					{#snippet children()}
-						<p>Kickoff, teams, and jam expectations.</p>
+						<p>Hosted at both UWaterloo and SFU; students learn their design brief, get some cool free swag, network with companies, and more!</p>
 					{/snippet}
 				</ScheduleAccordionItem>
 				<ScheduleAccordionItem title="Closing Ceremony" date="May 23" panelClass="bg-citrouille">
 					{#snippet children()}
-						<p>Final presentations and celebration.</p>
+						<p>Students pitch their work to Judges, get feedback, find out winners, and play fun games.</p>
 					{/snippet}
 				</ScheduleAccordionItem>
 			</div>
