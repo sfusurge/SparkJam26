@@ -36,6 +36,7 @@ const otterSprites = loadSprites(["otterSkiing", "fall1", "fall2", "fall3"]);
 
 const positionRange: boundRange = {min: 0, max: 4};
 const defaultPos: number = 2;
+const ottoAnimProg: number[] = [0, 0.55, 0.8, 0.95, 1];
 
 const ottID: string = "OTT";
 const positionCoords: number[][] = [
@@ -97,6 +98,8 @@ export class GameRenderer {
     skiCourse: obstacleItem[] = [];
 
     ottPosition: number = defaultPos;
+    prevPosition: number = defaultPos;
+    ottAnimFrame: number = ottoAnimProg.length;
 
     currentDistanceInKM: number = $state(0);
     KM_highScore: number = $state(0);
@@ -155,9 +158,11 @@ export class GameRenderer {
         this.currentDistanceInKM = 0;
         this.obstacleCache = 0;
 
+        this.prevPosition = defaultPos;
         this.ottPosition = defaultPos;
+        this.ottAnimFrame = ottoAnimProg.length;
         (this.dynamicObjs[ottID] as cImg).currentSprite = 0;
-        this.updateOttPosition();
+        this.updateOttPosition(positionCoords[defaultPos][0], positionCoords[defaultPos][1]);
         this.collision = false;
         this.collisionSlowDur = 1;
         
@@ -262,15 +267,17 @@ export class GameRenderer {
 
     setupEvents(){
         keybinds['d'] = () => {
-            if(this.ottPosition > positionRange.min){
+            if(this.gameState == GamePhase.RUNNING && this.ottPosition > positionRange.min){
+                this.prevPosition = this.ottPosition;
                 this.ottPosition--;
-                this.updateOttPosition();
+                this.ottAnimFrame = 0;
             }
         };
         keybinds['a'] = () => {
-            if(this.ottPosition < positionRange.max){
+            if(this.gameState == GamePhase.RUNNING && this.ottPosition < positionRange.max){
+                this.prevPosition = this.ottPosition;
                 this.ottPosition++;
-                this.updateOttPosition();
+                this.ottAnimFrame = 0;
             }
         };
         keybinds['arrowleft'] = () => {
@@ -281,9 +288,9 @@ export class GameRenderer {
         }
     }
 
-    updateOttPosition(){
+    updateOttPosition(x:number, y:number){
         if(this.gameState == GamePhase.RUNNING && (this.dynamicObjs[ottID] as cImg).currentSprite == 0){
-            this.dynamicObjs[ottID].setPosition(positionCoords[this.ottPosition][0], positionCoords[this.ottPosition][1]);
+            this.dynamicObjs[ottID].setPosition(x, y);
         }   
     }
 
@@ -443,6 +450,14 @@ export class GameRenderer {
         })
         if(this.waterlooAnim < this.waterlooFinish && this.currentDistanceInKM > destination){
             this.dynamicObjs[waterlooID].update();
+        }
+        if(this.gameState == GamePhase.RUNNING && this.ottAnimFrame != ottoAnimProg.length){
+            let pPos = positionCoords[this.prevPosition];
+            let cPos = positionCoords[this.ottPosition];
+            let transit = [cPos[0] - pPos[0], cPos[1] - pPos[1]];
+            let p = ottoAnimProg[this.ottAnimFrame];
+            this.updateOttPosition(pPos[0] + transit[0] * p, pPos[1] + transit[1] * p);
+            this.ottAnimFrame++;
         }
     }
 
