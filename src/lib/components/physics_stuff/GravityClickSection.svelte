@@ -35,40 +35,43 @@
         ball: {
             img: "/footer/newshapes/ball.png",
             shape: "/footer/newshapes/ballShape.svg",
+            scaleMultiplier: 0.89,
         },
         box: {
             img: "/footer/newshapes/box.png",
             shape: "/footer/newshapes/boxShape.svg",
-            scaleMultiplier: 1,
+            scaleMultiplier: 1.2,
             bodyRotation: Math.PI / 2,
         },
         cat: {
             img: "/footer/newshapes/cat.png",
             shape: "/footer/newshapes/catShape.svg",
-            scaleMultiplier: 0.6,
+            scaleMultiplier: 1.17,
         },
         fun_star: {
             img: "/footer/newshapes/funStar.png",
             shape: "/footer/newshapes/starShape.svg",
+            scaleMultiplier: 1.55,
         },
         green_triangle: {
             img: "/footer/newshapes/green_triangle.png",
             shape: "/footer/newshapes/triangleShape.svg",
-            scaleMultiplier: 0.6,
+            scaleMultiplier: 1.0,
         },
         orange_triangle: {
             img: "/footer/newshapes/orange_triangle.png",
             shape: "/footer/newshapes/triangleShape.svg",
-            scaleMultiplier: 0.6,
+            scaleMultiplier: 1.0,
         },
         squiggle: {
             img: "/footer/newshapes/squiggle.png",
             shape: "/footer/newshapes/squiggleShape.svg",
-            scaleMultiplier: 0.45,
+            scaleMultiplier: 0.73,
         },
         star: {
             img: "/footer/newshapes/star.png",
             shape: "/footer/newshapes/starShape.svg",
+            scaleMultiplier: 1.35,
         },
     };
 
