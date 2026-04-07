@@ -86,6 +86,14 @@
 				>
 					Get Jammin'
 				</Button>
+			{:else}
+			<Button
+				variant="hero-cta"
+				href="/SparkJam Applications Open.ics"
+				class="mt-[min(18vw,9rem)] max-sm:translate-y-85 self-end max-sm:self-center rotate-[7.78deg]"
+			>
+					Remind Me
+				</Button>
 			{/if}
 		</div>
 	</div>
