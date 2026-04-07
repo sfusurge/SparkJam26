@@ -6,8 +6,14 @@
 	<div class="header-bar__ios-glow" aria-hidden="true"></div>
 	<div class="header-bar__glass" aria-hidden="true"></div>
 		<div class="relative z-10 mx-auto flex h-[60px] w-full max-w-[1512px] items-center justify-between px-7">
-		<div class="h-[31px] w-[12.5px] shrink-0">
-			<img alt="Surge" class="block size-full max-w-none" src="/2D-Surge-Logo.svg" />
+		<div class="flex items-center gap-3">
+			<div class="h-[31px] w-[12.5px] shrink-0">
+				<img alt="Surge" class="block size-full max-w-none" src="/2D-Surge-Logo.svg" />
+			</div>
+			<div class="h-6 w-px bg-boba-black"></div>
+			<div class="h-6 shrink-0">
+				<img alt="Figma" class="block h-full w-auto brightness-0" src="/sponsors/Figma.svg" />
+			</div>
 		</div>
 		<Countdown />
 	</div>

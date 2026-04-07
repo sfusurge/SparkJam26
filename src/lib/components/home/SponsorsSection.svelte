@@ -46,8 +46,8 @@
 				</p>
 				<div class="mt-16 flex flex-col items-center gap-16 max-sm:gap-8 ">
 					<div class="flex flex-col items-center gap-10 ">
-						<a href="https://www.transoftsolutions.com/" target="_blank" rel="noopener noreferrer" class="transition-opacity hover:opacity-80">
-							<img src="/sponsors/transoft.webp" alt="Transoft Solutions" class="max-sm:max-w-[200px] max-h-[190px] w-auto max-w-full object-contain" />
+						<a href="https://https://www.instagram.com/figmaatwaterloo/" target="_blank" rel="noopener noreferrer" class="transition-opacity hover:opacity-80">
+							<img src="/sponsors/Figma_at_Waterloo.svg" alt="Transoft Solutions" class="max-sm:max-w-[200px] max-h-[190px] w-auto max-w-full object-contain" />
 						</a>
 						<a href="https://venturelabs.ca/" target="_blank" rel="noopener noreferrer" class="transition-opacity hover:opacity-80">
 							<img src="/sponsors/venturelabs.webp" alt="SFU VentureLabs" class="max-sm:max-w-[240px] max-h-[76px] w-full max-w-md object-contain" />
