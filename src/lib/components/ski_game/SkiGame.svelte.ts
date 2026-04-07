@@ -74,7 +74,7 @@ const slopeAngle = 49.5 * Math.PI / 180;
 const waterlooID: string = "water";
 const waterlooOffscreen = [0.65, 1];
 const waterlooAppear = [0.65, 0.8];
-const mobileWaterlooOffset = [-0.6, 0.25]
+const mobileWaterlooOffset = [-0.6, 0.25];
 const waterlooPause = 5000;
 
 const signID: string = "sign";
