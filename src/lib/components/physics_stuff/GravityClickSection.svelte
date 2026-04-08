@@ -29,47 +29,62 @@
 
     let container = $state<HTMLDivElement>();
     const svgs: Record<
-        "ball" | "box" | "cat" | "fun_star" | "green_triangle" | "orange_triangle" | "squiggle" | "star",
-        { shape: string; img: string; scaleMultiplier?: number; bodyRotation?: number; verticies?: Vector[][] | undefined; naturalWidth?: number; naturalHeight?: number }
+        | "ball"
+        | "box"
+        | "cat"
+        | "fun_star"
+        | "green_triangle"
+        | "orange_triangle"
+        | "squiggle"
+        | "star",
+        {
+            shape: string;
+            img: string;
+            scaleMultiplier?: number;
+            bodyRotation?: number;
+            verticies?: Vector[][] | undefined;
+            naturalWidth?: number;
+            naturalHeight?: number;
+        }
     > = {
         ball: {
-            img: "/footer/newshapes/ball.png",
+            img: "/footer/newshapes/ball.svg",
             shape: "/footer/newshapes/ballShape.svg",
             scaleMultiplier: 0.89,
         },
         box: {
-            img: "/footer/newshapes/box.png",
+            img: "/footer/newshapes/box.webp",
             shape: "/footer/newshapes/boxShape.svg",
             scaleMultiplier: 1.2,
             bodyRotation: Math.PI / 2,
         },
         cat: {
-            img: "/footer/newshapes/cat.png",
+            img: "/footer/newshapes/cat.webp",
             shape: "/footer/newshapes/catShape.svg",
             scaleMultiplier: 1.17,
         },
         fun_star: {
-            img: "/footer/newshapes/funStar.png",
+            img: "/footer/newshapes/funStar.webp",
             shape: "/footer/newshapes/starShape.svg",
             scaleMultiplier: 1.55,
         },
         green_triangle: {
-            img: "/footer/newshapes/green_triangle.png",
+            img: "/footer/newshapes/cone2.svg",
             shape: "/footer/newshapes/triangleShape.svg",
             scaleMultiplier: 1.0,
         },
         orange_triangle: {
-            img: "/footer/newshapes/orange_triangle.png",
+            img: "/footer/newshapes/cone1.svg",
             shape: "/footer/newshapes/triangleShape.svg",
             scaleMultiplier: 1.0,
         },
         squiggle: {
-            img: "/footer/newshapes/squiggle.png",
-            shape: "/footer/newshapes/squiggleShape.svg",
+            img: "/footer/newshapes/squig.svg",
+            shape: "/footer/newshapes/squig_shape.svg",
             scaleMultiplier: 0.73,
         },
         star: {
-            img: "/footer/newshapes/star.png",
+            img: "/footer/newshapes/star.svg",
             shape: "/footer/newshapes/starShape.svg",
             scaleMultiplier: 1.35,
         },
@@ -85,6 +100,9 @@
     let botBoundRect: Body | undefined = undefined;
     let runner: ReturnType<typeof Runner.create> | undefined = undefined;
     let footerVisibleObserver: IntersectionObserver | undefined = undefined;
+    let renderVisibilityObserver: IntersectionObserver | undefined = undefined;
+    let renderRunning = false;
+    let runnerRunning = false;
 
     function addShape(
         x: number,
@@ -203,8 +221,19 @@
         const fallBand = 420;
         const getXPos = () => rng() * Math.max(width - 80, 40) + 40;
         const getFallY = () => -viewportTopOffset - rng() * fallBand;
-        const spawnShape = (s: typeof svgs[keyof typeof svgs], xPos: number) =>
-            addShape(xPos, getFallY(), s.verticies!, s.img, undefined, undefined, s.scaleMultiplier ?? 1, s.naturalWidth, s.naturalHeight, s.bodyRotation ?? 0);
+        const spawnShape = (s: (typeof svgs)[keyof typeof svgs], xPos: number) =>
+            addShape(
+                xPos,
+                getFallY(),
+                s.verticies!,
+                s.img,
+                undefined,
+                undefined,
+                s.scaleMultiplier ?? 1,
+                s.naturalWidth,
+                s.naturalHeight,
+                s.bodyRotation ?? 0,
+            );
 
         spawnShape(svgs.ball, width / 2 + (rng() - 0.5) * 120);
         // spawnShape(svgs.ball, getXPos());
@@ -222,8 +251,6 @@
         // spawnShape(svgs.green_triangle, width / 2 + (rng() - 0.5) * 120);
         spawnShape(svgs.squiggle, getXPos());
         // spawnShape(svgs.squiggle, getXPos());
-
-
 
         // world boundry
 
@@ -260,6 +287,7 @@
         });
 
         Render.run(render);
+        renderRunning = true;
 
         Render.lookAt(render, {
             min: { x: 0, y: 0 },
@@ -272,6 +300,7 @@
             (entries) => {
                 if (!entries.some((e) => e.isIntersecting) || !runner || !engine) return;
                 Runner.run(runner, engine);
+                runnerRunning = true;
                 footerVisibleObserver?.disconnect();
                 footerVisibleObserver = undefined;
             },
@@ -280,28 +309,69 @@
         if (container) {
             footerVisibleObserver.observe(container);
         }
+
+        renderVisibilityObserver = new IntersectionObserver(
+            (entries) => {
+                const isVisible = entries.some((e) => e.isIntersecting);
+                if (!render) return;
+
+                if (isVisible) {
+                    if (!renderRunning) {
+                        Render.run(render);
+                        renderRunning = true;
+                    }
+                    if (runner && engine && !runnerRunning) {
+                        Runner.run(runner, engine);
+                        runnerRunning = true;
+                    }
+                    return;
+                }
+
+                if (renderRunning) {
+                    Render.stop(render);
+                    renderRunning = false;
+                }
+                if (runner && runnerRunning) {
+                    Runner.stop(runner);
+                    runnerRunning = false;
+                }
+            },
+            { root: null, rootMargin: "0px", threshold: 0.01 },
+        );
+        if (container) {
+            renderVisibilityObserver.observe(container);
+        }
     });
 
     onDestroy(() => {
         footerVisibleObserver?.disconnect();
         footerVisibleObserver = undefined;
+        renderVisibilityObserver?.disconnect();
+        renderVisibilityObserver = undefined;
         if (runner) {
             Runner.stop(runner);
+            runnerRunning = false;
             runner = undefined;
+        }
+        if (render) {
+            Render.stop(render);
+            renderRunning = false;
+            render = undefined;
         }
     });
 
     $effect(() => {
+
         if (initialized && render && world && engine) {
             const pixelRatio = "devicePixelRatio" in window ? window.devicePixelRatio : 1;
             render.bounds.max.x = width * pixelRatio;
             render.bounds.max.y = height * pixelRatio;
 
-            render.options.width = width ;
-            render.options.height = height ;
+            render.options.width = width;
+            render.options.height = height;
 
-            render.canvas.width = width  ;
-            render.canvas.height = height ;
+            render.canvas.width = width;
+            render.canvas.height = height;
 
             const mouse = Mouse.create(mouseCollider!);
             mouse.pixelRatio = pixelRatio;
@@ -397,26 +467,32 @@
 </script>
 
 <div
-        class="physics-layer"
-        style="position:absolute; left:0; top:{topOffset}px; width:{width}px; height:{height}px; z-index:10;"
+    class="physics-layer"
+    style="position:absolute; left:0; top:{topOffset}px; width:{width}px; height:{height}px; z-index:10;"
 >
     <div
-            class="mouseCollider"
-            style="width:{width}px; height:{height}px; position:absolute; top:0; left:0; z-index:10;"
-            bind:this={mouseCollider}
-            onpointerup={(e) => {
+        class="mouseCollider"
+        style="width:{width}px; height:{height}px; position:absolute; top:0; left:0; z-index:10;"
+        bind:this={mouseCollider}
+        role="button"
+        tabindex="0"
+        onpointerup={(e) => {
             onmouseup(e);
         }}
     >
         {#key [puffX, puffY]}
-            <div class="puff" style="--x: {puffX}px; --y:{puffY}px;" in:puff={{ duration: 200 }}></div>
+            <div
+                class="puff"
+                style="--x: {puffX}px; --y:{puffY}px;"
+                in:puff={{ duration: 200 }}
+            ></div>
         {/key}
     </div>
 
     <div
-            class="physicsContainer"
-            bind:this={container}
-            style="width:{width}px; height:{height}px; "
+        class="physicsContainer"
+        bind:this={container}
+        style="width:{width}px; height:{height}px; "
     ></div>
 </div>
 

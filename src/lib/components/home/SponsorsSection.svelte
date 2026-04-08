@@ -6,12 +6,12 @@
 
 <section class="relative mt-12 mx-auto w-full max-sm:w-screen" aria-label="Sponsors">
 	<div class="relative mx-auto w-full max-w-[1334px] px-[3%] max-sm:px-[3px]">
-		{#if !$isMobile}	
-			<div class="absolute -inset-y-23 left-[3%] w-[1px] bg-boba-black"></div>
-			<div class="absolute -inset-y-21.5 right-[3%] w-[1px] bg-boba-black"></div>
+		{#if !$isMobile}
+			<div class="absolute -inset-y-20 left-[3%] w-[1px] bg-boba-black"></div>
+			<div class="absolute -inset-y-21 right-[3%] w-[1px] bg-boba-black"></div>
 		{/if}
 		<div class="relative">
-			
+
 			<div class="mx-auto max-w-[750px] text-center">
 				{#if !$isMobile}
 					<div

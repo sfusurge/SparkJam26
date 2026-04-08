@@ -20,7 +20,7 @@ interface obstacleItem {
     trailPosition: number
 }
 
-let keybinds : {[id: string]: () => void} = {};
+let keybinds: { [id: string]: () => void } = {};
 
 const loadSprites = (names: string[]) => {
     return names.map(n => {
@@ -34,7 +34,7 @@ const envSprites = loadSprites(["mountains.svg", "Pattern.svg", "waterlooWelcome
 const obstacleSprites = loadSprites(["redCone", "blueCone", "redBall.svg", "blueBall.svg"]);
 const otterSprites = loadSprites(["otterSkiing", "fall1", "fall2", "fall3"]);
 
-const positionRange: boundRange = {min: 0, max: 4};
+const positionRange: boundRange = { min: 0, max: 4 };
 const defaultPos: number = 2;
 const ottoAnimProg: number[] = [0, 0.55, 0.8, 0.95, 1];
 
@@ -63,7 +63,7 @@ const duration: number = 400000;
 const gameSpeed: number = 1.25;
 const obstacleVisibilityWindow: number = 2500;
 
-const obstacleGenerationSpacing: boundRange = {min: 500, max: 2000};
+const obstacleGenerationSpacing: boundRange = { min: 500, max: 2000 };
 
 const randWholeNum = (range: number) => {
     return Math.trunc(Math.random() * range);
@@ -78,15 +78,15 @@ const mobileWaterlooOffset = [-0.6, 0.25];
 const waterlooPause = 5000;
 
 const signID: string = "sign";
-const signStartPos:number[] = [0.6, .8];
+const signStartPos: number[] = [0.6, .8];
 
 export class GameRenderer {
     canvas: HTMLCanvasElement;
     ctx: CanvasRenderingContext2D;
     mobile: boolean = $state(false);
     pkg: RenderPkg;
-    renderHandle: number|null = -1;
-    observer: IntersectionObserver|null = null;
+    renderHandle: number | null = -1;
+    observer: IntersectionObserver | null = null;
 
     gameState: GamePhaseType = $state(GamePhase.PRE);
 
@@ -94,7 +94,7 @@ export class GameRenderer {
     currentTime = 0;
 
     staticObj: component[] = [];
-    dynamicObjs: {[id: string]: component} = {};
+    dynamicObjs: { [id: string]: component } = {};
     skiCourse: obstacleItem[] = [];
 
     ottPosition: number = defaultPos;
@@ -108,11 +108,11 @@ export class GameRenderer {
 
     collision: boolean = false;
     collisionSlowDur: number = 1;
-    
-    waterlooAnim: number = 0;
-    waterlooFinish: number = 20; 
 
-    constructor(canvas: HTMLCanvasElement, mobileMode:boolean){
+    waterlooAnim: number = 0;
+    waterlooFinish: number = 20;
+
+    constructor(canvas: HTMLCanvasElement, mobileMode: boolean) {
         this.canvas = canvas;
         this.ctx = canvas.getContext("2d")!;
         this.pkg = {
@@ -121,39 +121,39 @@ export class GameRenderer {
             h: canvas.height
         };
         this.mobile = mobileMode;
-        
+
         this.init();
     }
 
-    init(){
+    init() {
         this.setupEnv();
         this.setupEvents();
         this.reset();
 
         this.observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if(entry.isIntersecting){
-                    if(this.renderHandle == -1){
+                if (entry.isIntersecting) {
+                    if (this.renderHandle == -1) {
                         this.renderHandle = requestAnimationFrame(this.eventLoop.bind(this));
                     }
                 } else {
-                    if(this.renderHandle){
+                    if (this.renderHandle) {
                         cancelAnimationFrame(this.renderHandle);
                         this.renderHandle = -1;
                     }
                 }
             });
-        }, {threshold: 0.1});
+        }, { threshold: 0.1 });
 
         this.observer.observe(this.canvas);
     }
 
-    windowChange(mobile: boolean){
+    windowChange(mobile: boolean) {
         this.mobile = mobile;
         this.ctx.clearRect(-200, -200, this.pkg.w * 2, this.pkg.h * 2);
     }
 
-    reset(){
+    reset() {
         this.currentTime = 0;
         this.currentDistanceInKM = 0;
         this.obstacleCache = 0;
@@ -165,29 +165,29 @@ export class GameRenderer {
         this.updateOttPosition(positionCoords[defaultPos][0], positionCoords[defaultPos][1]);
         this.collision = false;
         this.collisionSlowDur = 1;
-        
+
         this.skiCourse = [];
         this.generateSkiCourse();
     }
 
-    pauseToggle(){
-        if(this.gameState == GamePhase.PRE){
+    pauseToggle() {
+        if (this.gameState == GamePhase.PRE) {
             this.gameState = GamePhase.RUNNING;
-        }else if(this.gameState == GamePhase.RUNNING){
+        } else if (this.gameState == GamePhase.RUNNING) {
             this.gameState = GamePhase.PAUSED;
-        }else if(this.gameState == GamePhase.PAUSED){
+        } else if (this.gameState == GamePhase.PAUSED) {
             this.gameState = GamePhase.RUNNING;
         }
     }
 
-    playAgain(){
-        if(this.gameState == GamePhase.ENDED){
+    playAgain() {
+        if (this.gameState == GamePhase.ENDED) {
             this.gameState = GamePhase.RUNNING;
         }
         this.reset();
     }
 
-    setupEnv(){
+    setupEnv() {
         this.staticObj.push(
             new cImg(this.pkg,
                 0, 0.34,
@@ -251,10 +251,10 @@ export class GameRenderer {
         );
     }
 
-    generateSkiCourse(start = 0){
+    generateSkiCourse(start = 0) {
         this.skiCourse = [];
         let counter = start;
-        while(counter < start + duration){
+        while (counter < start + duration) {
             counter += randWholeNum((obstacleGenerationSpacing.max - obstacleGenerationSpacing.min)) + obstacleGenerationSpacing.min;
             this.skiCourse.push({
                 spriteID: randWholeNum(obstacleSprites.length),
@@ -265,16 +265,16 @@ export class GameRenderer {
         this.obstacleCache = 0;
     }
 
-    setupEvents(){
+    setupEvents() {
         keybinds['d'] = () => {
-            if(this.gameState == GamePhase.RUNNING && this.ottPosition > positionRange.min){
+            if (this.gameState == GamePhase.RUNNING && this.ottPosition > positionRange.min) {
                 this.prevPosition = this.ottPosition;
                 this.ottPosition--;
                 this.ottAnimFrame = 0;
             }
         };
         keybinds['a'] = () => {
-            if(this.gameState == GamePhase.RUNNING && this.ottPosition < positionRange.max){
+            if (this.gameState == GamePhase.RUNNING && this.ottPosition < positionRange.max) {
                 this.prevPosition = this.ottPosition;
                 this.ottPosition++;
                 this.ottAnimFrame = 0;
@@ -288,43 +288,43 @@ export class GameRenderer {
         }
     }
 
-    updateOttPosition(x:number, y:number){
-        if(this.gameState == GamePhase.RUNNING && (this.dynamicObjs[ottID] as cImg).currentSprite == 0){
+    updateOttPosition(x: number, y: number) {
+        if (this.gameState == GamePhase.RUNNING && (this.dynamicObjs[ottID] as cImg).currentSprite == 0) {
             this.dynamicObjs[ottID].setPosition(x, y);
-        }   
+        }
     }
 
-    inputCallback(k: string){
-        try{
+    inputCallback(k: string) {
+        try {
             keybinds[k]();
-        }catch{}
+        } catch { }
     }
 
-    eventLoop(time: number){
+    eventLoop(time: number) {
         this.ctx.save();
         let d = (time - this.pTime);
         this.pTime = time;
 
         const ottImg = () => {
-            return(this.dynamicObjs[ottID] as cImg);
+            return (this.dynamicObjs[ottID] as cImg);
         }
 
-        let delta = d * (gameSpeed + 3 * (this.currentTime/duration));
-        if(this.gameState == GamePhase.RUNNING){
-            
+        let delta = d * (gameSpeed + 3 * (this.currentTime / duration));
+        if (this.gameState == GamePhase.RUNNING) {
+
             this.currentTime += delta;
 
-            if(this.collision == true){
-                if(this.collisionSlowDur > 0){
+            if (this.collision == true) {
+                if (this.collisionSlowDur > 0) {
                     this.collisionSlowDur -= slowSpeed * this.collisionSlowDur / 2;
-                    if(this.collisionSlowDur < 0.001){
+                    if (this.collisionSlowDur < 0.001) {
                         this.collisionSlowDur = 0;
                         this.gameOver();
-                    }else if(this.collisionSlowDur < 0.3 && ottImg().currentSprite == 2){
+                    } else if (this.collisionSlowDur < 0.3 && ottImg().currentSprite == 2) {
                         ottImg().currentSprite++;
-                    }else if(this.collisionSlowDur < 0.4 && ottImg().currentSprite == 1){
+                    } else if (this.collisionSlowDur < 0.4 && ottImg().currentSprite == 1) {
                         ottImg().currentSprite++;
-                    }else if(this.collisionSlowDur < 0.5 && ottImg().currentSprite == 0){
+                    } else if (this.collisionSlowDur < 0.5 && ottImg().currentSprite == 0) {
                         ottImg().currentSprite++;
                     }
                 }
@@ -334,7 +334,7 @@ export class GameRenderer {
             this.currentDistanceInKM = Math.trunc((this.currentTime / duration) * destination);
         }
 
-        if(this.mobile){
+        if (this.mobile) {
             this.ctx.scale(0.5, 0.5);
             this.ctx.translate(0, 500);
         }
@@ -343,14 +343,18 @@ export class GameRenderer {
         this.renderHandle = requestAnimationFrame(this.eventLoop.bind(this));
     }
 
-    gameOver(){
-        if(this.KM_highScore < this.currentDistanceInKM){
+    gameOver() {
+        if (this.KM_highScore < this.currentDistanceInKM) {
             this.KM_highScore = this.currentDistanceInKM;
         }
         this.gameState = GamePhase.ENDED;
     }
 
     render() {
+        if (this.gameState == GamePhase.PAUSED) {
+            return;
+        }
+
         this.ctx.clearRect(0, (this.currentTime < obstacleVisibilityWindow) ? -100 : 0, this.pkg.w, this.pkg.h);
         // update canvas size before rendering to avoid flicker
         if (this.canvas.width !== this.pkg.w || this.canvas.height !== this.pkg.h) {
@@ -364,42 +368,42 @@ export class GameRenderer {
 
     renderEnv() {
         this.staticObj.forEach((obj, i) => {
-            if(this.currentTime < obstacleVisibilityWindow && i == 2){
+            if (this.currentTime < obstacleVisibilityWindow && i == 2) {
                 this.dynamicObjs[signID].update();
             }
             obj.update();
         });
 
         let bgHalf = backgroundFrames / 2
-        let p = ((backgroundFrames - (this.currentTime % backgroundFrames))/bgHalf) - 1.01;
+        let p = ((backgroundFrames - (this.currentTime % backgroundFrames)) / bgHalf) - 1.01;
         let p2 = ((backgroundFrames - (this.currentTime + bgHalf) % backgroundFrames)) / bgHalf - 1.01;
 
         this.staticObj[0].x = p;
         this.staticObj[1].x = p2;
 
         //waterloo arrival animation
-        if(this.waterlooAnim < this.waterlooFinish && this.currentDistanceInKM > destination){
+        if (this.waterlooAnim < this.waterlooFinish && this.currentDistanceInKM > destination) {
             let prog = (this.waterlooAnim % (this.waterlooFinish / 2)) + 1;
-            let inc = (waterlooOffscreen[1] - waterlooAppear[1])/(this.waterlooFinish / 2) * prog;
-            
-            if(this.currentTime > duration + waterlooPause){
+            let inc = (waterlooOffscreen[1] - waterlooAppear[1]) / (this.waterlooFinish / 2) * prog;
+
+            if (this.currentTime > duration + waterlooPause) {
                 this.dynamicObjs[waterlooID]
-                .setPosition(waterlooOffscreen[0] + (this.mobile ? mobileWaterlooOffset[0] : 0), waterlooAppear[1] + (this.mobile ? mobileWaterlooOffset[1] : 0) + inc);
+                    .setPosition(waterlooOffscreen[0] + (this.mobile ? mobileWaterlooOffset[0] : 0), waterlooAppear[1] + (this.mobile ? mobileWaterlooOffset[1] : 0) + inc);
                 this.waterlooAnim++;
-            }else if(this.waterlooAnim < 10){
+            } else if (this.waterlooAnim < 10) {
                 this.dynamicObjs[waterlooID]
-                .setPosition(waterlooOffscreen[0] + (this.mobile ? mobileWaterlooOffset[0] : 0), waterlooOffscreen[1] + (this.mobile ? mobileWaterlooOffset[1] : 0) - inc);
+                    .setPosition(waterlooOffscreen[0] + (this.mobile ? mobileWaterlooOffset[0] : 0), waterlooOffscreen[1] + (this.mobile ? mobileWaterlooOffset[1] : 0) - inc);
                 this.waterlooAnim++;
             }
         }
 
-        if(this.currentTime < obstacleVisibilityWindow){
-            let c = this.calculateSignCoordXY(this.currentTime/obstacleVisibilityWindow);
+        if (this.currentTime < obstacleVisibilityWindow) {
+            let c = this.calculateSignCoordXY(this.currentTime / obstacleVisibilityWindow);
             this.dynamicObjs[signID].setPosition(c[0], c[1]);
         }
     }
 
-    calculateSignCoordXY(progress:number){
+    calculateSignCoordXY(progress: number) {
         let len = progress * skiTrackLen;
         let ang = 52 * Math.PI / 180;
         let x = signStartPos[0] - len * Math.cos(ang);
@@ -408,8 +412,9 @@ export class GameRenderer {
     }
 
     renderObstacles() {
+
         const obstacleRender = (o: obstacleItem) => {
-            let coord = this.calculateSlopeCoordXY(o.lanePosition, (this.currentTime - o.trailPosition)/obstacleVisibilityWindow);
+            let coord = this.calculateSlopeCoordXY(o.lanePosition, (this.currentTime - o.trailPosition) / obstacleVisibilityWindow);
             this.ctx.drawImage(
                 obstacleSprites[o.spriteID],
                 this.xStd(coord[0]),
@@ -417,41 +422,41 @@ export class GameRenderer {
             )
         }
 
-        let obstacles:obstacleItem[] = [];
-        for (let i = this.obstacleCache; i < this.skiCourse.length; i++){
+        let obstacles: obstacleItem[] = [];
+        for (let i = this.obstacleCache; i < this.skiCourse.length; i++) {
             let obst = this.skiCourse[i];
             let pos = obst.trailPosition;
             //removes redundancy of obstacles that the otter has passed
-            if(this.currentTime > pos + obstacleVisibilityWindow){
+            if (this.currentTime > pos + obstacleVisibilityWindow) {
                 this.obstacleCache++;
                 continue;
             }
             //does not render things far into future
-            if(this.currentTime < pos){
+            if (this.currentTime < pos) {
                 break;
             }
             let ln = this.skiCourse[i].lanePosition;
             let prog = (this.currentTime - pos) / obstacleVisibilityWindow;
-            if(ln >= this.ottPosition){
-                if(ln == this.ottPosition && prog > 0.66 && prog < 0.75){
+            if (ln >= this.ottPosition) {
+                if (ln == this.ottPosition && prog > 0.66 && prog < 0.75) {
                     this.collision = true;
                 }
                 obstacles.push(obst);
-            }else{
+            } else {
                 obstacleRender(obst);
             }
         }
-        if(this.obstacleCache == this.skiCourse.length){
+        if (this.obstacleCache == this.skiCourse.length) {
             this.generateSkiCourse(this.currentTime)
         }
         this.dynamicObjs[ottID].update();
         obstacles.forEach(o => {
             obstacleRender(o);
         })
-        if(this.waterlooAnim < this.waterlooFinish && this.currentDistanceInKM > destination){
+        if (this.waterlooAnim < this.waterlooFinish && this.currentDistanceInKM > destination) {
             this.dynamicObjs[waterlooID].update();
         }
-        if(this.gameState == GamePhase.RUNNING && this.ottAnimFrame != ottoAnimProg.length){
+        if (this.gameState == GamePhase.RUNNING && this.ottAnimFrame != ottoAnimProg.length) {
             let pPos = positionCoords[this.prevPosition];
             let cPos = positionCoords[this.ottPosition];
             let transit = [cPos[0] - pPos[0], cPos[1] - pPos[1]];
@@ -461,7 +466,7 @@ export class GameRenderer {
         }
     }
 
-    calculateSlopeCoordXY(lane: number, position: number){
+    calculateSlopeCoordXY(lane: number, position: number) {
         let len = position * skiTrackLen;
         let x = spawnCoords[lane][0] - len * Math.cos(slopeAngle);
         let y = spawnCoords[lane][1] - len * Math.sin(slopeAngle);
@@ -477,7 +482,7 @@ export class GameRenderer {
     }
 
     destroy() {
-        if(this.renderHandle){
+        if (this.renderHandle) {
             cancelAnimationFrame(this.renderHandle);
         }
     }
