@@ -59,6 +59,7 @@
 		"svelte"
 	],
 	"dependencies": {
+		"@sveltejs/adapter-static": "^3.0.10",
 		"matter-js": "^0.20.0",
 		"path-data-polyfill": "^1.0.8",
 		"poly-decomp": "^0.3.0"

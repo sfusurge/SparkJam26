@@ -81,7 +81,7 @@
 		>
 			<div class="relative aspect-square w-full">
 				<img
-					src="/footer/newshapes/orange_triangle.webp"
+					src="/footer/newshapes/cone1.svg"
 					alt=""
 					class="block size-full object-contain"
 				/>
@@ -107,7 +107,7 @@
 		>
 			<div class="relative aspect-square w-full">
 				<img
-					src="/footer/newshapes/ball.webp"
+					src="/footer/newshapes/ball.svg"
 					alt=""
 					class="block size-full object-contain"
 				/>
@@ -165,7 +165,7 @@
 
 		transform: translate(-50%, -50%) scale(1);
 
-		
+
 		mask-image: url("/background/hero_mask.svg");
 		mask-size: contain;
 		mask-repeat: no-repeat;
