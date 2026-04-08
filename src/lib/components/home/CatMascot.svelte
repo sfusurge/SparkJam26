@@ -1,5 +1,5 @@
 <div class="cat-wrapper">
-	<img src="/footer/newshapes/cat.webp" alt="SparkJam cat mascot" class="cat" fetchpriority=high />
+	<img src="/footer/newshapes/cat.webp" alt="SparkJam cat mascot" class="cat" />
 </div>
 
 <style>
