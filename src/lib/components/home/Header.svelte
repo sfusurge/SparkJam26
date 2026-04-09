@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Countdown from '$lib/components/ui/Countdown.svelte';
+	import Button from "$lib/components/ui/Button.svelte";
 </script>
 
 <header class="header-bar z-100 w-full" aria-label="Site">
@@ -15,7 +16,7 @@
 				<img alt="Figma" class="block h-full w-auto brightness-0" src="/sponsors/Figma.svg" />
 			</div>
 		</div>
-		<Countdown />
+			<Button variant="header-cta" class="max-sm:text-[18px]" href="https://portal.sfusurge.com/application">Apply Now</Button>
 	</div>
 </header>
 
