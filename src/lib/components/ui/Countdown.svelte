@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { onDestroy, onMount } from 'svelte';
 
-	// April 9, 2026 @ 6:00 PM PST (UTC-8) = April 10, 2026 02:00:00 UTC
-	const TARGET = new Date('2026-04-10T02:00:00Z');
+	const TARGET = new Date('2026-04-09T15:00:00Z');
 
 	const {
 		vertical = false,

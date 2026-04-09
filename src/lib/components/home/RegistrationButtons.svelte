@@ -5,7 +5,7 @@
 	import type { Writable } from 'svelte/store';
 	const { isMobile } = $props() as { isMobile: Writable<boolean> };
 
-	const TARGET = new Date('2026-04-10T02:00:00Z');
+	const TARGET = new Date('2026-04-09T15:00:00Z');
 	let applicationsOpen = $state(Date.now() >= TARGET.getTime());
 </script>
 
