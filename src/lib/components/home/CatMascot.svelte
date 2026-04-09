@@ -1,6 +1,5 @@
-
 <div class="cat-wrapper">
-	<img src="/footer/newshapes/cat.png" alt="SparkJam cat mascot" class="cat" />
+	<img src="/footer/newshapes/cat.webp" alt="SparkJam cat mascot" class="cat" />
 </div>
 
 <style>
@@ -9,7 +8,7 @@
 		left: 53%;
 		top: 54%;
 		transform: translate(-50%, -50%);
-    z-index: 10;
+		z-index: 10;
 	}
 
 	.cat {
@@ -17,11 +16,18 @@
 		min-width: 650px;
 		transform-origin: center;
 		animation: wobble 2.5s ease-in-out infinite;
+		scale: 0.9;
 	}
 
 	@keyframes wobble {
-		0%   { transform: rotate(-6deg); }
-		50%  { transform: rotate(6deg); }
-		100% { transform: rotate(-6deg); }
+		0% {
+			transform: rotate(-6deg);
+		}
+		50% {
+			transform: rotate(6deg);
+		}
+		100% {
+			transform: rotate(-6deg);
+		}
 	}
 </style>

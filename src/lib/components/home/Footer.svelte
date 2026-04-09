@@ -24,7 +24,7 @@
 <svelte:window bind:innerWidth={_width} bind:innerHeight={height} />
 
 <div class="relative isolate w-full overflow-hidden {className}">
-	<FullBleedMedia src="/footer/footer.webp" class="mt-20" bind:mediaWidth={width} bind:mediaHeight={height}>
+	<FullBleedMedia  class="mt-20" bind:mediaWidth={width} bind:mediaHeight={height}>
 		{#snippet overlay()}
 			{#if width && effectiveHeight}
 				<GravityClickSection {width} height={physicsPlayHeight} topOffset={physicsTopOffset} />

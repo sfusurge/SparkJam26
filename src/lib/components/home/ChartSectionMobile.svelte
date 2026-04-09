@@ -102,10 +102,10 @@
 				>
 					<div class="absolute top-10 left-1/2 -translate-x-1/2 flex gap-4 z-20">
 						<button onclick={scrollPrev} aria-label="Scroll Left" disabled={selected === 0}>
-							<img src={'/shapes/leftArrow.svg'} class="size-[62px] rounded-xl" />
+							<img src={'/shapes/arrow.svg'} class="size-[62px] rounded-xl rotate-90" alt="Scroll left" />
 						</button>
 						<button onclick={scrollNext} aria-label="Scroll Right" disabled={selected === bars.length - 1}>
-							<img src={'/shapes/rightArrow.svg'} class="size-[62px] rounded-xl" />
+							<img src={'/shapes/arrow.svg'} class="size-[62px] rounded-xl -rotate-90" alt="Scroll right" />
 						</button>
 					</div>
 

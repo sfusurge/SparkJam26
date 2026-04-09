@@ -5,17 +5,21 @@
 
 @font-face {
 	font-family: 'PPMori';
-	src: url('/fonts/PPMori-Regular.otf') format('opentype');
+	src: url('/fonts/PPMori-Regular.woff2') format('woff2');
 	font-weight: 400;
 	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
 	font-family: 'PPMori';
-	src: url('/fonts/PPMori-SemiBold.otf') format('opentype');
+	src: url('/fonts/PPMori-SemiBold.woff2') format('woff2');
 	font-weight: 600;
 	font-style: normal;
+	font-display: swap;
+
 }
+
 
 html,
 body {
@@ -29,23 +33,20 @@ body {
 /* Explicit URLs (not @apply) so custom cursors survive cascade after a single Tailwind build. */
 @layer base {
 	:where(p, h1, h2, h3, h4, h5, h6, li, blockquote, figcaption) {
-		cursor: url('/cursors/text_highlight_cursor.svg') 16 1, text;
+		cursor: url('/cursors/text_highlight_cursor.svg') 16 16, text;
 	}
 
-	:where(
-		input[type='text'],
+	:where(input[type='text'],
 		input[type='email'],
 		input[type='search'],
 		input[type='password'],
 		input[type='url'],
 		input[type='tel'],
-		textarea
-	) {
-		cursor: url('/cursors/text_highlight_cursor.svg') 16 1, text;
+		textarea) {
+		cursor: url('/cursors/text_highlight_cursor.svg') 16 16, text;
 	}
 
-	:where(
-		a,
+	:where(a,
 		button,
 		[role='button'],
 		input[type='submit'],
@@ -53,8 +54,7 @@ body {
 		input[type='reset'],
 		label[for],
 		summary,
-		select
-	) {
+		select) {
 		cursor: url('/cursors/select_cursor.svg') 4 5, pointer;
 	}
 }
