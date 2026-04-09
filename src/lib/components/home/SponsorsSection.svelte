@@ -79,7 +79,7 @@
 								<img src="/sponsors/tacofino.webp" alt="Tacofino" class="h-[41px] object-contain" />
 							</a>
 							<a href="https://www.studyspotr.com/" target="_blank" rel="noopener noreferrer" class="max-sm:max-w-[60px] transition-opacity hover:opacity-80">
-								<img src="/sponsors/StudySpotr.png" alt="StudySpotr" class="h-[41px] object-contain" />
+								<img src="/sponsors/StudySpotr.webp" alt="StudySpotr" class="h-[41px] object-contain" />
 							</a>
 						</div>
 					</div>

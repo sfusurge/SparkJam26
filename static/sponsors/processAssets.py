@@ -22,8 +22,6 @@ print("Process the following files:")
 
 for file in glob.glob(f"{relativePath}/**/*.png", recursive=True) + glob.glob(
     f"{relativePath}/**/*.jpg", recursive=True
-)+ glob.glob(
-    f"{relativePath}/**/*.webp", recursive=True
 ):
     queue.append(file)
     nameToSize[file] = os.path.getsize(file) // 1024
