@@ -48,7 +48,7 @@
         }
     > = {
         ball: {
-            img: "/footer/newshapes/ball.svg",
+            img: "/footer/newshapes/Ball.webp",
             shape: "/footer/newshapes/ballShape.svg",
             scaleMultiplier: 0.89,
         },
@@ -74,7 +74,7 @@
             scaleMultiplier: 1.0,
         },
         orange_triangle: {
-            img: "/footer/newshapes/cone1.svg",
+            img: "/footer/newshapes/cone1.webp",
             shape: "/footer/newshapes/triangleShape.svg",
             scaleMultiplier: 1.0,
         },

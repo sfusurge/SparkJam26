@@ -29,7 +29,40 @@
 	<div
 		class="relative mx-auto aspect-[1411/819] w-full max-w-[1392px] max-sm:aspect-auto max-sm:min-h-[811px] max-sm:overflow-hidden"
 	>
+		<div
+			class="pointer-events-none absolute left-[54%] top-[56%] z-[7] max-sm:left-[52%] max-sm:top-[54%]"
+			style="width: 349.481px; height: 307.324px; transform: translate(-50%, -50%) rotate(-171.811deg);"
+			aria-hidden="true"
+		>
+			<img
+				src="/footer/newshapes/wide_squiggle.webp"
+				alt=""
+				class="block size-full object-contain opacity-90"
+			/>
+		</div>
+		<div
+			class="pointer-events-none absolute left-[53%] top-[66%] z-[8] w-[min(23%,304px)] min-w-[150px] max-w-[324px] -translate-x-1/2 -translate-y-1/2 -rotate-[14deg] max-sm:left-[50%] max-sm:top-[64%] max-sm:w-[min(46%,236px)]"
+			aria-hidden="true"
+		>
+			<img
+				src="/footer/newshapes/gradient_slice.webp"
+				alt=""
+				class="block w-full object-contain"
+			/>
+		</div>
 		<CatMascot />
+		<div
+			class="pointer-events-none absolute left-[29.5%] top-[47%] z-[9] w-[min(10%,136px)] min-w-[48px] max-w-[106px] rotate-[4deg] max-sm:left-[8%] max-sm:top-[46%] max-sm:w-[min(16%,90px)]"
+			aria-hidden="true"
+		>
+			<div class="relative aspect-[4/3] w-full">
+				<img
+					src="/footer/newshapes/bowtie.webp"
+					alt=""
+					class="block size-full object-contain"
+				/>
+			</div>
+		</div>
 		<img
 			src="/background/background.svg"
 			alt=""
@@ -81,7 +114,7 @@
 		>
 			<div class="relative aspect-square w-full">
 				<img
-					src="/footer/newshapes/cone1.svg"
+					src="/footer/newshapes/cone1.webp"
 					alt=""
 					class="block size-full object-contain"
 				/>
@@ -107,7 +140,7 @@
 		>
 			<div class="relative aspect-square w-full">
 				<img
-					src="/footer/newshapes/ball.svg"
+					src="/footer/newshapes/Ball.webp"
 					alt=""
 					class="block size-full object-contain"
 				/>
