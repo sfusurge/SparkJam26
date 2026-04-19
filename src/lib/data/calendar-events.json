@@ -3,134 +3,177 @@
 		{
 			"month": "MAY",
 			"day": "11",
-			"category": "workshop",
-			"title": "A Look Into Designing for Riot Games",
+			"category": "speaker-session",
+			"title": "Protecting Your Peace as a Designer",
 			"registerUrl": "#",
-			"bodyHtml": "<p>Learn all about the powerful no-code tool, with Framer Campus Leader and Nokia designer <span class=\"underline\">Zariyan Mansoor</span>.</p>",
+			"bodyHtml": "<p>Learn all about how to protect your peace as a designer from <span class=\"underline\">Elissa Martial</span>, prev @ Apple & Figma.</p>",
 			"personPhotos": [
-				{ "name": "Zariyan Mansoor", "photoSrc": "/people/placeholder.webp", "url": "https://www.linkedin.com" }
+				{ "name": "Elissa Martial", "photoSrc": "/people/Elissa.webp", "url": "https://www.linkedin.com/in/elissamartial/" }
+			],
+			"badges": [
+				{ "kind": "speaker-session", "text": "Speaker Session" },
+				{ "kind": "pill", "text": "1:00pm PST", "variant": "sparky-yellow" },
+				{ "kind": "pill", "text": "4:00pm EST", "variant": "sparky-yellow" }
+			]
+		},
+		{
+			"month": "MAY",
+			"day": "11",
+			"category": "workshop",
+			"title": "Intro to Framer",
+			"registerUrl": "#",
+			"bodyHtml": "<p>Bring your SparkJam project to life with no-code tool, Framer! Hosted by SFU Framer Campus Ambassador <span class=\"underline\">Zariyan Mansoor</span> (incoming design @ Nokia).</p>",
+			"personPhotos": [
+				{ "name": "Zariyan Mansoor", "photoSrc": "/people/Zariya.webp", "url": "https://www.linkedin.com/in/zariyanmansoor/" }
 			],
 			"badges": [
 				{ "kind": "pill", "text": "WORKSHOP", "variant": "strawberry-moon" },
-				{ "kind": "pill", "text": "11:00am PST", "variant": "sparky-yellow" },
-				{ "kind": "pill", "text": "2:00pm EST", "variant": "sparky-yellow" }
+				{ "kind": "pill", "text": "3:00pm PST", "variant": "sparky-yellow" },
+				{ "kind": "pill", "text": "6:00pm EST", "variant": "sparky-yellow" }
 			]
 		},
 		{
 			"month": "MAY",
 			"day": "11",
-			"category": "speaker-session",
-			"title": "Intro to Framer",
+			"category": "workshop",
+			"title": "Design Before You Design: Creating Stylescapes",
 			"registerUrl": "#",
-			"bodyHtml": "<p>Ever wonder how the UI in TFT is put together? Join <span class=\"underline\">Dave Felton</span> and <span class=\"underline\">Another Name</span> for this inside look.</p>",
+			"bodyHtml": "<p>Stylescapes are the foundation for great visual design, learn how to make them with <span class=\"underline\">Kaylyn Ho</span>, visual designer @ Riot Games.</p>",
 			"personPhotos": [
-				{ "name": "Dave Felton", "photoSrc": "/people/placeholder.webp", "url": "https://www.linkedin.com" },
-				{ "name": "Another Name", "photoSrc": "/people/placeholder.webp", "url": "https://www.linkedin.com" }
+				{ "name": "Kaylyn Ho", "photoSrc": "/people/Kayly.webp", "url": "https://www.linkedin.com/in/kaylyn-ho/" }
+			],
+			"badges": [
+				{ "kind": "pill", "text": "WORKSHOP", "variant": "strawberry-moon" },
+				{ "kind": "pill", "text": "5:00pm PST", "variant": "sparky-yellow" },
+				{ "kind": "pill", "text": "8:00pm EST", "variant": "sparky-yellow" }
+			]
+		},
+		{
+			"month": "MAY",
+			"day": "12",
+			"category": "workshop",
+			"title": "Vibe Coding Your Design Portfolio",
+			"registerUrl": "#",
+			"bodyHtml": "<p>Building your portfolio doesn't need to be hard. Hear all about Vibe Coding from <span class=\"underline\">Michelle Liu</span>, prev. @ Apple & Roblox.</p>",
+			"personPhotos": [
+				{ "name": "Michelle Liu", "photoSrc": "/people/Michelle.webp", "url": "https://www.linkedin.com/in/michelletliu/" }
+			],
+			"badges": [
+				{ "kind": "pill", "text": "WORKSHOP", "variant": "strawberry-moon" },
+				{ "kind": "pill", "text": "12:00pm PST", "variant": "sparky-yellow" },
+				{ "kind": "pill", "text": "3:00pm EST", "variant": "sparky-yellow" }
+			]
+		},
+		{
+			"month": "MAY",
+			"day": "12",
+			"category": "speaker-session",
+			"title": "More Than Space Mono: Typography Tips for Beginners",
+			"registerUrl": "#",
+			"bodyHtml": "<p>Typography can be confusing, but <span class=\"underline\">Nathan Lew</span> (prev. @ Invoke Digital), is here to help point you in the right direction.</p>",
+			"personPhotos": [
+				{ "name": "Nathan Lew", "photoSrc": "/people/Natha.webp", "url": "https://www.linkedin.com/in/nathan-lew/" }
 			],
 			"badges": [
 				{ "kind": "speaker-session", "text": "Speaker Session" },
+				{ "kind": "pill", "text": "3:00pm PST", "variant": "sparky-yellow" },
+				{ "kind": "pill", "text": "6:00pm EST", "variant": "sparky-yellow" }
+			]
+		},
+		{
+			"month": "MAY",
+			"day": "12",
+			"category": "workshop",
+			"title": "You HAVE to use Figma Auto Layout",
+			"registerUrl": "#",
+			"bodyHtml": "<p>Without Auto Layout, your projects can fall apart. Learn all about Auto Layout from <span class=\"underline\">Michael Dresler</span>.</p>",
+			"personPhotos": [
+				{ "name": "Michael Dresler", "photoSrc": "/people/Michael.webp", "url": "https://www.linkedin.com/in/michael-dresler/" }
+			],
+			"badges": [
+				{ "kind": "pill", "text": "WORKSHOP", "variant": "strawberry-moon" },
+				{ "kind": "pill", "text": "6:00pm PST (TBD)", "variant": "sparky-yellow" },
+				{ "kind": "pill", "text": "9:00pm EST (TBD)", "variant": "sparky-yellow" }
+			]
+		},
+		{
+			"month": "MAY",
+			"day": "13",
+			"category": "workshop",
+			"title": "Designing and Coding Interfaces with Feel",
+			"registerUrl": "#",
+			"bodyHtml": "<p>Go beyond the technical skills and develop your taste with <span class=\"underline\">Flora Guo</span> is a design engineer @ Paradigm AI.</p>",
+			"personPhotos": [
+				{ "name": "Flora Guo", "photoSrc": "/people/Flora.webp", "url": "https://www.linkedin.com/in/floguo/" }
+			],
+			"badges": [
+				{ "kind": "pill", "text": "WORKSHOP", "variant": "strawberry-moon" },
+				{ "kind": "pill", "text": "2:00pm PST", "variant": "sparky-yellow" },
+				{ "kind": "pill", "text": "5:00pm EST", "variant": "sparky-yellow" }
+			]
+		},
+		{
+			"month": "MAY",
+			"day": "14",
+			"category": "workshop",
+			"title": "Presenting your Design Projects",
+			"registerUrl": "#",
+			"bodyHtml": "<p>Most projects fall apart during the presentation phase, <span class=\"underline\">Keyan Verani</span> (design @ Ramp) is here to help guide you through that process.</p>",
+			"personPhotos": [
+				{ "name": "Keyan Verani", "photoSrc": "/people/Keya.webp", "url": "https://www.linkedin.com/in/keyanv/" }
+			],
+			"badges": [
+				{ "kind": "pill", "text": "WORKSHOP", "variant": "strawberry-moon" },
+				{ "kind": "pill", "text": "3:00pm PST", "variant": "sparky-yellow" },
+				{ "kind": "pill", "text": "6:00pm EST", "variant": "sparky-yellow" }
+			]
+		},
+		{
+			"month": "MAY",
+			"day": "14",
+			"category": "workshop",
+			"title": "Making Joyful Personal Software",
+			"registerUrl": "#",
+			"bodyHtml": "<p><span class=\"underline\">Bao To</span> (design eng @ Relationship Co.) loves ducks, but loves making them digital even more. Join him and learn all about joyful software.</p>",
+			"personPhotos": [
+				{ "name": "Bao To", "photoSrc": "/people/Bao.webp", "url": "https://www.linkedin.com/in/bao-to-54621b19b/" }
+			],
+			"badges": [
+				{ "kind": "pill", "text": "WORKSHOP", "variant": "strawberry-moon" },
 				{ "kind": "pill", "text": "6:00pm PST", "variant": "sparky-yellow" },
 				{ "kind": "pill", "text": "9:00pm EST", "variant": "sparky-yellow" }
 			]
 		},
 		{
 			"month": "MAY",
-			"day": "11",
+			"day": "15",
 			"category": "speaker-session",
-			"title": "Intro to Framer",
+			"title": "The Wu Panel: Galaxia, Emmi, & Caleb",
 			"registerUrl": "#",
-			"bodyHtml": "<p>Ever wonder how the UI in TFT is put together? Join <span class=\"underline\">Dave Felton</span> and <span class=\"underline\">Another Name</span> for this inside look.</p>",
+			"bodyHtml": "<p>Learn all about design from the Wu Panel, made up of <span class=\"underline\">Galaxia Wu</span> (esign @ Figma), <span class=\"underline\">Emmi Wu</span> (design @ Perplexity), and <span class=\"underline\">Caleb Wu</span> (design @ Ando).</p>",
 			"personPhotos": [
-				{ "name": "Dave Felton", "photoSrc": "/people/placeholder.webp", "url": "https://www.linkedin.com" },
-				{ "name": "Another Name", "photoSrc": "/people/placeholder.webp", "url": "https://www.linkedin.com" }
+				{ "name": "Galaxia Wu", "photoSrc": "/people/Galaxia.webp", "url": "https://www.linkedin.com/in/galaxia/" },
+				{ "name": "Emmi Wu", "photoSrc": "/people/Emmi.webp", "url": "https://www.linkedin.com/in/emerald-wu/" },
+				{ "name": "Caleb Wu", "photoSrc": "/people/Caleb.webp", "url": "https://www.linkedin.com/in/caleb-wu-/" }
 			],
 			"badges": [
-				{ "kind": "speaker-session", "text": "Speaker Session" },
-				{ "kind": "pill", "text": "6:00pm PST", "variant": "sparky-yellow" },
-				{ "kind": "pill", "text": "9:00pm EST", "variant": "sparky-yellow" }
+				{ "kind": "speaker-session", "text": "Speaker Panel" },
+				{ "kind": "pill", "text": "1:00pm PST", "variant": "sparky-yellow" },
+				{ "kind": "pill", "text": "4:00pm EST", "variant": "sparky-yellow" }
 			]
 		},
 		{
 			"month": "MAY",
-			"day": "11",
-			"category": "speaker-session",
-			"title": "Intro to Framer",
+			"day": "15",
+			"category": "workshop",
+			"title": "All About the Magic of Design Systems",
 			"registerUrl": "#",
-			"bodyHtml": "<p>Ever wonder how the UI in TFT is put together? Join <span class=\"underline\">Dave Felton</span> and <span class=\"underline\">Another Name</span> for this inside look.</p>",
+			"bodyHtml": "<p>Design Systems bring your project together, <span class=\"underline\">Christina Raganit</span> (design @ Google), will start you on your design system journey.</p>",
 			"personPhotos": [
-				{ "name": "Dave Felton", "photoSrc": "/people/placeholder.webp", "url": "https://www.linkedin.com" },
-				{ "name": "Another Name", "photoSrc": "/people/placeholder.webp", "url": "https://www.linkedin.com" }
+				{ "name": "Christina Raganit", "photoSrc": "/people/Chris.webp", "url": "https://www.linkedin.com/in/christinaraganit/" }
 			],
 			"badges": [
-				{ "kind": "speaker-session", "text": "Speaker Session" },
-				{ "kind": "pill", "text": "6:00pm PST", "variant": "sparky-yellow" },
-				{ "kind": "pill", "text": "9:00pm EST", "variant": "sparky-yellow" }
-			]
-		},
-		{
-			"month": "MAY",
-			"day": "11",
-			"category": "speaker-session",
-			"title": "Intro to Framer",
-			"registerUrl": "#",
-			"bodyHtml": "<p>Ever wonder how the UI in TFT is put together? Join <span class=\"underline\">Dave Felton</span> and <span class=\"underline\">Another Name</span> for this inside look.</p>",
-			"personPhotos": [
-				{ "name": "Dave Felton", "photoSrc": "/people/placeholder.webp", "url": "https://www.linkedin.com" },
-				{ "name": "Another Name", "photoSrc": "/people/placeholder.webp", "url": "https://www.linkedin.com" }
-			],
-			"badges": [
-				{ "kind": "speaker-session", "text": "Speaker Session" },
-				{ "kind": "pill", "text": "6:00pm PST", "variant": "sparky-yellow" },
-				{ "kind": "pill", "text": "9:00pm EST", "variant": "sparky-yellow" }
-			]
-		},
-		{
-			"month": "MAY",
-			"day": "11",
-			"category": "speaker-session",
-			"title": "Intro to Framer",
-			"registerUrl": "#",
-			"bodyHtml": "<p>Ever wonder how the UI in TFT is put together? Join <span class=\"underline\">Dave Felton</span> and <span class=\"underline\">Another Name</span> for this inside look.</p>",
-			"personPhotos": [
-				{ "name": "Dave Felton", "photoSrc": "/people/placeholder.webp", "url": "https://www.linkedin.com" },
-				{ "name": "Another Name", "photoSrc": "/people/placeholder.webp", "url": "https://www.linkedin.com" }
-			],
-			"badges": [
-				{ "kind": "speaker-session", "text": "Speaker Session" },
-				{ "kind": "pill", "text": "6:00pm PST", "variant": "sparky-yellow" },
-				{ "kind": "pill", "text": "9:00pm EST", "variant": "sparky-yellow" }
-			]
-		},
-		{
-			"month": "MAY",
-			"day": "11",
-			"category": "speaker-session",
-			"title": "Intro to Framer",
-			"registerUrl": "#",
-			"bodyHtml": "<p>Ever wonder how the UI in TFT is put together? Join <span class=\"underline\">Dave Felton</span> and <span class=\"underline\">Another Name</span> for this inside look.</p>",
-			"personPhotos": [
-				{ "name": "Dave Felton", "photoSrc": "/people/placeholder.webp", "url": "https://www.linkedin.com" },
-				{ "name": "Another Name", "photoSrc": "/people/placeholder.webp", "url": "https://www.linkedin.com" }
-			],
-			"badges": [
-				{ "kind": "speaker-session", "text": "Speaker Session" },
-				{ "kind": "pill", "text": "6:00pm PST", "variant": "sparky-yellow" },
-				{ "kind": "pill", "text": "9:00pm EST", "variant": "sparky-yellow" }
-			]
-		},
-		{
-			"month": "MAY",
-			"day": "11",
-			"category": "speaker-session",
-			"title": "Intro to Framer",
-			"registerUrl": "#",
-			"bodyHtml": "<p>Ever wonder how the UI in TFT is put together? Join <span class=\"underline\">Dave Felton</span> and <span class=\"underline\">Another Name</span> for this inside look.</p>",
-			"personPhotos": [
-				{ "name": "Dave Felton", "photoSrc": "/people/placeholder.webp", "url": "https://www.linkedin.com" },
-				{ "name": "Another Name", "photoSrc": "/people/placeholder.webp", "url": "https://www.linkedin.com" }
-			],
-			"badges": [
-				{ "kind": "speaker-session", "text": "Speaker Session" },
+				{ "kind": "pill", "text": "WORKSHOP", "variant": "strawberry-moon" },
 				{ "kind": "pill", "text": "6:00pm PST", "variant": "sparky-yellow" },
 				{ "kind": "pill", "text": "9:00pm EST", "variant": "sparky-yellow" }
 			]

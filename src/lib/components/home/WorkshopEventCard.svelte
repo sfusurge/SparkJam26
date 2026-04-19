@@ -156,19 +156,19 @@
 		<div
 			class="flex w-full flex-col gap-6 xl:flex-row xl:flex-wrap xl:items-center xl:justify-between"
 		>
-			<div class="flex min-w-0 flex-wrap items-center gap-x-[30px] gap-y-3">
+			<div class="flex min-w-0 flex-wrap items-center gap-x-[30px] gap-y-3 lg:flex-row flex-col w-fit lg:w-auto">
 				{#each badges as badge, i (badge.kind + '-' + badge.text + '-' + i)}
 					{#if badge.kind === 'speaker-session'}
-						<div class="relative flex items-center justify-center">
+						<div class="relative flex items-center justify-center w-full lg:w-auto">
 							<img src="/workshop/talkstar.svg" alt="" class="h-11 w-auto" />
 							<span
-									class="absolute inset-0 flex items-center justify-center font-sans text-2xl font-semibold"
+									class="absolute inset-0 flex items-center justify-center font-sans text-2xl font-semibold pt-0.5"
 							>{badge.text}</span
 							>
 						</div>
 					{:else}
 						<span
-							class="inline-flex min-h-[44px] min-w-0 items-center justify-center rounded-full border border-boba-black px-5 py-2.5 text-center font-sans text-2xl font-semibold leading-none tracking-[-0.03em] {pillVariantClass[badge.variant]}"
+							class="inline-flex min-h-[44px] min-w-0 items-center justify-center rounded-full border border-boba-black px-5 pt-3 pb-2 text-center font-sans text-2xl font-semibold leading-none tracking-[-0.03em] {pillVariantClass[badge.variant]} w-full lg:w-auto"
 						>
 							{badge.text}
 						</span>
@@ -176,14 +176,15 @@
 				{/each}
 			</div>
 
-			<Button
-				variant="register-row"
-				href={registerUrl}
-				target={isExternal ? '_blank' : undefined}
-				rel={isExternal ? 'noopener noreferrer' : undefined}
-			>
-				Register Now
-			</Button>
+<!--			hide button until we get the register urls-->
+<!--			<Button-->
+<!--				variant="register-row"-->
+<!--				href={registerUrl}-->
+<!--				target={isExternal ? '_blank' : undefined}-->
+<!--				rel={isExternal ? 'noopener noreferrer' : undefined}-->
+<!--			>-->
+<!--				Register Now-->
+<!--			</Button>-->
 		</div>
 	</div>
 </article>

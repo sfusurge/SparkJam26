@@ -28,8 +28,7 @@
 	<IndustryClassroomSection {isMobile} />
 	<TipToTipSection {isMobile} />
 	<ScheduleSection />
-	<TempWorkshopsSection/>
-<!--<WorkshopsSection />-->
+	<WorkshopsSection />
 	{#if $isMobile}
 		<ChartSectionMobile />
 	{:else}	
