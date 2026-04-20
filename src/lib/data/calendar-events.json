@@ -150,7 +150,7 @@
 			"category": "speaker-session",
 			"title": "The Wu Panel: Galaxia, Emmi, & Caleb",
 			"registerUrl": "#",
-			"bodyHtml": "<p>Learn all about design from the Wu Panel, made up of <span class=\"underline\">Galaxia Wu</span> (esign @ Figma), <span class=\"underline\">Emmi Wu</span> (design @ Perplexity), and <span class=\"underline\">Caleb Wu</span> (design @ Ando).</p>",
+			"bodyHtml": "<p>Learn all about design from the Wu Panel, made up of <span class=\"underline\">Galaxia Wu</span> (design @ Figma), <span class=\"underline\">Emmi Wu</span> (design @ Perplexity), and <span class=\"underline\">Caleb Wu</span> (design @ Ando).</p>",
 			"personPhotos": [
 				{ "name": "Galaxia Wu", "photoSrc": "/people/Galaxia.webp", "url": "https://www.linkedin.com/in/galaxia/" },
 				{ "name": "Emmi Wu", "photoSrc": "/people/Emmi.webp", "url": "https://www.linkedin.com/in/emerald-wu/" },
