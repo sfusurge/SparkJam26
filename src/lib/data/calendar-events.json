@@ -82,22 +82,6 @@
 		},
 		{
 			"month": "MAY",
-			"day": "12",
-			"category": "workshop",
-			"title": "You HAVE to use Figma Auto Layout",
-			"registerUrl": "#",
-			"bodyHtml": "<p>Without Auto Layout, your projects can fall apart. Learn all about Auto Layout from <span class=\"underline\">Michael Dresler</span>.</p>",
-			"personPhotos": [
-				{ "name": "Michael Dresler", "photoSrc": "/people/Michael.webp", "url": "https://www.linkedin.com/in/michael-dresler/" }
-			],
-			"badges": [
-				{ "kind": "pill", "text": "WORKSHOP", "variant": "strawberry-moon" },
-				{ "kind": "pill", "text": "6:00pm PST (TBD)", "variant": "sparky-yellow" },
-				{ "kind": "pill", "text": "9:00pm EST (TBD)", "variant": "sparky-yellow" }
-			]
-		},
-		{
-			"month": "MAY",
 			"day": "13",
 			"category": "workshop",
 			"title": "Designing and Coding Interfaces with Feel",
@@ -118,9 +102,9 @@
 			"category": "workshop",
 			"title": "Presenting your Design Projects",
 			"registerUrl": "#",
-			"bodyHtml": "<p>Most projects fall apart during the presentation phase, <span class=\"underline\">Keyan Verani</span> (design @ Ramp) is here to help guide you through that process.</p>",
+			"bodyHtml": "<p>Most projects fall apart during the presentation phase, <span class=\"underline\">Keyan Virani</span> (design @ Ramp) is here to help guide you through that process.</p>",
 			"personPhotos": [
-				{ "name": "Keyan Verani", "photoSrc": "/people/Keya.webp", "url": "https://www.linkedin.com/in/keyanv/" }
+				{ "name": "Keyan Virani", "photoSrc": "/people/Keya.webp", "url": "https://www.linkedin.com/in/keyanv/" }
 			],
 			"badges": [
 				{ "kind": "pill", "text": "WORKSHOP", "variant": "strawberry-moon" },
@@ -160,6 +144,22 @@
 				{ "kind": "speaker-session", "text": "Speaker Panel" },
 				{ "kind": "pill", "text": "1:00pm PST", "variant": "sparky-yellow" },
 				{ "kind": "pill", "text": "4:00pm EST", "variant": "sparky-yellow" }
+			]
+		},
+		{
+			"month": "MAY",
+			"day": "15",
+			"category": "workshop",
+			"title": "You HAVE to use Figma Auto Layout",
+			"registerUrl": "#",
+			"bodyHtml": "<p>Without Auto Layout, your projects can fall apart. Learn all about Auto Layout from <span class=\"underline\">Michael Dresler</span>.</p>",
+			"personPhotos": [
+				{ "name": "Michael Dresler", "photoSrc": "/people/Michael.webp", "url": "https://www.linkedin.com/in/michael-dresler/" }
+			],
+			"badges": [
+				{ "kind": "pill", "text": "WORKSHOP", "variant": "strawberry-moon" },
+				{ "kind": "pill", "text": "5:00pm PST", "variant": "sparky-yellow" },
+				{ "kind": "pill", "text": "8:00pm EST", "variant": "sparky-yellow" }
 			]
 		},
 		{
