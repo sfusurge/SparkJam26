@@ -20,9 +20,9 @@
 			"month": "MAY",
 			"day": "11",
 			"category": "workshop",
-			"title": "Intro to Framer",
+			"title": "Bringing Life to Your Projects with Framer",
 			"registerUrl": "#",
-			"bodyHtml": "<p>Bring your SparkJam project to life with no-code tool, Framer! Hosted by SFU Framer Campus Ambassador <span class=\"underline\">Zariyan Mansoor</span> (incoming design @ Nokia).</p>",
+			"bodyHtml": "<p>Bring your SparkJam project to life with Framer. Hosted by SFU Framer Campus Ambassador <span class=\"underline\">Zariyan Mansoor</span> (incoming design @ Nokia).</p>",
 			"personPhotos": [
 				{ "name": "Zariyan Mansoor", "photoSrc": "/people/Zariya.webp", "url": "https://www.linkedin.com/in/zariyanmansoor/" }
 			],
