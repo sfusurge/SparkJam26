@@ -47,9 +47,8 @@
 			],
 			"badges": [
 				{
-					"kind": "pill",
-					"text": "WORKSHOP",
-					"variant": "strawberry-moon"
+					"kind": "speaker-session",
+					"text": "Speaker Session"
 				},
 				{
 					"kind": "pill",
@@ -79,9 +78,8 @@
 			],
 			"badges": [
 				{
-					"kind": "pill",
-					"text": "WORKSHOP",
-					"variant": "strawberry-moon"
+					"kind": "speaker-session",
+					"text": "Speaker Session"
 				},
 				{
 					"kind": "pill",
@@ -143,8 +141,9 @@
 			],
 			"badges": [
 				{
-					"kind": "speaker-session",
-					"text": "Speaker Session"
+					"kind": "pill",
+					"text": "WORKSHOP",
+					"variant": "strawberry-moon"
 				},
 				{
 					"kind": "pill",
@@ -174,9 +173,8 @@
 			],
 			"badges": [
 				{
-					"kind": "pill",
-					"text": "WORKSHOP",
-					"variant": "strawberry-moon"
+					"kind": "speaker-session",
+					"text": "Speaker Session"
 				},
 				{
 					"kind": "pill",
@@ -211,9 +209,8 @@
 			],
 			"badges": [
 				{
-					"kind": "pill",
-					"text": "WORKSHOP",
-					"variant": "strawberry-moon"
+					"kind": "speaker-session",
+					"text": "Speaker Panel"
 				},
 				{
 					"kind": "pill",
@@ -243,9 +240,8 @@
 			],
 			"badges": [
 				{
-					"kind": "pill",
-					"text": "WORKSHOP",
-					"variant": "strawberry-moon"
+					"kind": "speaker-session",
+					"text": "Speaker Session"
 				},
 				{
 					"kind": "pill",
@@ -307,9 +303,8 @@
 			],
 			"badges": [
 				{
-					"kind": "pill",
-					"text": "WORKSHOP",
-					"variant": "strawberry-moon"
+					"kind": "speaker-session",
+					"text": "Speaker Session"
 				},
 				{
 					"kind": "pill",
