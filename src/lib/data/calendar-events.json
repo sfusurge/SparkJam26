@@ -8,12 +8,27 @@
 			"registerUrl": "#",
 			"bodyHtml": "<p>Learn all about how to protect your peace as a designer from <span class=\"underline\">Elissa Martial</span>, prev @ Apple & Figma.</p>",
 			"personPhotos": [
-				{ "name": "Elissa Martial", "photoSrc": "/people/Elissa.webp", "url": "https://www.linkedin.com/in/elissamartial/" }
+				{
+					"name": "Elissa Martial",
+					"photoSrc": "/people/Elissa.webp",
+					"url": "https://www.linkedin.com/in/elissamartial/"
+				}
 			],
 			"badges": [
-				{ "kind": "speaker-session", "text": "Speaker Session" },
-				{ "kind": "pill", "text": "1:00pm PST", "variant": "sparky-yellow" },
-				{ "kind": "pill", "text": "4:00pm EST", "variant": "sparky-yellow" }
+				{
+					"kind": "speaker-session",
+					"text": "Speaker Session"
+				},
+				{
+					"kind": "pill",
+					"text": "1:00pm PST",
+					"variant": "sparky-yellow"
+				},
+				{
+					"kind": "pill",
+					"text": "4:00pm EST",
+					"variant": "sparky-yellow"
+				}
 			]
 		},
 		{
@@ -24,12 +39,28 @@
 			"registerUrl": "#",
 			"bodyHtml": "<p>Bring your SparkJam project to life with Framer. Hosted by SFU Framer Campus Ambassador <span class=\"underline\">Zariyan Mansoor</span> (incoming design @ Nokia).</p>",
 			"personPhotos": [
-				{ "name": "Zariyan Mansoor", "photoSrc": "/people/Zariya.webp", "url": "https://www.linkedin.com/in/zariyanmansoor/" }
+				{
+					"name": "Zariyan Mansoor",
+					"photoSrc": "/people/Zariya.webp",
+					"url": "https://www.linkedin.com/in/zariyanmansoor/"
+				}
 			],
 			"badges": [
-				{ "kind": "pill", "text": "WORKSHOP", "variant": "strawberry-moon" },
-				{ "kind": "pill", "text": "3:00pm PST", "variant": "sparky-yellow" },
-				{ "kind": "pill", "text": "6:00pm EST", "variant": "sparky-yellow" }
+				{
+					"kind": "pill",
+					"text": "WORKSHOP",
+					"variant": "strawberry-moon"
+				},
+				{
+					"kind": "pill",
+					"text": "3:00pm PST",
+					"variant": "sparky-yellow"
+				},
+				{
+					"kind": "pill",
+					"text": "6:00pm EST",
+					"variant": "sparky-yellow"
+				}
 			]
 		},
 		{
@@ -40,12 +71,28 @@
 			"registerUrl": "#",
 			"bodyHtml": "<p>Stylescapes are the foundation for great visual design, learn how to make them with <span class=\"underline\">Kaylyn Ho</span>, visual designer @ Riot Games.</p>",
 			"personPhotos": [
-				{ "name": "Kaylyn Ho", "photoSrc": "/people/Kayly.webp", "url": "https://www.linkedin.com/in/kaylyn-ho/" }
+				{
+					"name": "Kaylyn Ho",
+					"photoSrc": "/people/Kayly.webp",
+					"url": "https://www.linkedin.com/in/kaylyn-ho/"
+				}
 			],
 			"badges": [
-				{ "kind": "pill", "text": "WORKSHOP", "variant": "strawberry-moon" },
-				{ "kind": "pill", "text": "5:00pm PST", "variant": "sparky-yellow" },
-				{ "kind": "pill", "text": "8:00pm EST", "variant": "sparky-yellow" }
+				{
+					"kind": "pill",
+					"text": "WORKSHOP",
+					"variant": "strawberry-moon"
+				},
+				{
+					"kind": "pill",
+					"text": "5:00pm PST",
+					"variant": "sparky-yellow"
+				},
+				{
+					"kind": "pill",
+					"text": "8:00pm EST",
+					"variant": "sparky-yellow"
+				}
 			]
 		},
 		{
@@ -56,12 +103,28 @@
 			"registerUrl": "#",
 			"bodyHtml": "<p>Building your portfolio doesn't need to be hard. Hear all about Vibe Coding from <span class=\"underline\">Michelle Liu</span>, prev. @ Apple & Roblox.</p>",
 			"personPhotos": [
-				{ "name": "Michelle Liu", "photoSrc": "/people/Michelle.webp", "url": "https://www.linkedin.com/in/michelletliu/" }
+				{
+					"name": "Michelle Liu",
+					"photoSrc": "/people/Michelle.webp",
+					"url": "https://www.linkedin.com/in/michelletliu/"
+				}
 			],
 			"badges": [
-				{ "kind": "pill", "text": "WORKSHOP", "variant": "strawberry-moon" },
-				{ "kind": "pill", "text": "12:00pm PST", "variant": "sparky-yellow" },
-				{ "kind": "pill", "text": "3:00pm EST", "variant": "sparky-yellow" }
+				{
+					"kind": "pill",
+					"text": "WORKSHOP",
+					"variant": "strawberry-moon"
+				},
+				{
+					"kind": "pill",
+					"text": "12:00pm PST",
+					"variant": "sparky-yellow"
+				},
+				{
+					"kind": "pill",
+					"text": "3:00pm EST",
+					"variant": "sparky-yellow"
+				}
 			]
 		},
 		{
@@ -72,12 +135,27 @@
 			"registerUrl": "#",
 			"bodyHtml": "<p>Typography can be confusing, but <span class=\"underline\">Nathan Lew</span> (prev. @ Invoke Digital), is here to help point you in the right direction.</p>",
 			"personPhotos": [
-				{ "name": "Nathan Lew", "photoSrc": "/people/Natha.webp", "url": "https://www.linkedin.com/in/nathan-lew/" }
+				{
+					"name": "Nathan Lew",
+					"photoSrc": "/people/Natha.webp",
+					"url": "https://www.linkedin.com/in/nathan-lew/"
+				}
 			],
 			"badges": [
-				{ "kind": "speaker-session", "text": "Speaker Session" },
-				{ "kind": "pill", "text": "3:00pm PST", "variant": "sparky-yellow" },
-				{ "kind": "pill", "text": "6:00pm EST", "variant": "sparky-yellow" }
+				{
+					"kind": "speaker-session",
+					"text": "Speaker Session"
+				},
+				{
+					"kind": "pill",
+					"text": "3:00pm PST",
+					"variant": "sparky-yellow"
+				},
+				{
+					"kind": "pill",
+					"text": "6:00pm EST",
+					"variant": "sparky-yellow"
+				}
 			]
 		},
 		{
@@ -88,12 +166,97 @@
 			"registerUrl": "#",
 			"bodyHtml": "<p>Go beyond the technical skills and develop your taste with <span class=\"underline\">Flora Guo</span> is a design engineer @ Paradigm AI.</p>",
 			"personPhotos": [
-				{ "name": "Flora Guo", "photoSrc": "/people/Flora.webp", "url": "https://www.linkedin.com/in/floguo/" }
+				{
+					"name": "Flora Guo",
+					"photoSrc": "/people/Flora.webp",
+					"url": "https://www.linkedin.com/in/floguo/"
+				}
 			],
 			"badges": [
-				{ "kind": "pill", "text": "WORKSHOP", "variant": "strawberry-moon" },
-				{ "kind": "pill", "text": "2:00pm PST", "variant": "sparky-yellow" },
-				{ "kind": "pill", "text": "5:00pm EST", "variant": "sparky-yellow" }
+				{
+					"kind": "pill",
+					"text": "WORKSHOP",
+					"variant": "strawberry-moon"
+				},
+				{
+					"kind": "pill",
+					"text": "2:00pm PST",
+					"variant": "sparky-yellow"
+				},
+				{
+					"kind": "pill",
+					"text": "5:00pm EST",
+					"variant": "sparky-yellow"
+				}
+			]
+		},
+		{
+			"month": "MAY",
+			"day": "13",
+			"category": "workshop",
+			"title": "Design Waterloo: The Future of Design is Interdisciplinary",
+			"registerUrl": "#",
+			"bodyHtml": "<p>Learn all about how the design community is being built up within the city of Waterloo with <span class=\"underline\">Sheffield Wong</span>  (preciously @MasterCard) and <span class=\"underline\">Brayden Petersen</span> (previously @ Shopify), creators of the student-led Design Waterloo directory.</p>",
+			"personPhotos": [
+				{
+					"name": "Sheffield Wong",
+					"photoSrc": "/people/Sheffield.webp",
+					"url": "https://www.linkedin.com/in/sheffield-wong/"
+				},
+				{
+					"name": "Brayden Petersen",
+					"photoSrc": "/people/Brayden.webp",
+					"url": "https://www.linkedin.com/in/braydenpetersen/"
+				}
+			],
+			"badges": [
+				{
+					"kind": "pill",
+					"text": "WORKSHOP",
+					"variant": "strawberry-moon"
+				},
+				{
+					"kind": "pill",
+					"text": "6:00pm PST",
+					"variant": "sparky-yellow"
+				},
+				{
+					"kind": "pill",
+					"text": "9:00pm EST",
+					"variant": "sparky-yellow"
+				}
+			]
+		},
+		{
+			"month": "MAY",
+			"day": "14",
+			"category": "workshop",
+			"title": "If You’re Not Having Fun, You’re NGMI: How Centering Play Can Accelerate Your Career",
+			"registerUrl": "#",
+			"bodyHtml": "<p>Learn how play and fun can get you further in your design career with <span class=\"underline\">Karissa Wong</span>, a product designer @ Roblox</p>",
+			"personPhotos": [
+				{
+					"name": "Karissa Wong",
+					"photoSrc": "/people/Karissa.webp",
+					"url": "https://www.linkedin.com/in/karissa-wong/"
+				}
+			],
+			"badges": [
+				{
+					"kind": "pill",
+					"text": "WORKSHOP",
+					"variant": "strawberry-moon"
+				},
+				{
+					"kind": "pill",
+					"text": "12:00pm PST",
+					"variant": "sparky-yellow"
+				},
+				{
+					"kind": "pill",
+					"text": "3:00pm EST",
+					"variant": "sparky-yellow"
+				}
 			]
 		},
 		{
@@ -104,12 +267,28 @@
 			"registerUrl": "#",
 			"bodyHtml": "<p>Most projects fall apart during the presentation phase, <span class=\"underline\">Keyan Virani</span> (design @ Ramp) is here to help guide you through that process.</p>",
 			"personPhotos": [
-				{ "name": "Keyan Virani", "photoSrc": "/people/Keya.webp", "url": "https://www.linkedin.com/in/keyanv/" }
+				{
+					"name": "Keyan Virani",
+					"photoSrc": "/people/Keya.webp",
+					"url": "https://www.linkedin.com/in/keyanv/"
+				}
 			],
 			"badges": [
-				{ "kind": "pill", "text": "WORKSHOP", "variant": "strawberry-moon" },
-				{ "kind": "pill", "text": "3:00pm PST", "variant": "sparky-yellow" },
-				{ "kind": "pill", "text": "6:00pm EST", "variant": "sparky-yellow" }
+				{
+					"kind": "pill",
+					"text": "WORKSHOP",
+					"variant": "strawberry-moon"
+				},
+				{
+					"kind": "pill",
+					"text": "1:00pm PST",
+					"variant": "sparky-yellow"
+				},
+				{
+					"kind": "pill",
+					"text": "4:00pm EST",
+					"variant": "sparky-yellow"
+				}
 			]
 		},
 		{
@@ -120,12 +299,28 @@
 			"registerUrl": "#",
 			"bodyHtml": "<p><span class=\"underline\">Bao To</span> (design eng @ Relationship Co.) loves ducks, but loves making them digital even more. Join him and learn all about joyful software.</p>",
 			"personPhotos": [
-				{ "name": "Bao To", "photoSrc": "/people/Bao.webp", "url": "https://www.linkedin.com/in/bao-to-54621b19b/" }
+				{
+					"name": "Bao To",
+					"photoSrc": "/people/Bao.webp",
+					"url": "https://www.linkedin.com/in/bao-to-54621b19b/"
+				}
 			],
 			"badges": [
-				{ "kind": "pill", "text": "WORKSHOP", "variant": "strawberry-moon" },
-				{ "kind": "pill", "text": "6:00pm PST", "variant": "sparky-yellow" },
-				{ "kind": "pill", "text": "9:00pm EST", "variant": "sparky-yellow" }
+				{
+					"kind": "pill",
+					"text": "WORKSHOP",
+					"variant": "strawberry-moon"
+				},
+				{
+					"kind": "pill",
+					"text": "6:00pm PST",
+					"variant": "sparky-yellow"
+				},
+				{
+					"kind": "pill",
+					"text": "9:00pm EST",
+					"variant": "sparky-yellow"
+				}
 			]
 		},
 		{
@@ -136,14 +331,37 @@
 			"registerUrl": "#",
 			"bodyHtml": "<p>Learn all about design from the Wu Panel, made up of <span class=\"underline\">Galaxia Wu</span> (design @ Figma), <span class=\"underline\">Emmi Wu</span> (design @ Perplexity), and <span class=\"underline\">Caleb Wu</span> (design @ Ando).</p>",
 			"personPhotos": [
-				{ "name": "Galaxia Wu", "photoSrc": "/people/Galaxia.webp", "url": "https://www.linkedin.com/in/galaxia/" },
-				{ "name": "Emmi Wu", "photoSrc": "/people/Emmi.webp", "url": "https://www.linkedin.com/in/emerald-wu/" },
-				{ "name": "Caleb Wu", "photoSrc": "/people/Caleb.webp", "url": "https://www.linkedin.com/in/caleb-wu-/" }
+				{
+					"name": "Galaxia Wu",
+					"photoSrc": "/people/Galaxia.webp",
+					"url": "https://www.linkedin.com/in/galaxia/"
+				},
+				{
+					"name": "Emmi Wu",
+					"photoSrc": "/people/Emmi.webp",
+					"url": "https://www.linkedin.com/in/emerald-wu/"
+				},
+				{
+					"name": "Caleb Wu",
+					"photoSrc": "/people/Caleb.webp",
+					"url": "https://www.linkedin.com/in/caleb-wu-/"
+				}
 			],
 			"badges": [
-				{ "kind": "speaker-session", "text": "Speaker Panel" },
-				{ "kind": "pill", "text": "1:00pm PST", "variant": "sparky-yellow" },
-				{ "kind": "pill", "text": "4:00pm EST", "variant": "sparky-yellow" }
+				{
+					"kind": "speaker-session",
+					"text": "Speaker Panel"
+				},
+				{
+					"kind": "pill",
+					"text": "1:00pm PST",
+					"variant": "sparky-yellow"
+				},
+				{
+					"kind": "pill",
+					"text": "4:00pm EST",
+					"variant": "sparky-yellow"
+				}
 			]
 		},
 		{
@@ -154,12 +372,28 @@
 			"registerUrl": "#",
 			"bodyHtml": "<p>Without Auto Layout, your projects can fall apart. Learn all about Auto Layout from <span class=\"underline\">Michael Dresler</span>.</p>",
 			"personPhotos": [
-				{ "name": "Michael Dresler", "photoSrc": "/people/Michael.webp", "url": "https://www.linkedin.com/in/michael-dresler/" }
+				{
+					"name": "Michael Dresler",
+					"photoSrc": "/people/Michael.webp",
+					"url": "https://www.linkedin.com/in/michael-dresler/"
+				}
 			],
 			"badges": [
-				{ "kind": "pill", "text": "WORKSHOP", "variant": "strawberry-moon" },
-				{ "kind": "pill", "text": "5:00pm PST", "variant": "sparky-yellow" },
-				{ "kind": "pill", "text": "8:00pm EST", "variant": "sparky-yellow" }
+				{
+					"kind": "pill",
+					"text": "WORKSHOP",
+					"variant": "strawberry-moon"
+				},
+				{
+					"kind": "pill",
+					"text": "6:00pm PST",
+					"variant": "sparky-yellow"
+				},
+				{
+					"kind": "pill",
+					"text": "9:00pm EST",
+					"variant": "sparky-yellow"
+				}
 			]
 		},
 		{
@@ -170,12 +404,28 @@
 			"registerUrl": "#",
 			"bodyHtml": "<p>Design Systems bring your project together, <span class=\"underline\">Christina Raganit</span> (design @ Google), will start you on your design system journey.</p>",
 			"personPhotos": [
-				{ "name": "Christina Raganit", "photoSrc": "/people/Chris.webp", "url": "https://www.linkedin.com/in/christinaraganit/" }
+				{
+					"name": "Christina Raganit",
+					"photoSrc": "/people/Chris.webp",
+					"url": "https://www.linkedin.com/in/christinaraganit/"
+				}
 			],
 			"badges": [
-				{ "kind": "pill", "text": "WORKSHOP", "variant": "strawberry-moon" },
-				{ "kind": "pill", "text": "6:00pm PST", "variant": "sparky-yellow" },
-				{ "kind": "pill", "text": "9:00pm EST", "variant": "sparky-yellow" }
+				{
+					"kind": "pill",
+					"text": "WORKSHOP",
+					"variant": "strawberry-moon"
+				},
+				{
+					"kind": "pill",
+					"text": "6:00pm PST",
+					"variant": "sparky-yellow"
+				},
+				{
+					"kind": "pill",
+					"text": "9:00pm EST",
+					"variant": "sparky-yellow"
+				}
 			]
 		}
 	]
